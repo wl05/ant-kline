@@ -1,0 +1,48 @@
+{
+    "name": "ant-kline",
+    "version": "1.0.7",
+    "description": "对kline.js的自定义修改",
+    "main": "dist/kline.js",
+    "directories": {
+        "example": "examples",
+        "lib": "lib"
+    },
+    "scripts": {
+        "dev": "webpack --progress --colors --watch",
+        "pack": "webpack --progress --colors",
+        "server": "node server.js",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/antbaobao/ant-kline.git"
+    },
+    "keywords": [
+        "kline"
+    ],
+    "author": "antbaobao",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/antbaobao/ant-kline/issues"
+    },
+    "homepage": "https://github.com/antbaobao/ant-kline#readme",
+    "devDependencies": {
+        "@babel/core": "^7.0.0-beta.36",
+        "@babel/preset-env": "^7.0.0-beta.36",
+        "babel-loader": "^8.0.0-beta.0",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "css-loader": "^0.28.7",
+        "file-loader": "^1.1.6",
+        "firebase": "^4.12.1",
+        "html-loader": "^0.5.1",
+        "style-loader": "^0.19.1",
+        "uglifyjs-webpack-plugin": "^1.1.6",
+        "url-loader": "^0.6.2",
+        "webpack": "^3.10.0",
+        "webpack-dev-server": "^3.1.10"
+    },
+    "dependencies": {
+        "express": "^4.16.4",
+        "md5": "^2.2.1"
+    }
+}
