@@ -6,7 +6,7 @@
     <script src="../lib/require.js"></script>
     <style type="text/css">
         .kline {
-            width: 1200px;
+            width: 100%;
             margin-left: auto;
             margin-right: auto;
             height: 462px;
@@ -17,10 +17,14 @@
 <body>
 
 <div class="kline">
-
     <h1>K线图</h1>
+    <div style="display: flex;width: 100%">
+        <div style="width: 200px"></div>
+        <div>
+            <div id="kline_container"></div>
+        </div>
 
-    <div id="kline_container"></div>
+    </div>
 </div>
 
 
@@ -43,11 +47,10 @@
             }
         }
     });
-
     require([ 'kline' ], function () {
         var kline = new Kline({
             element : "#kline_container",
-            width : 1200,
+            width : 0,
             height : 650,
             theme : 'dark', // light/dark
             language : 'zh-cn', // zh-cn/en-us/zh-tw
@@ -55,13 +58,28 @@
             symbol : "BTC",
             symbolName : "BTC/USD",
             type : "poll", // poll/socket
-            url : "localhost:3000",
+            url : "http://t.001.gs/api/kline/get_backtest_kline?backtest_id=5bfb6ed48619bd42403bc4b4&limit=10000",
             limit : 10000,
             intervalTime : 5000,
             debug : true,
-            showTrade : true
-        });
+            showTrade : true,
+            showTradeLog : true,
+            onRangeChange : function (range) {
+                // window.data = []
+                // console.log('1')
+                // if (!window.range) {
+                //     window.range = range
+                //     // console.log(range)
+                // }
+                // kline.resend()
+                // if (window.range > range) {
+                //     kline.resend()
+                // }
 
+                // kline.redraw()
+                // kline.draw();
+            }
+        });
         kline.draw();
     });
 

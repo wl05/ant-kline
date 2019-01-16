@@ -109,7 +109,9 @@ export class MainDataSource extends DataSource {
                         lastItem.high === e[2] &&
                         lastItem.low === e[3] &&
                         lastItem.close === e[4] &&
-                        lastItem.volume === e[5]) {
+                        lastItem.volume === e[5] &&
+                        lastItem.trade === e[6]
+                    ) {
                         this.setUpdateMode(DataSource.UpdateMode.DoNothing);
                     } else {
                         this.setUpdateMode(DataSource.UpdateMode.Update);
@@ -119,7 +121,8 @@ export class MainDataSource extends DataSource {
                             high: e[2],
                             low: e[3],
                             close: e[4],
-                            volume: e[5]
+                            volume: e[5],
+                            trade: e[6]
                         };
                         this._updatedCount++;
                     }
@@ -134,7 +137,8 @@ export class MainDataSource extends DataSource {
                                 high: e[2],
                                 low: e[3],
                                 close: e[4],
-                                volume: e[5]
+                                volume: e[5],
+                                trade: e[6]
                             });
                         }
                     }
@@ -162,7 +166,8 @@ export class MainDataSource extends DataSource {
                 high: e[2],
                 low: e[3],
                 close: e[4],
-                volume: e[5]
+                volume: e[5],
+                trade: e[6]
             });
         }
         return true;

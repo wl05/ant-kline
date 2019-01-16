@@ -1,5 +1,6 @@
 import * as exprs from "./exprs";
 import * as themes from "./themes";
+import { ExprEnv } from "./exprs";
 
 export class Indicator {
     
@@ -299,7 +300,7 @@ export class TRADEIndicator extends Indicator {
     
     constructor () {
         super();
-        let SHORT = new exprs.ParameterExpr("SHORT", 2, 200, 12);
+        let SHORT = new exprs.ParameterExpr("", 0, 0, 0);
         let LONG = new exprs.ParameterExpr("LONG", 2, 200, 26);
         let MID = new exprs.ParameterExpr("MID", 2, 200, 9);
         // this.addParameter(SHORT);
@@ -311,15 +312,30 @@ export class TRADEIndicator extends Indicator {
                 new exprs.EmaExpr(new exprs.CloseExpr(), LONG)
             )
         );
+        
         // this.addOutput(DIF);
         let DEA = new exprs.OutputExpr("DEA",
             new exprs.EmaExpr(DIF, MID)
         );
         // this.addOutput(DEA);
+        this.addOutput(new exprs.OutputExpr("Details",
+            new exprs.TradeExpr(),
+            exprs.OutputExpr.outputStyle.None
+        ));
+        
+        this.addOutput(new exprs.OutputExpr("Balance",
+            new exprs.MaExpr(new exprs.BalanceExpr(), new exprs.BalanceExpr())
+        ));
+        
+        // this.addOutput(new exprs.RangeOutputExpr("MA",
+        //     new exprs.MaExpr(new exprs.CloseExpr(), M1),
+        //     exprs.OutputExpr.outputStyle.Line,
+        //     themes.Theme.Color.Indicator1
+        // ));
         let TRADE = new exprs.OutputExpr("TRADE",
             new exprs.MulExpr(
                 new exprs.SubExpr(DIF, DEA),
-                new exprs.ConstExpr(2)
+                new exprs.ConstExpr(1)
             ),
             exprs.OutputExpr.outputStyle.Custom
         );

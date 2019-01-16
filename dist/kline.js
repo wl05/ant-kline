@@ -102,7 +102,7 @@ var crypt_1 = __webpack_require__(65);
 exports.base64 = crypt_1.base64;
 exports.base64Decode = crypt_1.base64Decode;
 exports.base64Encode = crypt_1.base64Encode;
-var constants_1 = __webpack_require__(44);
+var constants_1 = __webpack_require__(45);
 exports.CONSTANTS = constants_1.CONSTANTS;
 var deepCopy_1 = __webpack_require__(138);
 exports.deepCopy = deepCopy_1.deepCopy;
@@ -1341,11 +1341,11 @@ function __importDefault(mod) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__data_sources__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__chart_settings__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__data_providers__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__data_providers__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__themes__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__plotters__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ctools__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__areas__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__areas__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__util__ = __webpack_require__(21);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3453,7 +3453,7 @@ function isNativeBlobDefined() {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NamedObject; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cname__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cname__ = __webpack_require__(59);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -3991,7 +3991,7 @@ function (_DataSource) {
           _e = data[_i];
 
           if (_e[0] === lastItem.date) {
-            if (lastItem.open === _e[1] && lastItem.high === _e[2] && lastItem.low === _e[3] && lastItem.close === _e[4] && lastItem.volume === _e[5]) {
+            if (lastItem.open === _e[1] && lastItem.high === _e[2] && lastItem.low === _e[3] && lastItem.close === _e[4] && lastItem.volume === _e[5] && lastItem.trade === _e[6]) {
               this.setUpdateMode(DataSource.UpdateMode.DoNothing);
             } else {
               this.setUpdateMode(DataSource.UpdateMode.Update);
@@ -4001,7 +4001,8 @@ function (_DataSource) {
                 high: _e[2],
                 low: _e[3],
                 close: _e[4],
-                volume: _e[5]
+                volume: _e[5],
+                trade: _e[6]
               };
               this._updatedCount++;
             }
@@ -4020,7 +4021,8 @@ function (_DataSource) {
                   high: _e[2],
                   low: _e[3],
                   close: _e[4],
-                  volume: _e[5]
+                  volume: _e[5],
+                  trade: _e[6]
                 });
               }
             }
@@ -4057,7 +4059,8 @@ function (_DataSource) {
           high: e[2],
           low: e[3],
           close: e[4],
-          volume: e[5]
+          volume: e[5],
+          trade: e[6]
         });
       }
 
@@ -4764,7 +4767,7 @@ function reject(error) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Kline; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__control__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__kline_trade__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__kline_trade__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chart_manager__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chart_settings__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates__ = __webpack_require__(27);
@@ -6440,11 +6443,11 @@ function taskStateFromInternalTaskState(state) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__chart_manager__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chart_settings__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data_sources__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_providers__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__areas__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_providers__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__areas__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__plotters__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__timeline__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cname__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cname__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__layouts__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__themes__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ranges__ = __webpack_require__(61);
@@ -7866,7 +7869,7 @@ var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(1);
 var util_3 = __webpack_require__(0);
 var AuthTokenProvider_1 = __webpack_require__(172);
-var StatsManager_1 = __webpack_require__(49);
+var StatsManager_1 = __webpack_require__(50);
 var StatsReporter_1 = __webpack_require__(174);
 var StatsListener_1 = __webpack_require__(86);
 var EventQueue_1 = __webpack_require__(175);
@@ -8654,7 +8657,7 @@ var Location = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Control; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kline__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__kline_trade__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__kline_trade__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chart_manager__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chart_settings__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates__ = __webpack_require__(27);
@@ -10916,20 +10919,12 @@ function (_CSegLineObject2) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chart_manager__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cpoint__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__exprs__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__exprs__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__themes__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__data_providers__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__data_providers__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__data_sources__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ctools__ = __webpack_require__(40);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -11989,14 +11984,14 @@ function (_NamedObject4) {
         out = indic.getOutputAt(n);
         var style = out.getStyle();
 
-        if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["y" /* OutputExpr */].outputStyle.VolumeStick) {
+        if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["z" /* OutputExpr */].outputStyle.VolumeStick) {
           this.drawVolumeStick(context, theme, mgr.getDataSource(this.getDataSourceName()), start, last, timeline.toItemLeft(start), cW, timeline.getItemWidth(), range);
-        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["y" /* OutputExpr */].outputStyle.MACDStick) {
+        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["z" /* OutputExpr */].outputStyle.MACDStick) {
           this.drawMACDStick(context, theme, out, start, last, timeline.toItemLeft(start), cW, timeline.getItemWidth(), range);
-        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["y" /* OutputExpr */].outputStyle.SARPoint) {
+        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["z" /* OutputExpr */].outputStyle.SARPoint) {
           this.drawSARPoint(context, theme, out, start, last, timeline.toItemCenter(start), cW, timeline.getItemWidth(), range);
-        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["y" /* OutputExpr */].outputStyle.Custom) {
-          this.drawCustomStick(context, theme, out, start, last, timeline.toItemLeft(start), cW, timeline.getItemWidth(), range);
+        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["z" /* OutputExpr */].outputStyle.Custom) {
+          this.drawCustomStick(context, theme, out, start, last, timeline.toItemLeft(start), cW, timeline.getItemWidth(), range, mgr.getDataSource(this.getDataSourceName()));
         }
       }
 
@@ -12011,7 +12006,7 @@ function (_NamedObject4) {
         var x = center;
         out = indic.getOutputAt(n);
 
-        if (out.getStyle() === __WEBPACK_IMPORTED_MODULE_5__exprs__["y" /* OutputExpr */].outputStyle.Line) {
+        if (out.getStyle() === __WEBPACK_IMPORTED_MODULE_5__exprs__["z" /* OutputExpr */].outputStyle.Line) {
           var v = void 0,
               points = [];
 
@@ -12130,48 +12125,39 @@ function (_NamedObject4) {
     }
   }, {
     key: "drawCustomStick",
-    value: function drawCustomStick(context, theme, output, first, last, startX, cW, iW, range) {
+    value: function drawCustomStick(context, theme, output, first, last, startX, cW, iW, range, ds) {
       var left = startX;
       var middle = range.toY(0);
       var prevMACD = first > 0 ? output.execute(first - 1) : NaN;
 
-      if (!window.data) {
-        window.data = [];
-      }
-
-      var Klines = new __WEBPACK_IMPORTED_MODULE_0__kline__["a" /* default */](); // console.log(context)
-      // console.log(output)
-      // window.data = [ ...Klines.data.lines ]
-      // console.log(first, last, data.length)
-
-      window.data = _toConsumableArray(window.data.concat(Klines.data.lines)); // console.log(first, last, window.data.length)
-
-      var data = _toConsumableArray(window.data);
-
-      for (var i = first - 1; i < last; i++) {
+      for (var i = first ? first - 1 : 0; i < last; i++) {
         var TRADE = output.execute(i);
-        var color = "rgb(255,255,255)";
+        var data = ds.getDataAt(i);
 
-        if (data[i][data[i].length - 1] === 'open') {
-          // 开#19B34C 空心
-          color = '#19B34C';
-          context.strokeStyle = color;
-          context.stroke();
-        } else if (data[i][data[i].length - 1] === 'close') {
-          //关 #B33121 空心
-          color = '#B33121';
-          context.strokeStyle = color;
-          context.stroke();
-        } else if (data[i][data[i].length - 1] === 'liquidation') {
-          // 爆仓 #F6EB2F 实心
-          color = '#F6EB2F';
-          context.fillStyle = color;
-          context.fill();
-        } else if (data[i][data[i].length - 1] === 'both') {
-          // BOTH #19B34C 实心
-          color = '#19B34C';
-          context.fillStyle = color;
-          context.fill();
+        if (data.trade) {
+          var color = "rgb(255,255,255)";
+
+          if (data.trade.type === 'open') {
+            // 开#19B34C 空心
+            color = '#19B34C';
+            context.strokeStyle = color;
+            context.stroke();
+          } else if (data.trade.type === 'close') {
+            //关 #B33121 空心
+            color = '#B33121';
+            context.strokeStyle = color;
+            context.stroke();
+          } else if (data.trade.type === 'liquidation') {
+            // 爆仓 #F6EB2F 实心
+            color = '#F6EB2F';
+            context.fillStyle = color;
+            context.fill();
+          } else if (data.trade.type === 'both') {
+            // BOTH #19B34C 实心
+            color = '#19B34C';
+            context.fillStyle = color;
+            context.fill();
+          }
         }
         /*画线*/
 
@@ -12349,8 +12335,17 @@ function (_Plotter5) {
       for (n = 0; n < cnt; n++) {
         out = indic.getOutputAt(n);
         v = out.execute(selIndex);
-        if (isNaN(v)) continue;
-        info = "  " + out.getName() + ": " + v.toFixed(2);
+
+        if (!v && typeof v !== "string") {
+          continue;
+        }
+
+        if (typeof v === "number") {
+          info = "  " + out.getName() + ": " + v.toFixed(2);
+        } else {
+          info = "  " + out.getName() + ": " + v;
+        }
+
         color = out.getColor();
         if (color === undefined) color = __WEBPACK_IMPORTED_MODULE_6__themes__["c" /* Theme */].Color.Indicator0 + n;
         context.fillStyle = theme.getColor(color);
@@ -13128,9 +13123,9 @@ function (_Plotter10) {
       var lang = mgr.getLanguage();
       var x = timeline.toItemCenter(timeline.getSelectedIndex());
       context.fillStyle = theme.getColor(__WEBPACK_IMPORTED_MODULE_6__themes__["c" /* Theme */].Color.Background);
-      context.fillRect(x - 52.5, area.getTop() + 2.5, 106, 18);
+      context.fillRect(x - 72.5, area.getTop() + 2.5, 160, 18);
       context.strokeStyle = theme.getColor(__WEBPACK_IMPORTED_MODULE_6__themes__["c" /* Theme */].Color.Grid3);
-      context.strokeRect(x - 52.5, area.getTop() + 2.5, 106, 18);
+      context.strokeRect(x - 72.5, area.getTop() + 2.5, 160, 18);
       context.font = theme.getFont(__WEBPACK_IMPORTED_MODULE_6__themes__["c" /* Theme */].Font.Default);
       context.textAlign = "center";
       context.textBaseline = "middle";
@@ -13138,11 +13133,13 @@ function (_Plotter10) {
       var time = new Date(ds.getDataAt(timeline.getSelectedIndex()).date);
       var month = time.getMonth() + 1;
       var date = time.getDate();
+      var year = time.getFullYear();
       var hour = time.getHours();
       var minute = time.getMinutes();
       var second = time.getSeconds();
       var strMonth = month.toString();
       var strDate = date.toString();
+      var strYear = year.toString();
       var strHour = hour.toString();
       var strMinute = minute.toString();
       var strSecond = second.toString();
@@ -13158,11 +13155,11 @@ function (_Plotter10) {
       var text = "";
 
       if (lang === "zh-cn") {
-        text = strMonth + "月" + strDate + "日  " + strHour + ":" + strMinute;
+        text = strYear + "年" + strMonth + "月" + strDate + "日  " + strHour + ":" + strMinute;
       } else if (lang === "zh-tw") {
-        text = strMonth + "月" + strDate + "日  " + strHour + ":" + strMinute;
+        text = strYear + "年" + strMonth + "月" + strDate + "日  " + strHour + ":" + strMinute;
       } else if (lang === "en-us") {
-        text = TimelineSelectionPlotter.MonthConvert[month] + " " + strDate + "  " + strHour + ":" + strMinute;
+        text = TimelineSelectionPlotter.MonthConvert[month] + " " + strDate + "  " + strHour + ":" + strMinute + " " + strYear;
       }
 
       if (__WEBPACK_IMPORTED_MODULE_0__kline__["a" /* default */].instance.range < 60000) {
@@ -14287,6 +14284,1623 @@ function (_CToolPlotter13) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return ExprEnv; });
+/* unused harmony export Expr */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return OpenExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return HighExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return LowExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return CloseExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return TradeExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return BalanceExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return VolumeExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return ConstExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return ParameterExpr; });
+/* unused harmony export OpAExpr */
+/* unused harmony export OpABExpr */
+/* unused harmony export OpABCExpr */
+/* unused harmony export OpABCDExpr */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return NegExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return AddExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return SubExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return MulExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return DivExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return GtExpr; });
+/* unused harmony export GeExpr */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return LtExpr; });
+/* unused harmony export LeExpr */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return EqExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return MaxExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AbsExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return RefExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AndExpr; });
+/* unused harmony export OrExpr */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return IfExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return AssignExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return OutputExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return RangeOutputExpr; });
+/* unused harmony export RangeExpr */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return HhvExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return LlvExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return CountExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return SumExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return StdExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return MaExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return EmaExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return ExpmemaExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return SmaExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return SarExpr; });
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var ExprEnv =
+/*#__PURE__*/
+function () {
+  function ExprEnv() {
+    _classCallCheck(this, ExprEnv);
+
+    this._ds = null;
+    this._firstIndex = null;
+  }
+
+  _createClass(ExprEnv, [{
+    key: "getDataSource",
+    value: function getDataSource() {
+      return this._ds;
+    }
+  }, {
+    key: "setDataSource",
+    value: function setDataSource(ds) {
+      return this._ds = ds;
+    }
+  }, {
+    key: "getFirstIndex",
+    value: function getFirstIndex() {
+      return this._firstIndex;
+    }
+  }, {
+    key: "setFirstIndex",
+    value: function setFirstIndex(n) {
+      return this._firstIndex = n;
+    }
+  }], [{
+    key: "get",
+    value: function get() {
+      return this.inst;
+    }
+  }, {
+    key: "set",
+    value: function set(env) {
+      this.inst = env;
+    }
+  }]);
+
+  return ExprEnv;
+}();
+ExprEnv.inst = null;
+var Expr =
+/*#__PURE__*/
+function () {
+  function Expr() {
+    _classCallCheck(this, Expr);
+
+    this._rid = 0;
+  }
+
+  _createClass(Expr, [{
+    key: "execute",
+    value: function execute(index) {}
+  }, {
+    key: "reserve",
+    value: function reserve(rid, count) {}
+  }, {
+    key: "clear",
+    value: function clear() {}
+  }]);
+
+  return Expr;
+}();
+var OpenExpr =
+/*#__PURE__*/
+function (_Expr) {
+  _inherits(OpenExpr, _Expr);
+
+  function OpenExpr() {
+    _classCallCheck(this, OpenExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(OpenExpr).apply(this, arguments));
+  }
+
+  _createClass(OpenExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return ExprEnv.get()._ds.getDataAt(index).open;
+    }
+  }]);
+
+  return OpenExpr;
+}(Expr);
+var HighExpr =
+/*#__PURE__*/
+function (_Expr2) {
+  _inherits(HighExpr, _Expr2);
+
+  function HighExpr() {
+    _classCallCheck(this, HighExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(HighExpr).apply(this, arguments));
+  }
+
+  _createClass(HighExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return ExprEnv.get()._ds.getDataAt(index).high;
+    }
+  }]);
+
+  return HighExpr;
+}(Expr);
+var LowExpr =
+/*#__PURE__*/
+function (_Expr3) {
+  _inherits(LowExpr, _Expr3);
+
+  function LowExpr() {
+    _classCallCheck(this, LowExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(LowExpr).apply(this, arguments));
+  }
+
+  _createClass(LowExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return ExprEnv.get()._ds.getDataAt(index).low;
+    }
+  }]);
+
+  return LowExpr;
+}(Expr);
+var CloseExpr =
+/*#__PURE__*/
+function (_Expr4) {
+  _inherits(CloseExpr, _Expr4);
+
+  function CloseExpr() {
+    _classCallCheck(this, CloseExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(CloseExpr).apply(this, arguments));
+  }
+
+  _createClass(CloseExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return ExprEnv.get()._ds.getDataAt(index).close;
+    }
+  }]);
+
+  return CloseExpr;
+}(Expr);
+var TradeExpr =
+/*#__PURE__*/
+function (_Expr5) {
+  _inherits(TradeExpr, _Expr5);
+
+  function TradeExpr() {
+    _classCallCheck(this, TradeExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(TradeExpr).apply(this, arguments));
+  }
+
+  _createClass(TradeExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      var result = "";
+
+      if (ExprEnv.get()._ds.getDataAt(index).trade) {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = ExprEnv.get()._ds.getDataAt(index).trade.detail[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var item = _step.value;
+            result += "".concat(this.formatTimestamp(item.trade_time), " [").concat(item.trade_type, " P:").concat(item.trade_price.toFixed(4), " B:").concat(item.balance.toFixed(4), "] ");
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return != null) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      }
+
+      return result ? result : 'None';
+    }
+  }, {
+    key: "add0",
+    value: function add0(m) {
+      return m < 10 ? '0' + m : m;
+    }
+  }, {
+    key: "formatTimestamp",
+    value: function formatTimestamp(timestamps) {
+      var time = new Date(parseInt(timestamps) * 1000);
+      var y = time.getFullYear();
+      var m = time.getMonth() + 1;
+      var d = time.getDate();
+      var h = time.getHours();
+      var mm = time.getMinutes();
+      var s = time.getSeconds();
+      return y + '/' + this.add0(m) + '/' + this.add0(d) + ' ' + this.add0(h) + ':' + this.add0(mm) + ':' + this.add0(s);
+    }
+  }]);
+
+  return TradeExpr;
+}(Expr);
+var BalanceExpr =
+/*#__PURE__*/
+function (_Expr6) {
+  _inherits(BalanceExpr, _Expr6);
+
+  function BalanceExpr() {
+    _classCallCheck(this, BalanceExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(BalanceExpr).apply(this, arguments));
+  }
+
+  _createClass(BalanceExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      var balance = 0;
+
+      if (ExprEnv.get()._ds.getDataAt(index).trade) {
+        var detail = ExprEnv.get()._ds.getDataAt(index).trade.detail;
+
+        balance = detail[detail.length - 1].balance.toFixed(4);
+      } else {
+        balance = window.balance;
+      }
+
+      window.balance = balance;
+      return balance;
+    }
+  }]);
+
+  return BalanceExpr;
+}(Expr);
+var VolumeExpr =
+/*#__PURE__*/
+function (_Expr7) {
+  _inherits(VolumeExpr, _Expr7);
+
+  function VolumeExpr() {
+    _classCallCheck(this, VolumeExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(VolumeExpr).apply(this, arguments));
+  }
+
+  _createClass(VolumeExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return ExprEnv.get()._ds.getDataAt(index).volume;
+    }
+  }]);
+
+  return VolumeExpr;
+}(Expr);
+var ConstExpr =
+/*#__PURE__*/
+function (_Expr8) {
+  _inherits(ConstExpr, _Expr8);
+
+  function ConstExpr(v) {
+    var _this;
+
+    _classCallCheck(this, ConstExpr);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ConstExpr).call(this));
+    _this._value = v;
+    return _this;
+  }
+
+  _createClass(ConstExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._value;
+    }
+  }]);
+
+  return ConstExpr;
+}(Expr);
+var ParameterExpr =
+/*#__PURE__*/
+function (_Expr9) {
+  _inherits(ParameterExpr, _Expr9);
+
+  function ParameterExpr(name, minValue, maxValue, defaultValue) {
+    var _this2;
+
+    _classCallCheck(this, ParameterExpr);
+
+    _this2 = _possibleConstructorReturn(this, _getPrototypeOf(ParameterExpr).call(this));
+    _this2._name = name;
+    _this2._minValue = minValue;
+    _this2._maxValue = maxValue;
+    _this2._value = _this2._defaultValue = defaultValue;
+    return _this2;
+  }
+
+  _createClass(ParameterExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._value;
+    }
+  }, {
+    key: "getMinValue",
+    value: function getMinValue() {
+      return this._minValue;
+    }
+  }, {
+    key: "getMaxValue",
+    value: function getMaxValue() {
+      return this._maxValue;
+    }
+  }, {
+    key: "getDefaultValue",
+    value: function getDefaultValue() {
+      return this._defaultValue;
+    }
+  }, {
+    key: "getValue",
+    value: function getValue() {
+      return this._value;
+    }
+  }, {
+    key: "setValue",
+    value: function setValue(v) {
+      if (v === 0) this._value = 0;else if (v < this._minValue) this._value = this._minValue;else if (v > this._maxValue) this._value = this._maxValue;else this._value = v;
+    }
+  }]);
+
+  return ParameterExpr;
+}(Expr);
+var OpAExpr =
+/*#__PURE__*/
+function (_Expr10) {
+  _inherits(OpAExpr, _Expr10);
+
+  function OpAExpr(a) {
+    var _this3;
+
+    _classCallCheck(this, OpAExpr);
+
+    _this3 = _possibleConstructorReturn(this, _getPrototypeOf(OpAExpr).call(this));
+    _this3._exprA = a;
+    return _this3;
+  }
+
+  _createClass(OpAExpr, [{
+    key: "reserve",
+    value: function reserve(rid, count) {
+      if (this._rid < rid) {
+        this._rid = rid;
+
+        this._exprA.reserve(rid, count);
+      }
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      this._exprA.clear();
+    }
+  }]);
+
+  return OpAExpr;
+}(Expr);
+var OpABExpr =
+/*#__PURE__*/
+function (_Expr11) {
+  _inherits(OpABExpr, _Expr11);
+
+  function OpABExpr(a, b) {
+    var _this4;
+
+    _classCallCheck(this, OpABExpr);
+
+    _this4 = _possibleConstructorReturn(this, _getPrototypeOf(OpABExpr).call(this));
+    _this4._exprA = a;
+    _this4._exprB = b;
+    return _this4;
+  }
+
+  _createClass(OpABExpr, [{
+    key: "reserve",
+    value: function reserve(rid, count) {
+      if (this._rid < rid) {
+        this._rid = rid;
+
+        this._exprA.reserve(rid, count);
+
+        this._exprB.reserve(rid, count);
+      }
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      this._exprA.clear();
+
+      this._exprB.clear();
+    }
+  }]);
+
+  return OpABExpr;
+}(Expr);
+var OpABCExpr =
+/*#__PURE__*/
+function (_Expr12) {
+  _inherits(OpABCExpr, _Expr12);
+
+  function OpABCExpr(a, b, c) {
+    var _this5;
+
+    _classCallCheck(this, OpABCExpr);
+
+    _this5 = _possibleConstructorReturn(this, _getPrototypeOf(OpABCExpr).call(this));
+    _this5._exprA = a;
+    _this5._exprB = b;
+    _this5._exprC = c;
+    return _this5;
+  }
+
+  _createClass(OpABCExpr, [{
+    key: "reserve",
+    value: function reserve(rid, count) {
+      if (this._rid < rid) {
+        this._rid = rid;
+
+        this._exprA.reserve(rid, count);
+
+        this._exprB.reserve(rid, count);
+
+        this._exprC.reserve(rid, count);
+      }
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      this._exprA.clear();
+
+      this._exprB.clear();
+
+      this._exprC.clear();
+    }
+  }]);
+
+  return OpABCExpr;
+}(Expr);
+var OpABCDExpr =
+/*#__PURE__*/
+function (_Expr13) {
+  _inherits(OpABCDExpr, _Expr13);
+
+  function OpABCDExpr(a, b, c, d) {
+    var _this6;
+
+    _classCallCheck(this, OpABCDExpr);
+
+    _this6 = _possibleConstructorReturn(this, _getPrototypeOf(OpABCDExpr).call(this));
+    _this6._exprA = a;
+    _this6._exprB = b;
+    _this6._exprC = c;
+    _this6._exprD = d;
+    return _this6;
+  }
+
+  _createClass(OpABCDExpr, [{
+    key: "reserve",
+    value: function reserve(rid, count) {
+      if (this._rid < rid) {
+        this._rid = rid;
+
+        this._exprA.reserve(rid, count);
+
+        this._exprB.reserve(rid, count);
+
+        this._exprC.reserve(rid, count);
+
+        this._exprD.reserve(rid, count);
+      }
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      this._exprA.clear();
+
+      this._exprB.clear();
+
+      this._exprC.clear();
+
+      this._exprD.clear();
+    }
+  }]);
+
+  return OpABCDExpr;
+}(Expr);
+var NegExpr =
+/*#__PURE__*/
+function (_OpAExpr) {
+  _inherits(NegExpr, _OpAExpr);
+
+  function NegExpr(a) {
+    _classCallCheck(this, NegExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(NegExpr).call(this, a));
+  }
+
+  _createClass(NegExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return -this._exprA.execute(index);
+    }
+  }]);
+
+  return NegExpr;
+}(OpAExpr);
+var AddExpr =
+/*#__PURE__*/
+function (_OpABExpr) {
+  _inherits(AddExpr, _OpABExpr);
+
+  function AddExpr(a, b) {
+    _classCallCheck(this, AddExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AddExpr).call(this, a, b));
+  }
+
+  _createClass(AddExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) + this._exprB.execute(index);
+    }
+  }]);
+
+  return AddExpr;
+}(OpABExpr);
+var SubExpr =
+/*#__PURE__*/
+function (_OpABExpr2) {
+  _inherits(SubExpr, _OpABExpr2);
+
+  function SubExpr(a, b) {
+    _classCallCheck(this, SubExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SubExpr).call(this, a, b));
+  }
+
+  _createClass(SubExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) - this._exprB.execute(index);
+    }
+  }]);
+
+  return SubExpr;
+}(OpABExpr);
+var MulExpr =
+/*#__PURE__*/
+function (_OpABExpr3) {
+  _inherits(MulExpr, _OpABExpr3);
+
+  function MulExpr(a, b) {
+    _classCallCheck(this, MulExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(MulExpr).call(this, a, b));
+  }
+
+  _createClass(MulExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) * this._exprB.execute(index);
+    }
+  }]);
+
+  return MulExpr;
+}(OpABExpr);
+var DivExpr =
+/*#__PURE__*/
+function (_OpABExpr4) {
+  _inherits(DivExpr, _OpABExpr4);
+
+  function DivExpr(a, b) {
+    _classCallCheck(this, DivExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(DivExpr).call(this, a, b));
+  }
+
+  _createClass(DivExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      var a = this._exprA.execute(index);
+
+      var b = this._exprB.execute(index);
+
+      if (a === 0) return a;
+      if (b === 0) return a > 0 ? 1000000 : -1000000;
+      return a / b;
+    }
+  }]);
+
+  return DivExpr;
+}(OpABExpr);
+var GtExpr =
+/*#__PURE__*/
+function (_OpABExpr5) {
+  _inherits(GtExpr, _OpABExpr5);
+
+  function GtExpr(a, b) {
+    _classCallCheck(this, GtExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(GtExpr).call(this, a, b));
+  }
+
+  _createClass(GtExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) > this._exprB.execute(index) ? 1 : 0;
+    }
+  }]);
+
+  return GtExpr;
+}(OpABExpr);
+var GeExpr =
+/*#__PURE__*/
+function (_OpABExpr6) {
+  _inherits(GeExpr, _OpABExpr6);
+
+  function GeExpr(a, b) {
+    _classCallCheck(this, GeExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(GeExpr).call(this, a, b));
+  }
+
+  _createClass(GeExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) >= this._exprB.execute(index) ? 1 : 0;
+    }
+  }]);
+
+  return GeExpr;
+}(OpABExpr);
+var LtExpr =
+/*#__PURE__*/
+function (_OpABExpr7) {
+  _inherits(LtExpr, _OpABExpr7);
+
+  function LtExpr(a, b) {
+    _classCallCheck(this, LtExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(LtExpr).call(this, a, b));
+  }
+
+  _createClass(LtExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) < this._exprB.execute(index) ? 1 : 0;
+    }
+  }]);
+
+  return LtExpr;
+}(OpABExpr);
+var LeExpr =
+/*#__PURE__*/
+function (_OpABExpr8) {
+  _inherits(LeExpr, _OpABExpr8);
+
+  function LeExpr(a, b) {
+    _classCallCheck(this, LeExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(LeExpr).call(this, a, b));
+  }
+
+  _createClass(LeExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) <= this._exprB.execute(index) ? 1 : 0;
+    }
+  }]);
+
+  return LeExpr;
+}(OpABExpr);
+var EqExpr =
+/*#__PURE__*/
+function (_OpABExpr9) {
+  _inherits(EqExpr, _OpABExpr9);
+
+  function EqExpr(a, b) {
+    _classCallCheck(this, EqExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(EqExpr).call(this, a, b));
+  }
+
+  _createClass(EqExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) === this._exprB.execute(index) ? 1 : 0;
+    }
+  }]);
+
+  return EqExpr;
+}(OpABExpr);
+var MaxExpr =
+/*#__PURE__*/
+function (_OpABExpr10) {
+  _inherits(MaxExpr, _OpABExpr10);
+
+  function MaxExpr(a, b) {
+    _classCallCheck(this, MaxExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(MaxExpr).call(this, a, b));
+  }
+
+  _createClass(MaxExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return Math.max(this._exprA.execute(index), this._exprB.execute(index));
+    }
+  }]);
+
+  return MaxExpr;
+}(OpABExpr);
+var AbsExpr =
+/*#__PURE__*/
+function (_OpAExpr2) {
+  _inherits(AbsExpr, _OpAExpr2);
+
+  function AbsExpr(a) {
+    _classCallCheck(this, AbsExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AbsExpr).call(this, a));
+  }
+
+  _createClass(AbsExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return Math.abs(this._exprA.execute(index));
+    }
+  }]);
+
+  return AbsExpr;
+}(OpAExpr);
+var RefExpr =
+/*#__PURE__*/
+function (_OpABExpr11) {
+  _inherits(RefExpr, _OpABExpr11);
+
+  function RefExpr(a, b) {
+    _classCallCheck(this, RefExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(RefExpr).call(this, a, b));
+  }
+
+  _createClass(RefExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      if (this._offset === undefined || this._offset < 0) {
+        this._offset = this._exprB.execute(index);
+
+        if (this._offset < 0) {
+          throw "offset < 0";
+        }
+      }
+
+      index -= this._offset;
+
+      if (index < 0) {
+        throw "index < 0";
+      }
+
+      var result = this._exprA.execute(index);
+
+      if (isNaN(result)) {
+        throw "NaN";
+      }
+
+      return result;
+    }
+  }]);
+
+  return RefExpr;
+}(OpABExpr);
+var AndExpr =
+/*#__PURE__*/
+function (_OpABExpr12) {
+  _inherits(AndExpr, _OpABExpr12);
+
+  function AndExpr(a, b) {
+    _classCallCheck(this, AndExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AndExpr).call(this, a, b));
+  }
+
+  _createClass(AndExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) !== 0 && this._exprB.execute(index) !== 0 ? 1 : 0;
+    }
+  }]);
+
+  return AndExpr;
+}(OpABExpr);
+var OrExpr =
+/*#__PURE__*/
+function (_OpABExpr13) {
+  _inherits(OrExpr, _OpABExpr13);
+
+  function OrExpr(a, b) {
+    _classCallCheck(this, OrExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(OrExpr).call(this, a, b));
+  }
+
+  _createClass(OrExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) !== 0 || this._exprB.execute(index) !== 0 ? 1 : 0;
+    }
+  }]);
+
+  return OrExpr;
+}(OpABExpr);
+var IfExpr =
+/*#__PURE__*/
+function (_OpABCExpr) {
+  _inherits(IfExpr, _OpABCExpr);
+
+  function IfExpr(a, b, c) {
+    _classCallCheck(this, IfExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(IfExpr).call(this, a, b, c));
+  }
+
+  _createClass(IfExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      return this._exprA.execute(index) !== 0 ? this._exprB.execute(index) : this._exprC.execute(index);
+    }
+  }]);
+
+  return IfExpr;
+}(OpABCExpr);
+var AssignExpr =
+/*#__PURE__*/
+function (_OpAExpr3) {
+  _inherits(AssignExpr, _OpAExpr3);
+
+  function AssignExpr(name, a) {
+    var _this7;
+
+    _classCallCheck(this, AssignExpr);
+
+    _this7 = _possibleConstructorReturn(this, _getPrototypeOf(AssignExpr).call(this, a));
+    _this7._name = name;
+    _this7._buf = [];
+    return _this7;
+  }
+
+  _createClass(AssignExpr, [{
+    key: "getName",
+    value: function getName() {
+      return this._name;
+    }
+  }, {
+    key: "execute",
+    value: function execute(index) {
+      return this._buf[index];
+    }
+  }, {
+    key: "assign",
+    value: function assign(index) {
+      this._buf[index] = this._exprA.execute(index);
+
+      if (ExprEnv.get()._firstIndex >= 0 && typeof this._buf[index] === "number") {
+        if (isNaN(this._buf[index]) && !isNaN(this._buf[index - 1])) {
+          throw this._name + ".assign(" + index + "): NaN";
+        }
+      }
+    }
+  }, {
+    key: "reserve",
+    value: function reserve(rid, count) {
+      if (this._rid < rid) {
+        for (var c = count; c > 0; c--) {
+          this._buf.push(NaN);
+        }
+      }
+
+      _get(_getPrototypeOf(AssignExpr.prototype), "reserve", this).call(this, rid, count);
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      _get(_getPrototypeOf(AssignExpr.prototype), "clear", this).call(this);
+
+      this._buf = [];
+    }
+  }]);
+
+  return AssignExpr;
+}(OpAExpr);
+var OutputExpr =
+/*#__PURE__*/
+function (_AssignExpr) {
+  _inherits(OutputExpr, _AssignExpr);
+
+  function OutputExpr(name, a, style, color) {
+    var _this8;
+
+    _classCallCheck(this, OutputExpr);
+
+    _this8 = _possibleConstructorReturn(this, _getPrototypeOf(OutputExpr).call(this, name, a));
+    _this8._style = style === undefined ? OutputExpr.outputStyle.Line : style;
+    _this8._color = color;
+    return _this8;
+  }
+
+  _createClass(OutputExpr, [{
+    key: "getStyle",
+    value: function getStyle() {
+      return this._style;
+    }
+  }, {
+    key: "getColor",
+    value: function getColor() {
+      return this._color;
+    }
+  }]);
+
+  return OutputExpr;
+}(AssignExpr);
+OutputExpr.outputStyle = {
+  None: 0,
+  Line: 1,
+  VolumeStick: 2,
+  MACDStick: 3,
+  SARPoint: 4,
+  Custom: 5
+};
+var RangeOutputExpr =
+/*#__PURE__*/
+function (_OutputExpr) {
+  _inherits(RangeOutputExpr, _OutputExpr);
+
+  function RangeOutputExpr(name, a, style, color) {
+    _classCallCheck(this, RangeOutputExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(RangeOutputExpr).call(this, name, a, style, color));
+  }
+
+  _createClass(RangeOutputExpr, [{
+    key: "getName",
+    value: function getName() {
+      return this._name + this._exprA.getRange();
+    }
+  }]);
+
+  return RangeOutputExpr;
+}(OutputExpr);
+var RangeExpr =
+/*#__PURE__*/
+function (_OpABExpr14) {
+  _inherits(RangeExpr, _OpABExpr14);
+
+  function RangeExpr(a, b) {
+    var _this9;
+
+    _classCallCheck(this, RangeExpr);
+
+    _this9 = _possibleConstructorReturn(this, _getPrototypeOf(RangeExpr).call(this, a, b));
+    _this9._range = -1;
+    _this9._buf = [];
+    return _this9;
+  }
+
+  _createClass(RangeExpr, [{
+    key: "getRange",
+    value: function getRange() {
+      return this._range;
+    }
+  }, {
+    key: "initRange",
+    value: function initRange() {
+      this._range = this._exprB.execute(0);
+    }
+  }, {
+    key: "execute",
+    value: function execute(index) {
+      if (this._range < 0) {
+        this.initRange();
+      }
+
+      var rA = this._buf[index].resultA = this._exprA.execute(index);
+
+      if (typeof rA !== "number") {
+        return rA;
+      }
+
+      return this._buf[index].result = this.calcResult(index, rA);
+    }
+  }, {
+    key: "reserve",
+    value: function reserve(rid, count) {
+      if (this._rid < rid) {
+        for (var c = count; c > 0; c--) {
+          this._buf.push({
+            resultA: NaN,
+            result: NaN
+          });
+        }
+      }
+
+      _get(_getPrototypeOf(RangeExpr.prototype), "reserve", this).call(this, rid, count);
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      _get(_getPrototypeOf(RangeExpr.prototype), "clear", this).call(this);
+
+      this._range = -1;
+      this._buf = [];
+    }
+  }]);
+
+  return RangeExpr;
+}(OpABExpr);
+var HhvExpr =
+/*#__PURE__*/
+function (_RangeExpr) {
+  _inherits(HhvExpr, _RangeExpr);
+
+  function HhvExpr(a, b) {
+    _classCallCheck(this, HhvExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(HhvExpr).call(this, a, b));
+  }
+
+  _createClass(HhvExpr, [{
+    key: "calcResult",
+    value: function calcResult(index, resultA) {
+      if (this._range === 0) {
+        return NaN;
+      }
+
+      var first = ExprEnv.get()._firstIndex;
+
+      if (first < 0) {
+        return resultA;
+      }
+
+      if (index > first) {
+        var n = this._range;
+        var result = resultA;
+        var start = index - n + 1;
+        var i = Math.max(first, start);
+
+        for (; i < index; i++) {
+          var p = this._buf[i];
+
+          if (result < p.resultA) {
+            result = p.resultA;
+          }
+        }
+
+        return result;
+      } else {
+        return resultA;
+      }
+    }
+  }]);
+
+  return HhvExpr;
+}(RangeExpr);
+var LlvExpr =
+/*#__PURE__*/
+function (_RangeExpr2) {
+  _inherits(LlvExpr, _RangeExpr2);
+
+  function LlvExpr(a, b) {
+    _classCallCheck(this, LlvExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(LlvExpr).call(this, a, b));
+  }
+
+  _createClass(LlvExpr, [{
+    key: "calcResult",
+    value: function calcResult(index, resultA) {
+      if (this._range === 0) return NaN;
+
+      var first = ExprEnv.get()._firstIndex;
+
+      if (first < 0) return resultA;
+
+      if (index > first) {
+        var n = this._range;
+        var result = resultA;
+        var start = index - n + 1;
+        var i = Math.max(first, start);
+
+        for (; i < index; i++) {
+          var p = this._buf[i];
+          if (result > p.resultA) result = p.resultA;
+        }
+
+        return result;
+      } else {
+        return resultA;
+      }
+    }
+  }]);
+
+  return LlvExpr;
+}(RangeExpr);
+var CountExpr =
+/*#__PURE__*/
+function (_RangeExpr3) {
+  _inherits(CountExpr, _RangeExpr3);
+
+  function CountExpr(a, b) {
+    _classCallCheck(this, CountExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(CountExpr).call(this, a, b));
+  }
+
+  _createClass(CountExpr, [{
+    key: "calcResult",
+    value: function calcResult(index, resultA) {
+      if (this._range === 0) return NaN;
+
+      var first = ExprEnv.get()._firstIndex;
+
+      if (first < 0) return 0;
+
+      if (index >= first) {
+        var n = this._range - 1;
+        if (n > index - first) n = index - first;
+        var count = 0;
+
+        for (; n >= 0; n--) {
+          if (this._buf[index - n].resultA !== 0.0) count++;
+        }
+
+        return count;
+      } else {
+        return 0;
+      }
+    }
+  }]);
+
+  return CountExpr;
+}(RangeExpr);
+var SumExpr =
+/*#__PURE__*/
+function (_RangeExpr4) {
+  _inherits(SumExpr, _RangeExpr4);
+
+  function SumExpr(a, b) {
+    _classCallCheck(this, SumExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SumExpr).call(this, a, b));
+  }
+
+  _createClass(SumExpr, [{
+    key: "calcResult",
+    value: function calcResult(index, resultA) {
+      var first = ExprEnv.get()._firstIndex;
+
+      if (first < 0) return resultA;
+
+      if (index > first) {
+        var n = this._range;
+
+        if (n === 0 || n >= index + 1 - first) {
+          return this._buf[index - 1].result + resultA;
+        }
+
+        return this._buf[index - 1].result + resultA - this._buf[index - n].resultA;
+      } else {
+        return resultA;
+      }
+    }
+  }]);
+
+  return SumExpr;
+}(RangeExpr);
+var StdExpr =
+/*#__PURE__*/
+function (_RangeExpr5) {
+  _inherits(StdExpr, _RangeExpr5);
+
+  function StdExpr(a, b) {
+    _classCallCheck(this, StdExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(StdExpr).call(this, a, b));
+  }
+
+  _createClass(StdExpr, [{
+    key: "calcResult",
+    value: function calcResult(index, resultA) {
+      if (this._range === 0) return NaN;
+      var stdData = this._stdBuf[index];
+
+      var first = ExprEnv.get()._firstIndex;
+
+      if (first < 0) {
+        stdData.resultMA = resultA;
+        return 0.0;
+      }
+
+      if (index > first) {
+        var n = this._range;
+
+        if (n >= index + 1 - first) {
+          n = index + 1 - first;
+          stdData.resultMA = this._stdBuf[index - 1].resultMA * (1.0 - 1.0 / n) + resultA / n;
+        } else {
+          stdData.resultMA = this._stdBuf[index - 1].resultMA + (resultA - this._buf[index - n].resultA) / n;
+        }
+
+        var sum = 0;
+
+        for (var i = index - n + 1; i <= index; i++) {
+          sum += Math.pow(this._buf[i].resultA - stdData.resultMA, 2);
+        }
+
+        return Math.sqrt(sum / n);
+      }
+
+      stdData.resultMA = resultA;
+      return 0.0;
+    }
+  }, {
+    key: "reserve",
+    value: function reserve(rid, count) {
+      if (this._rid < rid) {
+        for (var c = count; c > 0; c--) {
+          this._stdBuf.push({
+            resultMA: NaN
+          });
+        }
+      }
+
+      _get(_getPrototypeOf(StdExpr.prototype), "reserve", this).call(this, rid, count);
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      _get(_getPrototypeOf(StdExpr.prototype), "clear", this).call(this);
+
+      this._stdBuf = [];
+    }
+  }]);
+
+  return StdExpr;
+}(RangeExpr);
+var MaExpr =
+/*#__PURE__*/
+function (_RangeExpr6) {
+  _inherits(MaExpr, _RangeExpr6);
+
+  function MaExpr(a, b) {
+    _classCallCheck(this, MaExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(MaExpr).call(this, a, b));
+  }
+
+  _createClass(MaExpr, [{
+    key: "calcResult",
+    value: function calcResult(index, resultA) {
+      if (this._range === 0) return NaN;
+
+      var first = ExprEnv.get()._firstIndex;
+
+      if (first < 0) return resultA;
+
+      if (index > first) {
+        var n = this._range;
+
+        if (n >= index + 1 - first) {
+          n = index + 1 - first;
+          return this._buf[index - 1].result * (1.0 - 1.0 / n) + resultA / n;
+        }
+
+        return this._buf[index - 1].result + (resultA - this._buf[index - n].resultA) / n;
+      } else {
+        return resultA;
+      }
+    }
+  }]);
+
+  return MaExpr;
+}(RangeExpr);
+var EmaExpr =
+/*#__PURE__*/
+function (_RangeExpr7) {
+  _inherits(EmaExpr, _RangeExpr7);
+
+  function EmaExpr(a, b) {
+    _classCallCheck(this, EmaExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(EmaExpr).call(this, a, b));
+  }
+
+  _createClass(EmaExpr, [{
+    key: "initRange",
+    value: function initRange() {
+      _get(_getPrototypeOf(EmaExpr.prototype), "initRange", this).call(this);
+
+      this._alpha = 2.0 / (this._range + 1);
+    }
+  }, {
+    key: "calcResult",
+    value: function calcResult(index, resultA) {
+      if (this._range === 0) return NaN;
+
+      var first = ExprEnv.get()._firstIndex;
+
+      if (first < 0) return resultA;
+
+      if (index > first) {
+        var prev = this._buf[index - 1];
+        return this._alpha * (resultA - prev.result) + prev.result;
+      }
+
+      return resultA;
+    }
+  }]);
+
+  return EmaExpr;
+}(RangeExpr);
+var ExpmemaExpr =
+/*#__PURE__*/
+function (_EmaExpr) {
+  _inherits(ExpmemaExpr, _EmaExpr);
+
+  function ExpmemaExpr(a, b) {
+    _classCallCheck(this, ExpmemaExpr);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ExpmemaExpr).call(this, a, b));
+  }
+
+  _createClass(ExpmemaExpr, [{
+    key: "calcResult",
+    value: function calcResult(index, resultA) {
+      var first = ExprEnv.get()._firstIndex;
+
+      if (first < 0) return resultA;
+
+      if (index > first) {
+        var n = this._range;
+        var prev = this._buf[index - 1];
+
+        if (n >= index + 1 - first) {
+          n = index + 1 - first;
+          return prev.result * (1.0 - 1.0 / n) + resultA / n;
+        }
+
+        return this._alpha * (resultA - prev.result) + prev.result;
+      }
+
+      return resultA;
+    }
+  }]);
+
+  return ExpmemaExpr;
+}(EmaExpr);
+var SmaExpr =
+/*#__PURE__*/
+function (_RangeExpr8) {
+  _inherits(SmaExpr, _RangeExpr8);
+
+  function SmaExpr(a, b, c) {
+    var _this10;
+
+    _classCallCheck(this, SmaExpr);
+
+    _this10 = _possibleConstructorReturn(this, _getPrototypeOf(SmaExpr).call(this, a, b));
+    _this10._exprC = c;
+    _this10._mul = null;
+    return _this10;
+  }
+
+  _createClass(SmaExpr, [{
+    key: "initRange",
+    value: function initRange() {
+      _get(_getPrototypeOf(SmaExpr.prototype), "initRange", this).call(this);
+
+      this._mul = this._exprC.execute(0);
+    }
+  }, {
+    key: "calcResult",
+    value: function calcResult(index, resultA) {
+      if (this._range === 0) return NaN;
+
+      var first = ExprEnv.get()._firstIndex;
+
+      if (first < 0) return resultA;
+
+      if (index > first) {
+        var n = this._range;
+        if (n > index + 1 - first) n = index + 1 - first;
+        return ((n - 1) * this._buf[index - 1].result + resultA * this._mul) / n;
+      }
+
+      return resultA;
+    }
+  }]);
+
+  return SmaExpr;
+}(RangeExpr);
+var SarExpr =
+/*#__PURE__*/
+function (_OpABCDExpr) {
+  _inherits(SarExpr, _OpABCDExpr);
+
+  function SarExpr(a, b, c, d) {
+    var _this11;
+
+    _classCallCheck(this, SarExpr);
+
+    _this11 = _possibleConstructorReturn(this, _getPrototypeOf(SarExpr).call(this, a, b, c, d));
+    _this11._buf = [];
+    _this11._range = -1;
+    _this11._min = null;
+    _this11._step = null;
+    _this11._max = null;
+    return _this11;
+  }
+
+  _createClass(SarExpr, [{
+    key: "execute",
+    value: function execute(index) {
+      if (this._range < 0) {
+        this._range = this._exprA.execute(0);
+        this._min = this._exprB.execute(0) / 100.0;
+        this._step = this._exprC.execute(0) / 100.0;
+        this._max = this._exprD.execute(0) / 100.0;
+      }
+
+      var data = this._buf[index];
+      var exprEnv = ExprEnv.get();
+      var first = exprEnv._firstIndex;
+
+      if (first < 0) {
+        data.longPos = true;
+        data.sar = exprEnv._ds.getDataAt(index).low;
+        data.ep = exprEnv._ds.getDataAt(index).high;
+        data.af = 0.02;
+      } else {
+        var high = exprEnv._ds.getDataAt(index).high;
+
+        var low = exprEnv._ds.getDataAt(index).low;
+
+        var prev = this._buf[index - 1];
+        data.sar = prev.sar + prev.af * (prev.ep - prev.sar);
+
+        if (prev.longPos) {
+          data.longPos = true;
+
+          if (high > prev.ep) {
+            data.ep = high;
+            data.af = Math.min(prev.af + this._step, this._max);
+          } else {
+            data.ep = prev.ep;
+            data.af = prev.af;
+          }
+
+          if (data.sar > low) {
+            data.longPos = false;
+            var i = index - this._range + 1;
+
+            for (i = Math.max(i, first); i < index; i++) {
+              var h = exprEnv._ds.getDataAt(i).high;
+
+              if (high < h) high = h;
+            }
+
+            data.sar = high;
+            data.ep = low;
+            data.af = 0.02;
+          }
+        } else {
+          data.longPos = false;
+
+          if (low < prev.ep) {
+            data.ep = low;
+            data.af = Math.min(prev.af + this._step, this._max);
+          } else {
+            data.ep = prev.ep;
+            data.af = prev.af;
+          }
+
+          if (data.sar < high) {
+            data.longPos = true;
+
+            var _i = index - this._range + 1;
+
+            for (_i = Math.max(_i, first); _i < index; _i++) {
+              var l = exprEnv._ds.getDataAt(_i).low;
+
+              if (low > l) low = l;
+            }
+
+            data.sar = low;
+            data.ep = high;
+            data.af = 0.02;
+          }
+        }
+      }
+
+      return data.sar;
+    }
+  }, {
+    key: "reserve",
+    value: function reserve(rid, count) {
+      if (this._rid < rid) {
+        for (var c = count; c > 0; c--) {
+          this._buf.push({
+            longPos: true,
+            sar: NaN,
+            ep: NaN,
+            af: NaN
+          });
+        }
+      }
+
+      _get(_getPrototypeOf(SarExpr.prototype), "reserve", this).call(this, rid, count);
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      _get(_getPrototypeOf(SarExpr.prototype), "clear", this).call(this);
+
+      this._range = -1;
+    }
+  }]);
+
+  return SarExpr;
+}(OpABCDExpr);
+
+/***/ }),
+/* 43 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* unused harmony export DataProvider */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MainDataProvider; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IndicatorDataProvider; });
@@ -14584,7 +16198,7 @@ function (_DataProvider2) {
 }(DataProvider);
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15264,7 +16878,7 @@ function (_ChartArea6) {
 }(ChartArea);
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15307,7 +16921,7 @@ exports.CONSTANTS = {
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15613,7 +17227,7 @@ SyncPoint_1.SyncPoint.__referenceConstructor = Reference;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15793,7 +17407,7 @@ exports.DataSnapshot = DataSnapshot;
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16157,7 +17771,7 @@ exports.ImmutableTree = ImmutableTree;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16297,7 +17911,7 @@ exports.IndexedFilter = IndexedFilter;
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16346,7 +17960,7 @@ exports.StatsManager = StatsManager;
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16486,7 +18100,7 @@ exports.RepoManager = RepoManager;
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16521,7 +18135,7 @@ function toBase64(arrayBuffer) {
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16623,7 +18237,7 @@ var SUBSCRIPTION_DETAILS = {
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16637,7 +18251,7 @@ var SUBSCRIPTION_DETAILS = {
 /* harmony export (immutable) */ __webpack_exports__["a"] = looseObjectSpec;
 /* harmony export (immutable) */ __webpack_exports__["d"] = nullFunctionSpec;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__metadata__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__metadata__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__type__ = __webpack_require__(8);
 /**
  * Copyright 2017 Google Inc.
@@ -16777,7 +18391,7 @@ function nullFunctionSpec(opt_optional) {
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16794,7 +18408,7 @@ function nullFunctionSpec(opt_optional) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__location__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__path__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__type__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__url__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__url__ = __webpack_require__(56);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -16973,7 +18587,7 @@ function metadataValidator(p) {
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17028,7 +18642,7 @@ function makeQueryString(params) {
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17080,7 +18694,7 @@ function remove(array, elem) {
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17585,7 +19199,7 @@ KlineTrade.created = false;
 KlineTrade.instance = null;
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17649,1521 +19263,6 @@ function () {
 
   return CName;
 }();
-
-/***/ }),
-/* 59 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return ExprEnv; });
-/* unused harmony export Expr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return OpenExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return HighExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return LowExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return CloseExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return VolumeExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return ConstExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return ParameterExpr; });
-/* unused harmony export OpAExpr */
-/* unused harmony export OpABExpr */
-/* unused harmony export OpABCExpr */
-/* unused harmony export OpABCDExpr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return NegExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return AddExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return SubExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return MulExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return DivExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return GtExpr; });
-/* unused harmony export GeExpr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return LtExpr; });
-/* unused harmony export LeExpr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return EqExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return MaxExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AbsExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return RefExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AndExpr; });
-/* unused harmony export OrExpr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return IfExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return AssignExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return OutputExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return RangeOutputExpr; });
-/* unused harmony export RangeExpr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return HhvExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return LlvExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return CountExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return SumExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return StdExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return MaExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return EmaExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return ExpmemaExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return SmaExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return SarExpr; });
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
-
-function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var ExprEnv =
-/*#__PURE__*/
-function () {
-  function ExprEnv() {
-    _classCallCheck(this, ExprEnv);
-
-    this._ds = null;
-    this._firstIndex = null;
-  }
-
-  _createClass(ExprEnv, [{
-    key: "getDataSource",
-    value: function getDataSource() {
-      return this._ds;
-    }
-  }, {
-    key: "setDataSource",
-    value: function setDataSource(ds) {
-      return this._ds = ds;
-    }
-  }, {
-    key: "getFirstIndex",
-    value: function getFirstIndex() {
-      return this._firstIndex;
-    }
-  }, {
-    key: "setFirstIndex",
-    value: function setFirstIndex(n) {
-      return this._firstIndex = n;
-    }
-  }], [{
-    key: "get",
-    value: function get() {
-      return this.inst;
-    }
-  }, {
-    key: "set",
-    value: function set(env) {
-      this.inst = env;
-    }
-  }]);
-
-  return ExprEnv;
-}();
-ExprEnv.inst = null;
-var Expr =
-/*#__PURE__*/
-function () {
-  function Expr() {
-    _classCallCheck(this, Expr);
-
-    this._rid = 0;
-  }
-
-  _createClass(Expr, [{
-    key: "execute",
-    value: function execute(index) {}
-  }, {
-    key: "reserve",
-    value: function reserve(rid, count) {}
-  }, {
-    key: "clear",
-    value: function clear() {}
-  }]);
-
-  return Expr;
-}();
-var OpenExpr =
-/*#__PURE__*/
-function (_Expr) {
-  _inherits(OpenExpr, _Expr);
-
-  function OpenExpr() {
-    _classCallCheck(this, OpenExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(OpenExpr).apply(this, arguments));
-  }
-
-  _createClass(OpenExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return ExprEnv.get()._ds.getDataAt(index).open;
-    }
-  }]);
-
-  return OpenExpr;
-}(Expr);
-var HighExpr =
-/*#__PURE__*/
-function (_Expr2) {
-  _inherits(HighExpr, _Expr2);
-
-  function HighExpr() {
-    _classCallCheck(this, HighExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(HighExpr).apply(this, arguments));
-  }
-
-  _createClass(HighExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return ExprEnv.get()._ds.getDataAt(index).high;
-    }
-  }]);
-
-  return HighExpr;
-}(Expr);
-var LowExpr =
-/*#__PURE__*/
-function (_Expr3) {
-  _inherits(LowExpr, _Expr3);
-
-  function LowExpr() {
-    _classCallCheck(this, LowExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(LowExpr).apply(this, arguments));
-  }
-
-  _createClass(LowExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return ExprEnv.get()._ds.getDataAt(index).low;
-    }
-  }]);
-
-  return LowExpr;
-}(Expr);
-var CloseExpr =
-/*#__PURE__*/
-function (_Expr4) {
-  _inherits(CloseExpr, _Expr4);
-
-  function CloseExpr() {
-    _classCallCheck(this, CloseExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(CloseExpr).apply(this, arguments));
-  }
-
-  _createClass(CloseExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return ExprEnv.get()._ds.getDataAt(index).close;
-    }
-  }]);
-
-  return CloseExpr;
-}(Expr);
-var VolumeExpr =
-/*#__PURE__*/
-function (_Expr5) {
-  _inherits(VolumeExpr, _Expr5);
-
-  function VolumeExpr() {
-    _classCallCheck(this, VolumeExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(VolumeExpr).apply(this, arguments));
-  }
-
-  _createClass(VolumeExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return ExprEnv.get()._ds.getDataAt(index).volume;
-    }
-  }]);
-
-  return VolumeExpr;
-}(Expr);
-var ConstExpr =
-/*#__PURE__*/
-function (_Expr6) {
-  _inherits(ConstExpr, _Expr6);
-
-  function ConstExpr(v) {
-    var _this;
-
-    _classCallCheck(this, ConstExpr);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ConstExpr).call(this));
-    _this._value = v;
-    return _this;
-  }
-
-  _createClass(ConstExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._value;
-    }
-  }]);
-
-  return ConstExpr;
-}(Expr);
-var ParameterExpr =
-/*#__PURE__*/
-function (_Expr7) {
-  _inherits(ParameterExpr, _Expr7);
-
-  function ParameterExpr(name, minValue, maxValue, defaultValue) {
-    var _this2;
-
-    _classCallCheck(this, ParameterExpr);
-
-    _this2 = _possibleConstructorReturn(this, _getPrototypeOf(ParameterExpr).call(this));
-    _this2._name = name;
-    _this2._minValue = minValue;
-    _this2._maxValue = maxValue;
-    _this2._value = _this2._defaultValue = defaultValue;
-    return _this2;
-  }
-
-  _createClass(ParameterExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._value;
-    }
-  }, {
-    key: "getMinValue",
-    value: function getMinValue() {
-      return this._minValue;
-    }
-  }, {
-    key: "getMaxValue",
-    value: function getMaxValue() {
-      return this._maxValue;
-    }
-  }, {
-    key: "getDefaultValue",
-    value: function getDefaultValue() {
-      return this._defaultValue;
-    }
-  }, {
-    key: "getValue",
-    value: function getValue() {
-      return this._value;
-    }
-  }, {
-    key: "setValue",
-    value: function setValue(v) {
-      if (v === 0) this._value = 0;else if (v < this._minValue) this._value = this._minValue;else if (v > this._maxValue) this._value = this._maxValue;else this._value = v;
-    }
-  }]);
-
-  return ParameterExpr;
-}(Expr);
-var OpAExpr =
-/*#__PURE__*/
-function (_Expr8) {
-  _inherits(OpAExpr, _Expr8);
-
-  function OpAExpr(a) {
-    var _this3;
-
-    _classCallCheck(this, OpAExpr);
-
-    _this3 = _possibleConstructorReturn(this, _getPrototypeOf(OpAExpr).call(this));
-    _this3._exprA = a;
-    return _this3;
-  }
-
-  _createClass(OpAExpr, [{
-    key: "reserve",
-    value: function reserve(rid, count) {
-      if (this._rid < rid) {
-        this._rid = rid;
-
-        this._exprA.reserve(rid, count);
-      }
-    }
-  }, {
-    key: "clear",
-    value: function clear() {
-      this._exprA.clear();
-    }
-  }]);
-
-  return OpAExpr;
-}(Expr);
-var OpABExpr =
-/*#__PURE__*/
-function (_Expr9) {
-  _inherits(OpABExpr, _Expr9);
-
-  function OpABExpr(a, b) {
-    var _this4;
-
-    _classCallCheck(this, OpABExpr);
-
-    _this4 = _possibleConstructorReturn(this, _getPrototypeOf(OpABExpr).call(this));
-    _this4._exprA = a;
-    _this4._exprB = b;
-    return _this4;
-  }
-
-  _createClass(OpABExpr, [{
-    key: "reserve",
-    value: function reserve(rid, count) {
-      if (this._rid < rid) {
-        this._rid = rid;
-
-        this._exprA.reserve(rid, count);
-
-        this._exprB.reserve(rid, count);
-      }
-    }
-  }, {
-    key: "clear",
-    value: function clear() {
-      this._exprA.clear();
-
-      this._exprB.clear();
-    }
-  }]);
-
-  return OpABExpr;
-}(Expr);
-var OpABCExpr =
-/*#__PURE__*/
-function (_Expr10) {
-  _inherits(OpABCExpr, _Expr10);
-
-  function OpABCExpr(a, b, c) {
-    var _this5;
-
-    _classCallCheck(this, OpABCExpr);
-
-    _this5 = _possibleConstructorReturn(this, _getPrototypeOf(OpABCExpr).call(this));
-    _this5._exprA = a;
-    _this5._exprB = b;
-    _this5._exprC = c;
-    return _this5;
-  }
-
-  _createClass(OpABCExpr, [{
-    key: "reserve",
-    value: function reserve(rid, count) {
-      if (this._rid < rid) {
-        this._rid = rid;
-
-        this._exprA.reserve(rid, count);
-
-        this._exprB.reserve(rid, count);
-
-        this._exprC.reserve(rid, count);
-      }
-    }
-  }, {
-    key: "clear",
-    value: function clear() {
-      this._exprA.clear();
-
-      this._exprB.clear();
-
-      this._exprC.clear();
-    }
-  }]);
-
-  return OpABCExpr;
-}(Expr);
-var OpABCDExpr =
-/*#__PURE__*/
-function (_Expr11) {
-  _inherits(OpABCDExpr, _Expr11);
-
-  function OpABCDExpr(a, b, c, d) {
-    var _this6;
-
-    _classCallCheck(this, OpABCDExpr);
-
-    _this6 = _possibleConstructorReturn(this, _getPrototypeOf(OpABCDExpr).call(this));
-    _this6._exprA = a;
-    _this6._exprB = b;
-    _this6._exprC = c;
-    _this6._exprD = d;
-    return _this6;
-  }
-
-  _createClass(OpABCDExpr, [{
-    key: "reserve",
-    value: function reserve(rid, count) {
-      if (this._rid < rid) {
-        this._rid = rid;
-
-        this._exprA.reserve(rid, count);
-
-        this._exprB.reserve(rid, count);
-
-        this._exprC.reserve(rid, count);
-
-        this._exprD.reserve(rid, count);
-      }
-    }
-  }, {
-    key: "clear",
-    value: function clear() {
-      this._exprA.clear();
-
-      this._exprB.clear();
-
-      this._exprC.clear();
-
-      this._exprD.clear();
-    }
-  }]);
-
-  return OpABCDExpr;
-}(Expr);
-var NegExpr =
-/*#__PURE__*/
-function (_OpAExpr) {
-  _inherits(NegExpr, _OpAExpr);
-
-  function NegExpr(a) {
-    _classCallCheck(this, NegExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(NegExpr).call(this, a));
-  }
-
-  _createClass(NegExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return -this._exprA.execute(index);
-    }
-  }]);
-
-  return NegExpr;
-}(OpAExpr);
-var AddExpr =
-/*#__PURE__*/
-function (_OpABExpr) {
-  _inherits(AddExpr, _OpABExpr);
-
-  function AddExpr(a, b) {
-    _classCallCheck(this, AddExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(AddExpr).call(this, a, b));
-  }
-
-  _createClass(AddExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) + this._exprB.execute(index);
-    }
-  }]);
-
-  return AddExpr;
-}(OpABExpr);
-var SubExpr =
-/*#__PURE__*/
-function (_OpABExpr2) {
-  _inherits(SubExpr, _OpABExpr2);
-
-  function SubExpr(a, b) {
-    _classCallCheck(this, SubExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(SubExpr).call(this, a, b));
-  }
-
-  _createClass(SubExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) - this._exprB.execute(index);
-    }
-  }]);
-
-  return SubExpr;
-}(OpABExpr);
-var MulExpr =
-/*#__PURE__*/
-function (_OpABExpr3) {
-  _inherits(MulExpr, _OpABExpr3);
-
-  function MulExpr(a, b) {
-    _classCallCheck(this, MulExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(MulExpr).call(this, a, b));
-  }
-
-  _createClass(MulExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) * this._exprB.execute(index);
-    }
-  }]);
-
-  return MulExpr;
-}(OpABExpr);
-var DivExpr =
-/*#__PURE__*/
-function (_OpABExpr4) {
-  _inherits(DivExpr, _OpABExpr4);
-
-  function DivExpr(a, b) {
-    _classCallCheck(this, DivExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(DivExpr).call(this, a, b));
-  }
-
-  _createClass(DivExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      var a = this._exprA.execute(index);
-
-      var b = this._exprB.execute(index);
-
-      if (a === 0) return a;
-      if (b === 0) return a > 0 ? 1000000 : -1000000;
-      return a / b;
-    }
-  }]);
-
-  return DivExpr;
-}(OpABExpr);
-var GtExpr =
-/*#__PURE__*/
-function (_OpABExpr5) {
-  _inherits(GtExpr, _OpABExpr5);
-
-  function GtExpr(a, b) {
-    _classCallCheck(this, GtExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(GtExpr).call(this, a, b));
-  }
-
-  _createClass(GtExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) > this._exprB.execute(index) ? 1 : 0;
-    }
-  }]);
-
-  return GtExpr;
-}(OpABExpr);
-var GeExpr =
-/*#__PURE__*/
-function (_OpABExpr6) {
-  _inherits(GeExpr, _OpABExpr6);
-
-  function GeExpr(a, b) {
-    _classCallCheck(this, GeExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(GeExpr).call(this, a, b));
-  }
-
-  _createClass(GeExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) >= this._exprB.execute(index) ? 1 : 0;
-    }
-  }]);
-
-  return GeExpr;
-}(OpABExpr);
-var LtExpr =
-/*#__PURE__*/
-function (_OpABExpr7) {
-  _inherits(LtExpr, _OpABExpr7);
-
-  function LtExpr(a, b) {
-    _classCallCheck(this, LtExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(LtExpr).call(this, a, b));
-  }
-
-  _createClass(LtExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) < this._exprB.execute(index) ? 1 : 0;
-    }
-  }]);
-
-  return LtExpr;
-}(OpABExpr);
-var LeExpr =
-/*#__PURE__*/
-function (_OpABExpr8) {
-  _inherits(LeExpr, _OpABExpr8);
-
-  function LeExpr(a, b) {
-    _classCallCheck(this, LeExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(LeExpr).call(this, a, b));
-  }
-
-  _createClass(LeExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) <= this._exprB.execute(index) ? 1 : 0;
-    }
-  }]);
-
-  return LeExpr;
-}(OpABExpr);
-var EqExpr =
-/*#__PURE__*/
-function (_OpABExpr9) {
-  _inherits(EqExpr, _OpABExpr9);
-
-  function EqExpr(a, b) {
-    _classCallCheck(this, EqExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(EqExpr).call(this, a, b));
-  }
-
-  _createClass(EqExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) === this._exprB.execute(index) ? 1 : 0;
-    }
-  }]);
-
-  return EqExpr;
-}(OpABExpr);
-var MaxExpr =
-/*#__PURE__*/
-function (_OpABExpr10) {
-  _inherits(MaxExpr, _OpABExpr10);
-
-  function MaxExpr(a, b) {
-    _classCallCheck(this, MaxExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(MaxExpr).call(this, a, b));
-  }
-
-  _createClass(MaxExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return Math.max(this._exprA.execute(index), this._exprB.execute(index));
-    }
-  }]);
-
-  return MaxExpr;
-}(OpABExpr);
-var AbsExpr =
-/*#__PURE__*/
-function (_OpAExpr2) {
-  _inherits(AbsExpr, _OpAExpr2);
-
-  function AbsExpr(a) {
-    _classCallCheck(this, AbsExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(AbsExpr).call(this, a));
-  }
-
-  _createClass(AbsExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return Math.abs(this._exprA.execute(index));
-    }
-  }]);
-
-  return AbsExpr;
-}(OpAExpr);
-var RefExpr =
-/*#__PURE__*/
-function (_OpABExpr11) {
-  _inherits(RefExpr, _OpABExpr11);
-
-  function RefExpr(a, b) {
-    _classCallCheck(this, RefExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(RefExpr).call(this, a, b));
-  }
-
-  _createClass(RefExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      if (this._offset === undefined || this._offset < 0) {
-        this._offset = this._exprB.execute(index);
-
-        if (this._offset < 0) {
-          throw "offset < 0";
-        }
-      }
-
-      index -= this._offset;
-
-      if (index < 0) {
-        throw "index < 0";
-      }
-
-      var result = this._exprA.execute(index);
-
-      if (isNaN(result)) {
-        throw "NaN";
-      }
-
-      return result;
-    }
-  }]);
-
-  return RefExpr;
-}(OpABExpr);
-var AndExpr =
-/*#__PURE__*/
-function (_OpABExpr12) {
-  _inherits(AndExpr, _OpABExpr12);
-
-  function AndExpr(a, b) {
-    _classCallCheck(this, AndExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(AndExpr).call(this, a, b));
-  }
-
-  _createClass(AndExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) !== 0 && this._exprB.execute(index) !== 0 ? 1 : 0;
-    }
-  }]);
-
-  return AndExpr;
-}(OpABExpr);
-var OrExpr =
-/*#__PURE__*/
-function (_OpABExpr13) {
-  _inherits(OrExpr, _OpABExpr13);
-
-  function OrExpr(a, b) {
-    _classCallCheck(this, OrExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(OrExpr).call(this, a, b));
-  }
-
-  _createClass(OrExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) !== 0 || this._exprB.execute(index) !== 0 ? 1 : 0;
-    }
-  }]);
-
-  return OrExpr;
-}(OpABExpr);
-var IfExpr =
-/*#__PURE__*/
-function (_OpABCExpr) {
-  _inherits(IfExpr, _OpABCExpr);
-
-  function IfExpr(a, b, c) {
-    _classCallCheck(this, IfExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(IfExpr).call(this, a, b, c));
-  }
-
-  _createClass(IfExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      return this._exprA.execute(index) !== 0 ? this._exprB.execute(index) : this._exprC.execute(index);
-    }
-  }]);
-
-  return IfExpr;
-}(OpABCExpr);
-var AssignExpr =
-/*#__PURE__*/
-function (_OpAExpr3) {
-  _inherits(AssignExpr, _OpAExpr3);
-
-  function AssignExpr(name, a) {
-    var _this7;
-
-    _classCallCheck(this, AssignExpr);
-
-    _this7 = _possibleConstructorReturn(this, _getPrototypeOf(AssignExpr).call(this, a));
-    _this7._name = name;
-    _this7._buf = [];
-    return _this7;
-  }
-
-  _createClass(AssignExpr, [{
-    key: "getName",
-    value: function getName() {
-      return this._name;
-    }
-  }, {
-    key: "execute",
-    value: function execute(index) {
-      return this._buf[index];
-    }
-  }, {
-    key: "assign",
-    value: function assign(index) {
-      this._buf[index] = this._exprA.execute(index);
-
-      if (ExprEnv.get()._firstIndex >= 0) {
-        if (isNaN(this._buf[index]) && !isNaN(this._buf[index - 1])) {
-          throw this._name + ".assign(" + index + "): NaN";
-        }
-      }
-    }
-  }, {
-    key: "reserve",
-    value: function reserve(rid, count) {
-      if (this._rid < rid) {
-        for (var c = count; c > 0; c--) {
-          this._buf.push(NaN);
-        }
-      }
-
-      _get(_getPrototypeOf(AssignExpr.prototype), "reserve", this).call(this, rid, count);
-    }
-  }, {
-    key: "clear",
-    value: function clear() {
-      _get(_getPrototypeOf(AssignExpr.prototype), "clear", this).call(this);
-
-      this._buf = [];
-    }
-  }]);
-
-  return AssignExpr;
-}(OpAExpr);
-var OutputExpr =
-/*#__PURE__*/
-function (_AssignExpr) {
-  _inherits(OutputExpr, _AssignExpr);
-
-  function OutputExpr(name, a, style, color) {
-    var _this8;
-
-    _classCallCheck(this, OutputExpr);
-
-    _this8 = _possibleConstructorReturn(this, _getPrototypeOf(OutputExpr).call(this, name, a));
-    _this8._style = style === undefined ? OutputExpr.outputStyle.Line : style;
-    _this8._color = color;
-    return _this8;
-  }
-
-  _createClass(OutputExpr, [{
-    key: "getStyle",
-    value: function getStyle() {
-      return this._style;
-    }
-  }, {
-    key: "getColor",
-    value: function getColor() {
-      return this._color;
-    }
-  }]);
-
-  return OutputExpr;
-}(AssignExpr);
-OutputExpr.outputStyle = {
-  None: 0,
-  Line: 1,
-  VolumeStick: 2,
-  MACDStick: 3,
-  SARPoint: 4,
-  Custom: 5
-};
-var RangeOutputExpr =
-/*#__PURE__*/
-function (_OutputExpr) {
-  _inherits(RangeOutputExpr, _OutputExpr);
-
-  function RangeOutputExpr(name, a, style, color) {
-    _classCallCheck(this, RangeOutputExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(RangeOutputExpr).call(this, name, a, style, color));
-  }
-
-  _createClass(RangeOutputExpr, [{
-    key: "getName",
-    value: function getName() {
-      return this._name + this._exprA.getRange();
-    }
-  }]);
-
-  return RangeOutputExpr;
-}(OutputExpr);
-var RangeExpr =
-/*#__PURE__*/
-function (_OpABExpr14) {
-  _inherits(RangeExpr, _OpABExpr14);
-
-  function RangeExpr(a, b) {
-    var _this9;
-
-    _classCallCheck(this, RangeExpr);
-
-    _this9 = _possibleConstructorReturn(this, _getPrototypeOf(RangeExpr).call(this, a, b));
-    _this9._range = -1;
-    _this9._buf = [];
-    return _this9;
-  }
-
-  _createClass(RangeExpr, [{
-    key: "getRange",
-    value: function getRange() {
-      return this._range;
-    }
-  }, {
-    key: "initRange",
-    value: function initRange() {
-      this._range = this._exprB.execute(0);
-    }
-  }, {
-    key: "execute",
-    value: function execute(index) {
-      if (this._range < 0) {
-        this.initRange();
-      }
-
-      var rA = this._buf[index].resultA = this._exprA.execute(index);
-
-      return this._buf[index].result = this.calcResult(index, rA);
-    }
-  }, {
-    key: "reserve",
-    value: function reserve(rid, count) {
-      if (this._rid < rid) {
-        for (var c = count; c > 0; c--) {
-          this._buf.push({
-            resultA: NaN,
-            result: NaN
-          });
-        }
-      }
-
-      _get(_getPrototypeOf(RangeExpr.prototype), "reserve", this).call(this, rid, count);
-    }
-  }, {
-    key: "clear",
-    value: function clear() {
-      _get(_getPrototypeOf(RangeExpr.prototype), "clear", this).call(this);
-
-      this._range = -1;
-      this._buf = [];
-    }
-  }]);
-
-  return RangeExpr;
-}(OpABExpr);
-var HhvExpr =
-/*#__PURE__*/
-function (_RangeExpr) {
-  _inherits(HhvExpr, _RangeExpr);
-
-  function HhvExpr(a, b) {
-    _classCallCheck(this, HhvExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(HhvExpr).call(this, a, b));
-  }
-
-  _createClass(HhvExpr, [{
-    key: "calcResult",
-    value: function calcResult(index, resultA) {
-      if (this._range === 0) {
-        return NaN;
-      }
-
-      var first = ExprEnv.get()._firstIndex;
-
-      if (first < 0) {
-        return resultA;
-      }
-
-      if (index > first) {
-        var n = this._range;
-        var result = resultA;
-        var start = index - n + 1;
-        var i = Math.max(first, start);
-
-        for (; i < index; i++) {
-          var p = this._buf[i];
-
-          if (result < p.resultA) {
-            result = p.resultA;
-          }
-        }
-
-        return result;
-      } else {
-        return resultA;
-      }
-    }
-  }]);
-
-  return HhvExpr;
-}(RangeExpr);
-var LlvExpr =
-/*#__PURE__*/
-function (_RangeExpr2) {
-  _inherits(LlvExpr, _RangeExpr2);
-
-  function LlvExpr(a, b) {
-    _classCallCheck(this, LlvExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(LlvExpr).call(this, a, b));
-  }
-
-  _createClass(LlvExpr, [{
-    key: "calcResult",
-    value: function calcResult(index, resultA) {
-      if (this._range === 0) return NaN;
-
-      var first = ExprEnv.get()._firstIndex;
-
-      if (first < 0) return resultA;
-
-      if (index > first) {
-        var n = this._range;
-        var result = resultA;
-        var start = index - n + 1;
-        var i = Math.max(first, start);
-
-        for (; i < index; i++) {
-          var p = this._buf[i];
-          if (result > p.resultA) result = p.resultA;
-        }
-
-        return result;
-      } else {
-        return resultA;
-      }
-    }
-  }]);
-
-  return LlvExpr;
-}(RangeExpr);
-var CountExpr =
-/*#__PURE__*/
-function (_RangeExpr3) {
-  _inherits(CountExpr, _RangeExpr3);
-
-  function CountExpr(a, b) {
-    _classCallCheck(this, CountExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(CountExpr).call(this, a, b));
-  }
-
-  _createClass(CountExpr, [{
-    key: "calcResult",
-    value: function calcResult(index, resultA) {
-      if (this._range === 0) return NaN;
-
-      var first = ExprEnv.get()._firstIndex;
-
-      if (first < 0) return 0;
-
-      if (index >= first) {
-        var n = this._range - 1;
-        if (n > index - first) n = index - first;
-        var count = 0;
-
-        for (; n >= 0; n--) {
-          if (this._buf[index - n].resultA !== 0.0) count++;
-        }
-
-        return count;
-      } else {
-        return 0;
-      }
-    }
-  }]);
-
-  return CountExpr;
-}(RangeExpr);
-var SumExpr =
-/*#__PURE__*/
-function (_RangeExpr4) {
-  _inherits(SumExpr, _RangeExpr4);
-
-  function SumExpr(a, b) {
-    _classCallCheck(this, SumExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(SumExpr).call(this, a, b));
-  }
-
-  _createClass(SumExpr, [{
-    key: "calcResult",
-    value: function calcResult(index, resultA) {
-      var first = ExprEnv.get()._firstIndex;
-
-      if (first < 0) return resultA;
-
-      if (index > first) {
-        var n = this._range;
-
-        if (n === 0 || n >= index + 1 - first) {
-          return this._buf[index - 1].result + resultA;
-        }
-
-        return this._buf[index - 1].result + resultA - this._buf[index - n].resultA;
-      } else {
-        return resultA;
-      }
-    }
-  }]);
-
-  return SumExpr;
-}(RangeExpr);
-var StdExpr =
-/*#__PURE__*/
-function (_RangeExpr5) {
-  _inherits(StdExpr, _RangeExpr5);
-
-  function StdExpr(a, b) {
-    _classCallCheck(this, StdExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(StdExpr).call(this, a, b));
-  }
-
-  _createClass(StdExpr, [{
-    key: "calcResult",
-    value: function calcResult(index, resultA) {
-      if (this._range === 0) return NaN;
-      var stdData = this._stdBuf[index];
-
-      var first = ExprEnv.get()._firstIndex;
-
-      if (first < 0) {
-        stdData.resultMA = resultA;
-        return 0.0;
-      }
-
-      if (index > first) {
-        var n = this._range;
-
-        if (n >= index + 1 - first) {
-          n = index + 1 - first;
-          stdData.resultMA = this._stdBuf[index - 1].resultMA * (1.0 - 1.0 / n) + resultA / n;
-        } else {
-          stdData.resultMA = this._stdBuf[index - 1].resultMA + (resultA - this._buf[index - n].resultA) / n;
-        }
-
-        var sum = 0;
-
-        for (var i = index - n + 1; i <= index; i++) {
-          sum += Math.pow(this._buf[i].resultA - stdData.resultMA, 2);
-        }
-
-        return Math.sqrt(sum / n);
-      }
-
-      stdData.resultMA = resultA;
-      return 0.0;
-    }
-  }, {
-    key: "reserve",
-    value: function reserve(rid, count) {
-      if (this._rid < rid) {
-        for (var c = count; c > 0; c--) {
-          this._stdBuf.push({
-            resultMA: NaN
-          });
-        }
-      }
-
-      _get(_getPrototypeOf(StdExpr.prototype), "reserve", this).call(this, rid, count);
-    }
-  }, {
-    key: "clear",
-    value: function clear() {
-      _get(_getPrototypeOf(StdExpr.prototype), "clear", this).call(this);
-
-      this._stdBuf = [];
-    }
-  }]);
-
-  return StdExpr;
-}(RangeExpr);
-var MaExpr =
-/*#__PURE__*/
-function (_RangeExpr6) {
-  _inherits(MaExpr, _RangeExpr6);
-
-  function MaExpr(a, b) {
-    _classCallCheck(this, MaExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(MaExpr).call(this, a, b));
-  }
-
-  _createClass(MaExpr, [{
-    key: "calcResult",
-    value: function calcResult(index, resultA) {
-      if (this._range === 0) return NaN;
-
-      var first = ExprEnv.get()._firstIndex;
-
-      if (first < 0) return resultA;
-
-      if (index > first) {
-        var n = this._range;
-
-        if (n >= index + 1 - first) {
-          n = index + 1 - first;
-          return this._buf[index - 1].result * (1.0 - 1.0 / n) + resultA / n;
-        }
-
-        return this._buf[index - 1].result + (resultA - this._buf[index - n].resultA) / n;
-      } else {
-        return resultA;
-      }
-    }
-  }]);
-
-  return MaExpr;
-}(RangeExpr);
-var EmaExpr =
-/*#__PURE__*/
-function (_RangeExpr7) {
-  _inherits(EmaExpr, _RangeExpr7);
-
-  function EmaExpr(a, b) {
-    _classCallCheck(this, EmaExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(EmaExpr).call(this, a, b));
-  }
-
-  _createClass(EmaExpr, [{
-    key: "initRange",
-    value: function initRange() {
-      _get(_getPrototypeOf(EmaExpr.prototype), "initRange", this).call(this);
-
-      this._alpha = 2.0 / (this._range + 1);
-    }
-  }, {
-    key: "calcResult",
-    value: function calcResult(index, resultA) {
-      if (this._range === 0) return NaN;
-
-      var first = ExprEnv.get()._firstIndex;
-
-      if (first < 0) return resultA;
-
-      if (index > first) {
-        var prev = this._buf[index - 1];
-        return this._alpha * (resultA - prev.result) + prev.result;
-      }
-
-      return resultA;
-    }
-  }]);
-
-  return EmaExpr;
-}(RangeExpr);
-var ExpmemaExpr =
-/*#__PURE__*/
-function (_EmaExpr) {
-  _inherits(ExpmemaExpr, _EmaExpr);
-
-  function ExpmemaExpr(a, b) {
-    _classCallCheck(this, ExpmemaExpr);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(ExpmemaExpr).call(this, a, b));
-  }
-
-  _createClass(ExpmemaExpr, [{
-    key: "calcResult",
-    value: function calcResult(index, resultA) {
-      var first = ExprEnv.get()._firstIndex;
-
-      if (first < 0) return resultA;
-
-      if (index > first) {
-        var n = this._range;
-        var prev = this._buf[index - 1];
-
-        if (n >= index + 1 - first) {
-          n = index + 1 - first;
-          return prev.result * (1.0 - 1.0 / n) + resultA / n;
-        }
-
-        return this._alpha * (resultA - prev.result) + prev.result;
-      }
-
-      return resultA;
-    }
-  }]);
-
-  return ExpmemaExpr;
-}(EmaExpr);
-var SmaExpr =
-/*#__PURE__*/
-function (_RangeExpr8) {
-  _inherits(SmaExpr, _RangeExpr8);
-
-  function SmaExpr(a, b, c) {
-    var _this10;
-
-    _classCallCheck(this, SmaExpr);
-
-    _this10 = _possibleConstructorReturn(this, _getPrototypeOf(SmaExpr).call(this, a, b));
-    _this10._exprC = c;
-    _this10._mul = null;
-    return _this10;
-  }
-
-  _createClass(SmaExpr, [{
-    key: "initRange",
-    value: function initRange() {
-      _get(_getPrototypeOf(SmaExpr.prototype), "initRange", this).call(this);
-
-      this._mul = this._exprC.execute(0);
-    }
-  }, {
-    key: "calcResult",
-    value: function calcResult(index, resultA) {
-      if (this._range === 0) return NaN;
-
-      var first = ExprEnv.get()._firstIndex;
-
-      if (first < 0) return resultA;
-
-      if (index > first) {
-        var n = this._range;
-        if (n > index + 1 - first) n = index + 1 - first;
-        return ((n - 1) * this._buf[index - 1].result + resultA * this._mul) / n;
-      }
-
-      return resultA;
-    }
-  }]);
-
-  return SmaExpr;
-}(RangeExpr);
-var SarExpr =
-/*#__PURE__*/
-function (_OpABCDExpr) {
-  _inherits(SarExpr, _OpABCDExpr);
-
-  function SarExpr(a, b, c, d) {
-    var _this11;
-
-    _classCallCheck(this, SarExpr);
-
-    _this11 = _possibleConstructorReturn(this, _getPrototypeOf(SarExpr).call(this, a, b, c, d));
-    _this11._buf = [];
-    _this11._range = -1;
-    _this11._min = null;
-    _this11._step = null;
-    _this11._max = null;
-    return _this11;
-  }
-
-  _createClass(SarExpr, [{
-    key: "execute",
-    value: function execute(index) {
-      if (this._range < 0) {
-        this._range = this._exprA.execute(0);
-        this._min = this._exprB.execute(0) / 100.0;
-        this._step = this._exprC.execute(0) / 100.0;
-        this._max = this._exprD.execute(0) / 100.0;
-      }
-
-      var data = this._buf[index];
-      var exprEnv = ExprEnv.get();
-      var first = exprEnv._firstIndex;
-
-      if (first < 0) {
-        data.longPos = true;
-        data.sar = exprEnv._ds.getDataAt(index).low;
-        data.ep = exprEnv._ds.getDataAt(index).high;
-        data.af = 0.02;
-      } else {
-        var high = exprEnv._ds.getDataAt(index).high;
-
-        var low = exprEnv._ds.getDataAt(index).low;
-
-        var prev = this._buf[index - 1];
-        data.sar = prev.sar + prev.af * (prev.ep - prev.sar);
-
-        if (prev.longPos) {
-          data.longPos = true;
-
-          if (high > prev.ep) {
-            data.ep = high;
-            data.af = Math.min(prev.af + this._step, this._max);
-          } else {
-            data.ep = prev.ep;
-            data.af = prev.af;
-          }
-
-          if (data.sar > low) {
-            data.longPos = false;
-            var i = index - this._range + 1;
-
-            for (i = Math.max(i, first); i < index; i++) {
-              var h = exprEnv._ds.getDataAt(i).high;
-
-              if (high < h) high = h;
-            }
-
-            data.sar = high;
-            data.ep = low;
-            data.af = 0.02;
-          }
-        } else {
-          data.longPos = false;
-
-          if (low < prev.ep) {
-            data.ep = low;
-            data.af = Math.min(prev.af + this._step, this._max);
-          } else {
-            data.ep = prev.ep;
-            data.af = prev.af;
-          }
-
-          if (data.sar < high) {
-            data.longPos = true;
-
-            var _i = index - this._range + 1;
-
-            for (_i = Math.max(_i, first); _i < index; _i++) {
-              var l = exprEnv._ds.getDataAt(_i).low;
-
-              if (low > l) low = l;
-            }
-
-            data.sar = low;
-            data.ep = high;
-            data.af = 0.02;
-          }
-        }
-      }
-
-      return data.sar;
-    }
-  }, {
-    key: "reserve",
-    value: function reserve(rid, count) {
-      if (this._rid < rid) {
-        for (var c = count; c > 0; c--) {
-          this._buf.push({
-            longPos: true,
-            sar: NaN,
-            ep: NaN,
-            af: NaN
-          });
-        }
-      }
-
-      _get(_getPrototypeOf(SarExpr.prototype), "reserve", this).call(this, rid, count);
-    }
-  }, {
-    key: "clear",
-    value: function clear() {
-      _get(_getPrototypeOf(SarExpr.prototype), "clear", this).call(this);
-
-      this._range = -1;
-    }
-  }]);
-
-  return SarExpr;
-}(OpABCDExpr);
 
 /***/ }),
 /* 60 */
@@ -19977,7 +20076,7 @@ process.umask = function() { return 0; };
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var constants_1 = __webpack_require__(44);
+var constants_1 = __webpack_require__(45);
 /**
  * Throws an error if the provided assertion is falsy
  * @param {*} assertion The assertion to be tested for falsiness
@@ -20534,9 +20633,9 @@ var tslib_1 = __webpack_require__(3);
 var util_1 = __webpack_require__(1);
 var parser_1 = __webpack_require__(70);
 var Path_1 = __webpack_require__(2);
-var Reference_1 = __webpack_require__(45);
+var Reference_1 = __webpack_require__(46);
 var Repo_1 = __webpack_require__(34);
-var RepoManager_1 = __webpack_require__(50);
+var RepoManager_1 = __webpack_require__(51);
 var util_2 = __webpack_require__(0);
 var validation_1 = __webpack_require__(13);
 /**
@@ -24648,7 +24747,7 @@ exports.Connection = Connection;
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(1);
 var CountedSet_1 = __webpack_require__(82);
-var StatsManager_1 = __webpack_require__(49);
+var StatsManager_1 = __webpack_require__(50);
 var PacketReceiver_1 = __webpack_require__(179);
 var Constants_1 = __webpack_require__(30);
 var util_2 = __webpack_require__(0);
@@ -25285,7 +25384,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var app_1 = __webpack_require__(11);
 var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(1);
-var StatsManager_1 = __webpack_require__(49);
+var StatsManager_1 = __webpack_require__(50);
 var Constants_1 = __webpack_require__(30);
 var util_3 = __webpack_require__(0);
 var storage_1 = __webpack_require__(29);
@@ -25719,7 +25818,7 @@ exports.ServerActions = ServerActions;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var IndexedFilter_1 = __webpack_require__(48);
+var IndexedFilter_1 = __webpack_require__(49);
 var PriorityIndex_1 = __webpack_require__(5);
 var Node_1 = __webpack_require__(7);
 var ChildrenNode_1 = __webpack_require__(6);
@@ -25861,7 +25960,7 @@ exports.RangedFilter = RangedFilter;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_vapid_details_model__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_notification_permission__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_iid_model__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helpers_array_buffer_to_base64__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helpers_array_buffer_to_base64__ = __webpack_require__(52);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -26311,8 +26410,8 @@ var DBInterface = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_util__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__firebase_util__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__errors__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_array_buffer_to_base64__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fcm_details__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_array_buffer_to_base64__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fcm_details__ = __webpack_require__(53);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -26593,11 +26692,11 @@ var ErrorCode;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Reference; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_args__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_args__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__implementation_blob__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__implementation_error__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__implementation_location__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__implementation_metadata__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__implementation_metadata__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__implementation_object__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__implementation_path__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__implementation_requests__ = __webpack_require__(103);
@@ -27079,14 +27178,14 @@ var FbsBlob = /** @class */ (function () {
 /* harmony export (immutable) */ __webpack_exports__["f"] = getResumableUploadStatus;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return resumableUploadChunkSize; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = continueResumableUpload;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blob__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__error__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__object__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__requestinfo__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__type__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__url__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__url__ = __webpack_require__(56);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -27625,6 +27724,11 @@ function () {
 
         if (_areaName === '') {
           __WEBPACK_IMPORTED_MODULE_3__templates__["b" /* Template */].createIndicatorChartComps('frame0.k0', indicName);
+
+          if (__WEBPACK_IMPORTED_MODULE_2__kline__["a" /* default */].instance.showTradeLog) {
+            __WEBPACK_IMPORTED_MODULE_3__templates__["b" /* Template */].createIndicatorChartComps('frame0.k0', 'TRADE');
+          } // console.log('indicName', indicName)
+
         } else {
           __WEBPACK_IMPORTED_MODULE_0__chart_manager__["a" /* ChartManager */].instance.setIndicator(_areaName, indicName);
         }
@@ -28240,7 +28344,7 @@ Timeline.PADDING_RIGHT = 8;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TableLayout; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DockableLayout; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__areas__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__areas__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chart_manager__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__themes__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chart_settings__ = __webpack_require__(20);
@@ -28757,7 +28861,7 @@ function (_areas$ChartAreaGroup2) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BOLLIndicator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return PSYIndicator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return STOCHRSIIndicator; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__exprs__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__exprs__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__themes__ = __webpack_require__(22);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -28779,13 +28883,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
 var Indicator =
 /*#__PURE__*/
 function () {
   function Indicator() {
     _classCallCheck(this, Indicator);
 
-    this._exprEnv = new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* ExprEnv */]();
+    this._exprEnv = new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ExprEnv */]();
     this._rid = 0;
     this._params = [];
     this._assigns = [];
@@ -28871,7 +28976,7 @@ function () {
 
       this._exprEnv.setDataSource(ds);
 
-      __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* ExprEnv */].set(this._exprEnv);
+      __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ExprEnv */].set(this._exprEnv);
 
       try {
         var i, cnt;
@@ -28934,17 +29039,17 @@ function (_Indicator) {
     _classCallCheck(this, HLCIndicator);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(HLCIndicator).call(this));
-    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M1", 2, 1000, 60);
+    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M1", 2, 1000, 60);
 
     _this.addParameter(M1);
 
-    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("HIGH", new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */].outputStyle.None));
+    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("HIGH", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.None));
 
-    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("LOW", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */].outputStyle.None));
+    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("LOW", new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.None));
 
-    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("CLOSE", new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator0));
+    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("CLOSE", new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator0));
 
-    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M1), __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator1));
+    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M1), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator1));
 
     return _this;
   }
@@ -28969,12 +29074,12 @@ function (_Indicator2) {
     _classCallCheck(this, MAIndicator);
 
     _this2 = _possibleConstructorReturn(this, _getPrototypeOf(MAIndicator).call(this));
-    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M1", 2, 1000, 7);
-    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M2", 2, 1000, 30);
-    var M3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M3", 2, 1000, 0);
-    var M4 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M4", 2, 1000, 0);
-    var M5 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M5", 2, 1000, 0);
-    var M6 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M6", 2, 1000, 0);
+    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M1", 2, 1000, 7);
+    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M2", 2, 1000, 30);
+    var M3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M3", 2, 1000, 0);
+    var M4 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M4", 2, 1000, 0);
+    var M5 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M5", 2, 1000, 0);
+    var M6 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M6", 2, 1000, 0);
 
     _this2.addParameter(M1);
 
@@ -28988,17 +29093,17 @@ function (_Indicator2) {
 
     _this2.addParameter(M6);
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M1)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M1)));
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M2)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M2)));
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M3)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M3)));
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M4)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M4)));
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M5)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M5)));
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M6)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M6)));
 
     return _this2;
   }
@@ -29023,12 +29128,12 @@ function (_Indicator3) {
     _classCallCheck(this, EMAIndicator);
 
     _this3 = _possibleConstructorReturn(this, _getPrototypeOf(EMAIndicator).call(this));
-    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M1", 2, 1000, 7);
-    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M2", 2, 1000, 30);
-    var M3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M3", 2, 1000, 0);
-    var M4 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M4", 2, 1000, 0);
-    var M5 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M5", 2, 1000, 0);
-    var M6 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M6", 2, 1000, 0);
+    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M1", 2, 1000, 7);
+    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M2", 2, 1000, 30);
+    var M3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M3", 2, 1000, 0);
+    var M4 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M4", 2, 1000, 0);
+    var M5 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M5", 2, 1000, 0);
+    var M6 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M6", 2, 1000, 0);
 
     _this3.addParameter(M1);
 
@@ -29042,17 +29147,17 @@ function (_Indicator3) {
 
     _this3.addParameter(M6);
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M1)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M1)));
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M2)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M2)));
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M3)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M3)));
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M4)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M4)));
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M5)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M5)));
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), M6)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), M6)));
 
     return _this3;
   }
@@ -29077,20 +29182,20 @@ function (_Indicator4) {
     _classCallCheck(this, VOLUMEIndicator);
 
     _this4 = _possibleConstructorReturn(this, _getPrototypeOf(VOLUMEIndicator).call(this));
-    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M1", 2, 500, 5);
-    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M2", 2, 500, 10);
+    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M1", 2, 500, 5);
+    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M2", 2, 500, 10);
 
     _this4.addParameter(M1);
 
     _this4.addParameter(M2);
 
-    var VOLUME = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("VOLUME", new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* VolumeExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */].outputStyle.VolumeStick, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Text4);
+    var VOLUME = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("VOLUME", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* VolumeExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.VolumeStick, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Text4);
 
     _this4.addOutput(VOLUME);
 
-    _this4.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](VOLUME, M1), __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator0));
+    _this4.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](VOLUME, M1), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator0));
 
-    _this4.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](VOLUME, M2), __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator1));
+    _this4.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](VOLUME, M2), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator1));
 
     return _this4;
   }
@@ -29115,9 +29220,9 @@ function (_Indicator5) {
     _classCallCheck(this, MACDIndicator);
 
     _this5 = _possibleConstructorReturn(this, _getPrototypeOf(MACDIndicator).call(this));
-    var SHORT = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("SHORT", 2, 200, 12);
-    var LONG = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("LONG", 2, 200, 26);
-    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("MID", 2, 200, 9);
+    var SHORT = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("SHORT", 2, 200, 12);
+    var LONG = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("LONG", 2, 200, 26);
+    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("MID", 2, 200, 9);
 
     _this5.addParameter(SHORT);
 
@@ -29125,15 +29230,15 @@ function (_Indicator5) {
 
     _this5.addParameter(MID);
 
-    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), SHORT), new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), LONG)));
+    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), SHORT), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), LONG)));
 
     _this5.addOutput(DIF);
 
-    var DEA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("DEA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](DIF, MID));
+    var DEA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("DEA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](DIF, MID));
 
     _this5.addOutput(DEA);
 
-    var MACD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("MACD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](DIF, DEA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](2)), __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */].outputStyle.MACDStick);
+    var MACD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("MACD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](DIF, DEA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](2)), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.MACDStick);
 
     _this5.addOutput(MACD);
 
@@ -29160,17 +29265,26 @@ function (_Indicator6) {
     _classCallCheck(this, TRADEIndicator);
 
     _this6 = _possibleConstructorReturn(this, _getPrototypeOf(TRADEIndicator).call(this));
-    var SHORT = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("SHORT", 2, 200, 12);
-    var LONG = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("LONG", 2, 200, 26);
-    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("MID", 2, 200, 9); // this.addParameter(SHORT);
+    var SHORT = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("", 0, 0, 0);
+    var LONG = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("LONG", 2, 200, 26);
+    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("MID", 2, 200, 9); // this.addParameter(SHORT);
     // this.addParameter(LONG);
     // this.addParameter(MID);
 
-    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), SHORT), new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), LONG))); // this.addOutput(DIF);
+    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), SHORT), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), LONG))); // this.addOutput(DIF);
 
-    var DEA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("DEA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](DIF, MID)); // this.addOutput(DEA);
+    var DEA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("DEA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](DIF, MID)); // this.addOutput(DEA);
 
-    var TRADE = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("TRADE", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](DIF, DEA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](2)), __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */].outputStyle.Custom);
+    _this6.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("Details", new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* TradeExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.None));
+
+    _this6.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("Balance", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* BalanceExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* BalanceExpr */]()))); // this.addOutput(new exprs.RangeOutputExpr("MA",
+    //     new exprs.MaExpr(new exprs.CloseExpr(), M1),
+    //     exprs.OutputExpr.outputStyle.Line,
+    //     themes.Theme.Color.Indicator1
+    // ));
+
+
+    var TRADE = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("TRADE", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](DIF, DEA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.Custom);
 
     _this6.addOutput(TRADE);
 
@@ -29197,46 +29311,46 @@ function (_Indicator7) {
     _classCallCheck(this, DMIIndicator);
 
     _this7 = _possibleConstructorReturn(this, _getPrototypeOf(DMIIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 90, 14);
-    var MM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("MM", 2, 60, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 90, 14);
+    var MM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("MM", 2, 60, 6);
 
     _this7.addParameter(N);
 
     _this7.addParameter(MM);
 
-    var MTR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MTR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1))))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */]()))), N));
+    var MTR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MTR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1))))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */]()))), N));
 
     _this7.addAssign(MTR);
 
-    var HD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1))));
+    var HD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1))));
 
     _this7.addAssign(HD);
 
-    var LD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */]()));
+    var LD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */]()));
 
     _this7.addAssign(LD);
 
-    var DMP = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("DMP", new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["c" /* AndExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* GtExpr */](HD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* GtExpr */](HD, LD)), HD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), N));
+    var DMP = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("DMP", new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["c" /* AndExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* GtExpr */](HD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* GtExpr */](HD, LD)), HD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), N));
 
     _this7.addAssign(DMP);
 
-    var DMM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("DMM", new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["c" /* AndExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* GtExpr */](LD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* GtExpr */](LD, HD)), LD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), N));
+    var DMM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("DMM", new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["c" /* AndExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* GtExpr */](LD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* GtExpr */](LD, HD)), LD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), N));
 
     _this7.addAssign(DMM);
 
-    var PDI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("PDI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](DMP, MTR), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var PDI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("PDI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](DMP, MTR), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this7.addOutput(PDI);
 
-    var MDI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("MDI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](DMM, MTR), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var MDI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("MDI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](DMM, MTR), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this7.addOutput(MDI);
 
-    var ADX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("ADX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](MDI, PDI)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](MDI, PDI)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)), MM));
+    var ADX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("ADX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](MDI, PDI)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](MDI, PDI)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)), MM));
 
     _this7.addOutput(ADX);
 
-    var ADXR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("ADXR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* ExpmemaExpr */](ADX, MM));
+    var ADXR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("ADXR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* ExpmemaExpr */](ADX, MM));
 
     _this7.addOutput(ADXR);
 
@@ -29263,9 +29377,9 @@ function (_Indicator8) {
     _classCallCheck(this, DMAIndicator);
 
     _this8 = _possibleConstructorReturn(this, _getPrototypeOf(DMAIndicator).call(this));
-    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N1", 2, 60, 10);
-    var N2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N2", 2, 250, 50);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M", 2, 100, 10);
+    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N1", 2, 60, 10);
+    var N2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N2", 2, 250, 50);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M", 2, 100, 10);
 
     _this8.addParameter(N1);
 
@@ -29273,11 +29387,11 @@ function (_Indicator8) {
 
     _this8.addParameter(M);
 
-    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), N1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), N2)));
+    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), N1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), N2)));
 
     _this8.addOutput(DIF);
 
-    var DIFMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("DIFMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](DIF, M));
+    var DIFMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("DIFMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](DIF, M));
 
     _this8.addOutput(DIFMA);
 
@@ -29304,22 +29418,22 @@ function (_Indicator9) {
     _classCallCheck(this, TRIXIndicator);
 
     _this9 = _possibleConstructorReturn(this, _getPrototypeOf(TRIXIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 100, 12);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M", 2, 100, 9);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 100, 12);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M", 2, 100, 9);
 
     _this9.addParameter(N);
 
     _this9.addParameter(M);
 
-    var MTR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MTR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), N), N), N));
+    var MTR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MTR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), N), N), N));
 
     _this9.addAssign(MTR);
 
-    var TRIX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("TRIX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var TRIX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("TRIX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this9.addOutput(TRIX);
 
-    var MATRIX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("MATRIX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](TRIX, M));
+    var MATRIX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("MATRIX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](TRIX, M));
 
     _this9.addOutput(MATRIX);
 
@@ -29346,19 +29460,19 @@ function (_Indicator10) {
     _classCallCheck(this, BRARIndicator);
 
     _this10 = _possibleConstructorReturn(this, _getPrototypeOf(BRARIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 120, 26);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 120, 26);
 
     _this10.addParameter(N);
 
-    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)));
+    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)));
 
     _this10.addAssign(REF_CLOSE_1);
 
-    var BR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("BR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), REF_CLOSE_1)), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](REF_CLOSE_1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */]())), N)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var BR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("BR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0), new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), REF_CLOSE_1)), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0), new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](REF_CLOSE_1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */]())), N)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this10.addOutput(BR);
 
-    var AR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("AR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* OpenExpr */]()), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* OpenExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */]()), N)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var AR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("AR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OpenExpr */]()), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OpenExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */]()), N)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this10.addOutput(AR);
 
@@ -29385,34 +29499,34 @@ function (_Indicator11) {
     _classCallCheck(this, VRIndicator);
 
     _this11 = _possibleConstructorReturn(this, _getPrototypeOf(VRIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 100, 26);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M", 2, 100, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 100, 26);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M", 2, 100, 6);
 
     _this11.addParameter(N);
 
     _this11.addParameter(M);
 
-    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)));
+    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)));
 
     _this11.addAssign(REF_CLOSE_1);
 
-    var TH = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TH", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), N));
+    var TH = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TH", new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), N));
 
     _this11.addAssign(TH);
 
-    var TL = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TL", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), N));
+    var TL = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TL", new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* LtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), N));
 
     _this11.addAssign(TL);
 
-    var TQ = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TQ", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EqExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), N));
+    var TQ = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TQ", new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* EqExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), N));
 
     _this11.addAssign(TQ);
 
-    var VR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("VR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](TH, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](2)), TQ), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](TL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](2)), TQ)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var VR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("VR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](TH, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](2)), TQ), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](TL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](2)), TQ)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this11.addOutput(VR);
 
-    var MAVR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("MAVR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](VR, M));
+    var MAVR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("MAVR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](VR, M));
 
     _this11.addOutput(MAVR);
 
@@ -29439,23 +29553,23 @@ function (_Indicator12) {
     _classCallCheck(this, OBVIndicator);
 
     _this12 = _possibleConstructorReturn(this, _getPrototypeOf(OBVIndicator).call(this));
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M", 2, 100, 30);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M", 2, 100, 30);
 
     _this12.addParameter(M);
 
-    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)));
+    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)));
 
     _this12.addAssign(REF_CLOSE_1);
 
-    var VA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("VA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* NegExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* VolumeExpr */]())));
+    var VA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("VA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* NegExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* VolumeExpr */]())));
 
     _this12.addAssign(VA);
 
-    var OBV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("OBV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* EqExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0), VA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)));
+    var OBV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("OBV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* EqExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0), VA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)));
 
     _this12.addOutput(OBV);
 
-    var MAOBV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("MAOBV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](OBV, M));
+    var MAOBV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("MAOBV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](OBV, M));
 
     _this12.addOutput(MAOBV);
 
@@ -29482,26 +29596,26 @@ function (_Indicator13) {
     _classCallCheck(this, EMVIndicator);
 
     _this13 = _possibleConstructorReturn(this, _getPrototypeOf(EMVIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 90, 14);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M", 2, 60, 9);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 90, 14);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M", 2, 60, 9);
 
     _this13.addParameter(N);
 
     _this13.addParameter(M);
 
-    var VOLUME = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("VOLUME", new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* VolumeExpr */](), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* VolumeExpr */]()));
+    var VOLUME = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("VOLUME", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* VolumeExpr */](), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* VolumeExpr */]()));
 
     _this13.addAssign(VOLUME);
 
-    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MID", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */]())), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MID", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */]())), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this13.addAssign(MID);
 
-    var EMV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("EMV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](MID, new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](VOLUME, new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */]()))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */]()), N)), N));
+    var EMV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("EMV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](MID, new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](VOLUME, new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */]()))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */]()), N)), N));
 
     _this13.addOutput(EMV);
 
-    var MAEMV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("MAEMV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](EMV, M));
+    var MAEMV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("MAEMV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](EMV, M));
 
     _this13.addOutput(MAEMV);
 
@@ -29528,9 +29642,9 @@ function (_Indicator14) {
     _classCallCheck(this, RSIIndicator);
 
     _this14 = _possibleConstructorReturn(this, _getPrototypeOf(RSIIndicator).call(this));
-    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N1", 2, 120, 6);
-    var N2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N2", 2, 250, 12);
-    var N3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N3", 2, 500, 24);
+    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N1", 2, 120, 6);
+    var N2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N2", 2, 250, 12);
+    var N3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N3", 2, 500, 24);
 
     _this14.addParameter(N1);
 
@@ -29538,19 +29652,19 @@ function (_Indicator14) {
 
     _this14.addParameter(N3);
 
-    var LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)));
+    var LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)));
 
     _this14.addAssign(LC);
 
-    var CLOSE_LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("CLOSE_LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), LC));
+    var CLOSE_LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("CLOSE_LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), LC));
 
     _this14.addAssign(CLOSE_LC);
 
-    _this14.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("RSI1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), N1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100))));
+    _this14.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("RSI1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), N1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100))));
 
-    _this14.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("RSI2", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), N2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100))));
+    _this14.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("RSI2", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), N2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100))));
 
-    _this14.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("RSI3", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), N3, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N3, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100))));
+    _this14.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("RSI3", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), N3, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N3, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100))));
 
     return _this14;
   }
@@ -29575,34 +29689,34 @@ function (_Indicator15) {
     _classCallCheck(this, WRIndicator);
 
     _this15 = _possibleConstructorReturn(this, _getPrototypeOf(WRIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 100, 10);
-    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N1", 2, 100, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 100, 10);
+    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N1", 2, 100, 6);
 
     _this15.addParameter(N);
 
     _this15.addParameter(N1);
 
-    var HHV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), N));
+    var HHV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), N));
 
     _this15.addAssign(HHV);
 
-    var HHV1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), N1));
+    var HHV1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), N1));
 
     _this15.addAssign(HHV1);
 
-    var LLV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */](), N));
+    var LLV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */](), N));
 
     _this15.addAssign(LLV);
 
-    var LLV1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */](), N1));
+    var LLV1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */](), N1));
 
     _this15.addAssign(LLV1);
 
-    var WR1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("WR1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](HHV, new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](HHV, LLV)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var WR1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("WR1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](HHV, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](HHV, LLV)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this15.addOutput(WR1);
 
-    var WR2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("WR2", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](HHV1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](HHV1, LLV1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var WR2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("WR2", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](HHV1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](HHV1, LLV1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this15.addOutput(WR2);
 
@@ -29629,12 +29743,12 @@ function (_Indicator16) {
     _classCallCheck(this, SARIndicator);
 
     _this16 = _possibleConstructorReturn(this, _getPrototypeOf(SARIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](4);
-    var MIN = new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](2);
-    var STEP = new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](2);
-    var MAX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](20);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](4);
+    var MIN = new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](2);
+    var STEP = new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](2);
+    var MAX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](20);
 
-    _this16.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("SAR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* SarExpr */](N, MIN, STEP, MAX), __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */].outputStyle.SARPoint));
+    _this16.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("SAR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SarExpr */](N, MIN, STEP, MAX), __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */].outputStyle.SARPoint));
 
     return _this16;
   }
@@ -29659,9 +29773,9 @@ function (_Indicator17) {
     _classCallCheck(this, KDJIndicator);
 
     _this17 = _possibleConstructorReturn(this, _getPrototypeOf(KDJIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 90, 9);
-    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M1", 2, 30, 3);
-    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M2", 2, 30, 3);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 90, 9);
+    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M1", 2, 30, 3);
+    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M2", 2, 30, 3);
 
     _this17.addParameter(N);
 
@@ -29669,27 +29783,27 @@ function (_Indicator17) {
 
     _this17.addParameter(M2);
 
-    var HHV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HighExpr */](), N));
+    var HHV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* HighExpr */](), N));
 
     _this17.addAssign(HHV);
 
-    var LLV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LowExpr */](), N));
+    var LLV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* LowExpr */](), N));
 
     _this17.addAssign(LLV);
 
-    var RSV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("RSV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), LLV), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](HHV, LLV)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var RSV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("RSV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), LLV), new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](HHV, LLV)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this17.addAssign(RSV);
 
-    var K = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("K", new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SmaExpr */](RSV, M1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)));
+    var K = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("K", new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* SmaExpr */](RSV, M1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)));
 
     _this17.addOutput(K);
 
-    var D = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("D", new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SmaExpr */](K, M2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)));
+    var D = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("D", new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* SmaExpr */](K, M2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)));
 
     _this17.addOutput(D);
 
-    var J = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("J", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](K, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](3)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](D, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](2))));
+    var J = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("J", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](K, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](3)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](D, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](2))));
 
     _this17.addOutput(J);
 
@@ -29716,22 +29830,22 @@ function (_Indicator18) {
     _classCallCheck(this, ROCIndicator);
 
     _this18 = _possibleConstructorReturn(this, _getPrototypeOf(ROCIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 120, 12);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M", 2, 60, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 120, 12);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M", 2, 60, 6);
 
     _this18.addParameter(N);
 
     _this18.addParameter(M);
 
-    var REF_CLOSE_N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_N", new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), N));
+    var REF_CLOSE_N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_N", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), N));
 
     _this18.addAssign(REF_CLOSE_N);
 
-    var ROC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("ROC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), REF_CLOSE_N), REF_CLOSE_N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var ROC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("ROC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), REF_CLOSE_N), REF_CLOSE_N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this18.addOutput(ROC);
 
-    var MAROC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("MAROC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](ROC, M));
+    var MAROC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("MAROC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](ROC, M));
 
     _this18.addOutput(MAROC);
 
@@ -29758,18 +29872,18 @@ function (_Indicator19) {
     _classCallCheck(this, MTMIndicator);
 
     _this19 = _possibleConstructorReturn(this, _getPrototypeOf(MTMIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 120, 12);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M", 2, 60, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 120, 12);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M", 2, 60, 6);
 
     _this19.addParameter(N);
 
     _this19.addParameter(M);
 
-    var MTM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("MTM", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), N)));
+    var MTM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("MTM", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), N)));
 
     _this19.addOutput(MTM);
 
-    var MTMMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("MTMMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](MTM, M));
+    var MTMMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("MTMMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](MTM, M));
 
     _this19.addOutput(MTMMA);
 
@@ -29796,23 +29910,23 @@ function (_Indicator20) {
     _classCallCheck(this, BOLLIndicator);
 
     _this20 = _possibleConstructorReturn(this, _getPrototypeOf(BOLLIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 120, 20);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 120, 20);
 
     _this20.addParameter(N);
 
-    var STD_CLOSE_N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("STD_CLOSE_N", new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* StdExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), N));
+    var STD_CLOSE_N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("STD_CLOSE_N", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* StdExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), N));
 
     _this20.addAssign(STD_CLOSE_N);
 
-    var BOLL = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("BOLL", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), N));
+    var BOLL = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("BOLL", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), N));
 
     _this20.addOutput(BOLL);
 
-    var UB = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("UB", new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](BOLL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](2), STD_CLOSE_N)));
+    var UB = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("UB", new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](BOLL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](2), STD_CLOSE_N)));
 
     _this20.addOutput(UB);
 
-    var LB = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("LB", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](BOLL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](2), STD_CLOSE_N)));
+    var LB = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("LB", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](BOLL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](2), STD_CLOSE_N)));
 
     _this20.addOutput(LB);
 
@@ -29839,18 +29953,18 @@ function (_Indicator21) {
     _classCallCheck(this, PSYIndicator);
 
     _this21 = _possibleConstructorReturn(this, _getPrototypeOf(PSYIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 2, 100, 12);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M", 2, 100, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 2, 100, 12);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M", 2, 100, 6);
 
     _this21.addParameter(N);
 
     _this21.addParameter(M);
 
-    var PSY = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("PSY", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* CountExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1))), N), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var PSY = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("PSY", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* CountExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1))), N), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this21.addOutput(PSY);
 
-    var PSYMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("PSYMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](PSY, M));
+    var PSYMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("PSYMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](PSY, M));
 
     _this21.addOutput(PSYMA);
 
@@ -29882,10 +29996,10 @@ function (_Indicator22) {
       return "StochRSI";
     };
 
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("N", 3, 100, 14);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("M", 3, 100, 14);
-    var P1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("P1", 2, 50, 3);
-    var P2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* ParameterExpr */]("P2", 2, 50, 3);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("N", 3, 100, 14);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("M", 3, 100, 14);
+    var P1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("P1", 2, 50, 3);
+    var P2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* ParameterExpr */]("P2", 2, 50, 3);
 
     _this22.addParameter(N);
 
@@ -29895,23 +30009,23 @@ function (_Indicator22) {
 
     _this22.addParameter(P2);
 
-    var LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)));
+    var LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)));
 
     _this22.addAssign(LC);
 
-    var CLOSE_LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("CLOSE_LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* CloseExpr */](), LC));
+    var CLOSE_LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("CLOSE_LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* CloseExpr */](), LC));
 
     _this22.addAssign(CLOSE_LC);
 
-    var RSI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("RSI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](0)), N, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N, new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var RSI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("RSI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](0)), N, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N, new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this22.addAssign(RSI);
 
-    var STOCHRSI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* OutputExpr */]("STOCHRSI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](RSI, new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* LlvExpr */](RSI, M)), P1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* HhvExpr */](RSI, M), new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* LlvExpr */](RSI, M)), P1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* ConstExpr */](100)));
+    var STOCHRSI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* OutputExpr */]("STOCHRSI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](RSI, new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LlvExpr */](RSI, M)), P1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* HhvExpr */](RSI, M), new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* LlvExpr */](RSI, M)), P1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* ConstExpr */](100)));
 
     _this22.addOutput(STOCHRSI);
 
-    _this22.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* MaExpr */](STOCHRSI, P2)));
+    _this22.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* MaExpr */](STOCHRSI, P2)));
 
     return _this22;
   }
@@ -29960,7 +30074,7 @@ exports = module.exports = __webpack_require__(113)(false);
 
 
 // module
-exports.push([module.i, "html,\nbody {\n    min-height: 100%;\n    margin: 0;\n    min-width: 100%\n}\n\n.chart_container {\n    cursor: default;\n    font-family: arial, sans, serif;\n    font-size: 12px;\n    height: 100%;\n    position: relative;\n    width: 100%\n}\n\n.chart_container div,\n.chart_container ul,\n.chart_container form {\n    margin: 0;\n    padding: 0\n}\n\n.chart_container a:hover {\n    text-decoration: none\n}\n\n.chart_container ul {\n    list-style: none;\n    border: 0;\n    margin: 0;\n    padding: 0\n}\n\n.chart_container button {\n    cursor: pointer\n}\n\n#chart_dom_elem_cache {\n    *font-weight: bold;\n    position: absolute;\n    visibility: hidden;\n    z-index: -1\n}\n\n#chart_toolbar {\n    border-bottom: 1px solid;\n    *font-weight: bold;\n    height: 29px;\n    position: absolute;\n    z-index: 3\n}\n\n.chart_container.dark #chart_toolbar {\n    background-color: #0a0a0a;\n    border-bottom-color: #404040\n}\n\n.chart_container.light #chart_toolbar {\n    background-color: #fff;\n    border-bottom-color: #afb1b3\n}\n\n.chart_container .chart_toolbar_sep {\n    float: left;\n    height: 100%;\n    width: 16px\n}\n\n.chart_container .chart_toolbar_minisep {\n    float: left;\n    height: 100%;\n    width: 4px\n}\n\n.chart_container .chart_dropdown {\n    display: inline-block;\n    float: left;\n    position: relative;\n    z-index: 100\n}\n\n.chart_container .chart_dropdown_t {\n    background-origin: content-box;\n    background-repeat: no-repeat;\n    border: 1px solid;\n    border-bottom-width: 0;\n    margin-top: 3px;\n    padding-right: 10px;\n    z-index: 101;\n    position: relative\n}\n\n.chart_container .chart_dropdown_t a {\n    display: inline-block;\n    padding: 3px 12px 5px 10px\n}\n\n.chart_container .chart_dropdown_data {\n    border: 1px solid;\n    display: none;\n    position: absolute;\n    padding: 6px 8px 6px 8px;\n    margin-top: -1px;\n    z-index: 100\n}\n\n.chart_container .chart_dropdown_data table {\n    border-collapse: collapse;\n    font-weight: normal;\n    white-space: nowrap\n}\n\n.chart_container .chart_dropdown_data td {\n    border-bottom: 1px solid;\n    padding: 8px 6px;\n    vertical-align: top\n}\n\n.market_chooser .chart_dropdown_data {\n    width: 370px\n}\n\n.market_chooser .chart_dropdown_data td {\n    border-bottom: 1px solid;\n    padding: 1px 6px !important;\n    vertical-align: top;\n    line-height: 24px\n}\n\n.market_chooser li {\n    float: left;\n    width: 80px;\n    height: 24px;\n    line-height: 24px\n}\n\n.chart_container .chart_dropdown_data td.marketName_ a.dark {\n    color: #fff\n}\n\n.chart_container .chart_dropdown_data td.marketName_ a.light {\n    color: #000\n}\n\n.chart_container .chart_dropdown_data table tr:last-child td {\n    border-bottom: 0\n}\n\n.chart_container .chart_dropdown_data li {\n    white-space: nowrap;\n    display: inline-block\n}\n\n.chart_container .chart_dropdown_data a {\n    text-decoration: none;\n    cursor: pointer;\n    padding: 5px 6px 5px 6px\n}\n\n.chart_container .chart_dropdown-hover.chart_dropdown_data {\n    display: block\n}\n\n#chart_dropdown_symbols .chart_dropdown_data td {\n    padding: 8px 6px 0 6px\n}\n\n#chart_dropdown_symbols .chart_dropdown_data li {\n    display: block;\n    height: 26px\n}\n\n#chart_dropdown_symbols .chart_dropdown_data a {\n    cursor: pointer\n}\n\n#chart_dropdown_themes .chart_dropdown_data td:first-child {\n    padding: 6px 1px 7px 6px\n}\n\n.chart_container.dark .chart_dropdown_t {\n    background-image: url(" + escape(__webpack_require__(114)) + ");\n    background-position: right 9px;\n    border-color: #0a0a0a;\n    color: #e5e5e5\n}\n\n.chart_container.dark .chart_dropdown-hover.chart_dropdown_t {\n    background-color: #0a0a0a;\n    background-image: url(" + escape(__webpack_require__(115)) + ");\n    background-position: right 8px;\n    border-color: #606060;\n    color: #fff\n}\n\n.chart_container.dark .chart_dropdown_data {\n    background-color: rgba(10, 10, 10, 0.8);\n    border-color: #606060\n}\n\n.chart_container.dark .chart_dropdown_data td {\n    border-bottom-color: #404040;\n    color: #e5e5e5\n}\n\n.chart_container.dark .chart_dropdown_data li a {\n    color: #1987da\n}\n\n.chart_container.dark .chart_dropdown_data li a:hover {\n    background-color: #383838\n}\n\n.chart_container.dark .chart_dropdown_data li a.selected {\n    color: #ffac00\n}\n\n.chart_container.light .chart_dropdown_t {\n    background-image: url(" + escape(__webpack_require__(116)) + ");\n    background-position: right 10px;\n    border-color: #fff;\n    color: #393c40\n}\n\n.chart_container.light .chart_dropdown-hover.chart_dropdown_t {\n    background-color: #fff;\n    background-image: url(" + escape(__webpack_require__(117)) + ");\n    background-position: right 9px;\n    border-color: #4c4f53;\n    color: #393c40\n}\n\n.chart_container.light .chart_dropdown_data {\n    background-color: #fff;\n    border-color: #4c4f53\n}\n\n.chart_container.light .chart_dropdown_data td {\n    border-bottom-color: #e4e5e6;\n    color: #393c40\n}\n\n.chart_container.light .chart_dropdown_data li a {\n    color: #1478c8\n}\n\n.chart_container.light .chart_dropdown_data a:hover {\n    background-color: #f4f4f4\n}\n\n.chart_container.light .chart_dropdown_data a.selected {\n    color: #f27935\n}\n\n.chart_container .chart_toolbar_label {\n    cursor: default;\n    display: inline-block;\n    float: left;\n    padding: 7px 4px\n}\n\n.chart_container.dark .chart_toolbar_label {\n    border-color: #232323;\n    color: #e5e5e5\n}\n\n.chart_container.light .chart_toolbar_label {\n    border-color: #fff;\n    color: #393c40\n}\n\n.chart_container .chart_toolbar_button {\n    border: 1px solid;\n    cursor: pointer;\n    float: left;\n    margin: 3px 2px;\n    padding: 3px 10px;\n    position: relative;\n    z-index: 100\n}\n\n.chart_container.dark .chart_toolbar_button {\n    border-color: #404040;\n    color: #e5e5e5\n}\n\n.chart_container.dark .chart_toolbar_button:hover {\n    background-color: #383838;\n    border-color: #606060;\n    color: #fff\n}\n\n.chart_container.dark .chart_toolbar_button.selected {\n    background-color: #383838;\n    border-color: #606060;\n    color: #ffac00\n}\n\n.chart_container.dark .chart_toolbar_button.selected:hover {\n    background-color: #474747;\n    border-color: #808080;\n    color: #ffac00\n}\n\n.chart_container.light .chart_toolbar_button {\n    border-color: #ccc;\n    color: #393c40\n}\n\n.chart_container.light .chart_toolbar_button:hover {\n    background-color: #f4f4f4;\n    color: #393c40\n}\n\n.chart_container.light .chart_toolbar_button.selected {\n    background-color: #f4f4f4;\n    border-color: #f27935;\n    color: #f27935\n}\n\n.chart_container .chart_toolbar_tabgroup {\n    float: left\n}\n\n.chart_container .chart_toolbar_tabgroup li {\n    display: inline-block;\n    padding: 4px 0;\n    margin: 3px 0\n}\n\n.chart_container .chart_toolbar_tabgroup li a {\n    cursor: pointer;\n    padding: 4px 4px\n}\n\n.chart_container .chart_toolbar_tabgroup li a:hover {\n    text-decoration: none\n}\n\n.chart_container.dark .chart_toolbar_tabgroup li a {\n    color: #1987da\n}\n\n.chart_container.dark .chart_toolbar_tabgroup li a:hover {\n    background-color: #383838\n}\n\n.chart_container.dark .chart_toolbar_tabgroup li a.selected {\n    color: #ffac00\n}\n\n.chart_container.light .chart_toolbar_tabgroup li a {\n    color: #1478c8\n}\n\n.chart_container.light .chart_toolbar_tabgroup li a:hover {\n    background-color: #f4f4f4\n}\n\n.chart_container.light .chart_toolbar_tabgroup li a.selected {\n    color: #f27935\n}\n\n#chart_toolbar_periods_horz {\n    display: inline-block;\n    float: left;\n    position: relative;\n    z-index: 100\n}\n\n#chart_toolbar_periods_vert {\n    float: left\n}\n\n.chart_container a.chart_icon {\n    border: 1px solid;\n    height: 16px;\n    padding: 0;\n    width: 16px;\n    box-sizing:border-box;\n}\n\n.chart_container a.chart_icon:hover {\n    border-width: 2px;\n}\n\n.chart_container .chart_dropdown_data a.chart_icon {\n    display: inline-block;\n    margin: 0 6px 0 6px\n}\n\n.chart_container a.chart_icon_theme_dark,\n.chart_container .chart_dropdown_data li a.chart_icon_theme_dark:hover {\n    background-color: #000\n}\n\n.chart_container a.chart_icon_theme_light,\n.chart_container .chart_dropdown_data li a.chart_icon_theme_light:hover {\n    background-color: #fff\n}\n\n.chart_container #chart_toolbar_theme {\n    float: left;\n    padding: 0 8px\n}\n\n.chart_container #chart_toolbar_theme a.chart_icon {\n    cursor: pointer;\n    float: left;\n    margin: 6px 4px\n}\n\n.chart_container #chart_select_theme td:last-child {\n    padding: 6px 6px 0 8px\n}\n\n.chart_container #chart_select_theme li {\n    padding: 0 4px 0 4px\n}\n\n.chart_container.dark a.chart_icon {\n    border-color: #aaa\n}\n\n.chart_container.dark a.chart_icon:hover {\n    border-color: #1987da\n}\n\n.chart_container.dark a.chart_icon.selected {\n    border-color: #ffac00\n}\n\n.chart_container.light a.chart_icon {\n    border-color: #aaa\n}\n\n.chart_container.light a.chart_icon.selected {\n    border-color: #f27935\n}\n\n.chart_container #chart_updated_time {\n    float: right;\n    margin: 4px 3px;\n    padding: 3px 10px\n}\n\n.chart_container.dark #chart_updated_time {\n    color: #e5e5e5\n}\n\n.chart_container.light #chart_updated_time {\n    color: #393c40\n}\n\n#chart_toolpanel {\n    border-right: 1px solid;\n    display: none;\n    position: absolute;\n    width: 32px;\n    z-index: 2\n}\n\n#chart_toolpanel .chart_toolpanel_separator {\n    position: relative;\n    height: 4px\n}\n\n#chart_toolpanel .chart_toolpanel_button {\n    position: relative;\n    z-index: 100\n}\n\n#chart_toolpanel .chart_toolpanel_icon {\n    background-origin: content-box;\n    background-repeat: no-repeat;\n    border: 1px solid;\n    cursor: pointer;\n    height: 16px;\n    margin: 1px 4px 1px 4px;\n    padding: 3px;\n    position: relative;\n    width: 16px;\n    z-index: 101\n}\n\n#chart_toolpanel .chart_toolpanel_tip {\n    border-radius: 4px;\n    border: 1px solid;\n    display: none;\n    *font-weight: bold;\n    position: absolute;\n    padding: 3px 6px 4px 6px;\n    margin-left: 36px;\n    margin-top: -25px;\n    white-space: nowrap;\n    z-index: 100\n}\n\n#chart_toolpanel .chart_toolpanel_button:hover .chart_toolpanel_tip {\n    display: block\n}\n\n.chart_container.dark #chart_toolpanel {\n    background-color: #0a0a0a;\n    border-right-color: #404040\n}\n\n.chart_container.dark .chart_toolpanel_icon {\n    background-color: #0a0a0a;\n    border-color: #0a0a0a\n}\n\n.chart_container.dark .chart_toolpanel_button:hover .chart_toolpanel_icon {\n    background-color: #404040;\n    border-color: #666\n}\n\n.chart_container.dark .chart_toolpanel_button.selected .chart_toolpanel_icon {\n    background-color: #080808;\n    border-color: #666\n}\n\n.chart_container.dark .chart_toolpanel_tip {\n    background-color: #ffac00;\n    border-color: #ffac00;\n    color: #0a0a0a\n}\n\n.chart_container.light #chart_toolpanel {\n    background-color: #fff;\n    border-right-color: #afb1b3\n}\n\n.chart_container.light .chart_toolpanel_icon {\n    background-color: #fff;\n    border-color: #fff\n}\n\n.chart_container.light .chart_toolpanel_button:hover .chart_toolpanel_icon {\n    background-color: #eee;\n    border-color: #afb1b3\n}\n\n.chart_container.light .chart_toolpanel_button.selected .chart_toolpanel_icon {\n    background-color: #f4f4f4;\n    border-color: #afb1b3\n}\n\n.chart_container.light .chart_toolpanel_tip {\n    background-color: #f27938;\n    border-color: #f27938;\n    color: #eee\n}\n\n.chart_container.dark #chart_toolpanel .chart_toolpanel_button .chart_toolpanel_icon {\n    background-image: url(" + escape(__webpack_require__(118)) + ")\n}\n\n.chart_container.dark #chart_toolpanel .chart_toolpanel_button.selected .chart_toolpanel_icon {\n    background-image: url(" + escape(__webpack_require__(119)) + ")\n}\n\n.chart_container.dark #chart_toolbar .chart_BoxSize {\n    background: url(" + escape(__webpack_require__(120)) + ") no-repeat;\n}\n\n.chart_container.light #chart_toolpanel .chart_toolpanel_button .chart_toolpanel_icon {\n    background-image: url(" + escape(__webpack_require__(121)) + ")\n}\n\n.chart_container.light #chart_toolpanel .chart_toolpanel_button.selected .chart_toolpanel_icon {\n    background-image: url(" + escape(__webpack_require__(122)) + ")\n}\n\n.chart_container.light #chart_toolbar .chart_BoxSize {\n    background: url(" + escape(__webpack_require__(123)) + ") no-repeat;\n}\n\n.chart_container #chart_toolpanel #chart_Cursor {\n    background-position: 0 0\n}\n\n.chart_container #chart_toolpanel #chart_CrossCursor {\n    background-position: 0 -20px\n}\n\n.chart_container #chart_toolpanel #chart_SegLine {\n    background-position: 0 -40px\n}\n\n.chart_container #chart_toolpanel #chart_StraightLine {\n    background-position: 0 -60px\n}\n\n.chart_container #chart_toolpanel #chart_RayLine {\n    background-position: 0 -100px\n}\n\n.chart_container #chart_toolpanel #chart_ArrowLine {\n    background-position: 0 -80px\n}\n\n.chart_container #chart_toolpanel #chart_HoriSegLine {\n    background-position: 0 -160px\n}\n\n.chart_container #chart_toolpanel #chart_HoriStraightLine {\n    background-position: 0 -120px\n}\n\n.chart_container #chart_toolpanel #chart_HoriRayLine {\n    background-position: 0 -140px\n}\n\n.chart_container #chart_toolpanel #chart_VertiStraightLine {\n    background-position: 0 -180px\n}\n\n.chart_container #chart_toolpanel #chart_PriceLine {\n    background-position: 0 -200px\n}\n\n.chart_container #chart_toolpanel #chart_TriParallelLine {\n    background-position: 0 -220px\n}\n\n.chart_container #chart_toolpanel #chart_BiParallelLine {\n    background-position: 0 -240px\n}\n\n.chart_container #chart_toolpanel #chart_BiParallelRayLine {\n    background-position: 0 -260px\n}\n\n.chart_container .chart_toolpanel_button #chart_DrawFibRetrace {\n    background-position: 0 -280px\n}\n\n.chart_container #chart_toolpanel #chart_DrawFibFans {\n    background-position: 0 -300px\n}\n\n#chart_tabbar {\n    border-top: 1px solid;\n    cursor: default;\n    display: none;\n    *font-weight: bold;\n    height: 22px;\n    overflow: hidden;\n    position: absolute;\n    z-index: 1\n}\n\n#chart_tabbar ul {\n    height: 100%;\n    list-style: none;\n    padding: 0 0 0 4px\n}\n\n#chart_tabbar li {\n    display: inline-block;\n    height: 100%;\n    margin: 0\n}\n\n#chart_tabbar a {\n    cursor: pointer;\n    display: inline-block;\n    height: 100%;\n    margin: 0;\n    padding: 3px 4px 0 4px;\n    overflow: hidden\n}\n\n#chart_tabbar a:hover {\n    text-decoration: none\n}\n\n.chart_container.dark #chart_tabbar {\n    background-color: #0a0a0a;\n    border-top-color: #404040\n}\n\n.chart_container.dark #chart_tabbar a {\n    color: #e5e5e5\n}\n\n.chart_container.dark #chart_tabbar a:hover {\n    background-color: #383838;\n    color: #fff\n}\n\n.chart_container.dark #chart_tabbar a.selected {\n    color: #ffac00\n}\n\n.chart_container.light #chart_tabbar {\n    background-color: #fff;\n    border-top-color: #afb1b3\n}\n\n.chart_container.light #chart_tabbar a {\n    color: #393c40\n}\n\n.chart_container.light #chart_tabbar a:hover {\n    background-color: #f4f4f4;\n    color: #393c40\n}\n\n.chart_container.light #chart_tabbar a.selected {\n    color: #f27935\n}\n\n#chart_canvasGroup {\n    position: absolute;\n    z-index: 0\n}\n\n#chart_mainCanvas {\n    overflow: hidden;\n    position: absolute;\n    z-index: 0\n}\n\n#chart_overlayCanvas {\n    overflow: hidden;\n    position: absolute;\n    z-index: 2\n}\n\n#chart_loading {\n    border: 1px solid;\n    border-radius: 4px;\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 48px;\n    overflow: hidden;\n    position: absolute;\n    text-align: center;\n    visibility: hidden;\n    width: 200px;\n    z-index: 200\n}\n\n#chart_loading.activated {\n    visibility: visible\n}\n\n.chart_container.dark #chart_loading {\n    border-color: #aaa;\n    background-color: rgba(0, 0, 0, 0.6);\n    color: #ccc\n}\n\n.chart_container.light #chart_loading {\n    border-color: #afb1b3;\n    background-color: rgba(244, 244, 244, 0.8);\n    color: #393c40\n}\n\n#chart_parameter_settings {\n    border-radius: 4px;\n    border: 1px solid;\n    width: 640px;\n    position: absolute;\n    overflow: hidden;\n    visibility: hidden;\n    z-index: 500\n}\n\n#chart_parameter_settings.clicked {\n    visibility: visible\n}\n\n#chart_parameter_settings h2 {\n    padding: 8px 12px;\n    margin: 0\n}\n\n#chart_parameter_settings table {\n    border-collapse: collapse;\n    width: 100%\n}\n\n#chart_parameter_settings tr {\n    line-height: 32px\n}\n\n#chart_parameter_settings th {\n    text-align: right;\n    padding: 0 4px 0 16px\n}\n\n#chart_parameter_settings input {\n    width: 2em;\n    margin: 0 2px 0 2px\n}\n\n#chart_parameter_settings #close_settings {\n    border-radius: 4px;\n    cursor: pointer;\n    font-weight: bold;\n    text-align: center;\n    margin: 8px auto;\n    padding: 5px 24px 5px 24px;\n    width: 84px\n}\n\n#chart_parameter_settings .chart_str_default {\n    margin-right: 24px\n}\n\n.chart_container.dark #chart_parameter_settings {\n    background-color: rgba(0, 0, 0, 0.9);\n    border-color: rgba(0, 0, 0, 0.9);\n    color: #ccc;\n}\n\n.chart_container.dark #chart_parameter_settings #close_settings {\n    background: #1887da;\n    color: #eee\n}\n\n.chart_container.light #chart_parameter_settings {\n    background-color: rgba(244, 244, 244, 0.8);\n    border-color: #afb1b3;\n    color: #393c40\n}\n\n.chart_container.light #chart_parameter_settings #close_settings {\n    background: #1478c8;\n    color: #eee\n}\n\n.chart_container input,\n.chart_container button {\n    border-radius: 4px;\n    border: 1px solid;\n    padding: 4px\n}\n\n.chart_container input[type=text] {\n    width: 12em\n}\n\n.chart_container input[type=button],\n.chart_container input[type=submit],\n.chart_container button {\n    font-family: arial, sans, serif;\n    padding: 4px 8px;\n    cursor: pointer\n}\n\n.chart_container.dark input,\n.chart_container.dark button {\n    background-color: #151515;\n    border-color: #333;\n    color: #ccc\n}\n\n.chart_container.light input,\n.chart_container.light button {\n    background-color: #ddd;\n    border-color: #ddd;\n    color: #222\n}\n\n.trade_container {\n    width: 250px;\n    height: 100%;\n    float: right;\n    z-index: 99999;\n    font-size: 12px;\n    overflow: hidden\n}\n\n.trade_container.dark {\n    background: #0a0a0a;\n    color: #f1f1f1\n}\n\n.m_righttop {\n    position: fixed;\n    top: 0;\n    height: 41px;\n    line-height: 41px;\n    width: 230px;\n    text-align: right;\n    padding-right: 20px;\n    font-size: 16px;\n    color: #f78d15;\n    font-family: Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif\n}\n\n.m_righttop em {\n    width: 123px;\n    height: 28px;\n    background-position: 0 0;\n    display: block;\n    float: right;\n    margin-top: 5px\n}\n\n.dark .m_righttop em {\n    background-position: 0 0\n}\n\n.m_rightbot {\n    height: 22px;\n    line-height: 22px;\n    border-top: 1px solid #404040;\n    width: 230px;\n    text-align: right;\n    padding-right: 20px;\n    background-color: #0a0a0a;\n    border-bottom-color: #404040\n}\n\n.m_guadan {\n    margin-top: 29px;\n    overflow: hidden;\n    border-left: 1px solid #404040;\n    border-top: 1px solid #404040\n}\n\n.m_guadan a {\n    font-weight: bold;\n    color: #FFF;\n    text-decoration: none\n}\n\n.light .m_guadan {\n    margin-top: 29px;\n    overflow: hidden;\n    border-left: 1px solid #afb1b3;\n    border-top: 1px solid #afb1b3\n}\n\n#orderbook #asks,\n#orderbook #gasks,\n#orderbook #bids,\n#orderbook #gbids {\n    height: 195px;\n    position: relative;\n    display: inline-block;\n    overflow: hidden\n}\n\n.symbol-title {\n    font-size: 14px;\n    font-weight: bold;\n    text-align: center;\n    height: 16px;\n    line-height: 16px;\n    font-family: Arial, sans, serif;\n    padding: 5px\n}\n\n.symbol-title .dark {\n    color: #6BF\n}\n\n.symbol-title .infoDepth {\n    margin-left: 8px;\n    color: #f78d15\n}\n\n.symbol-title a:hover {\n    text-decoration: underline\n}\n\n#asks,\n#bids {\n    width: 150px\n}\n\n#orderbook {\n    padding-left: 3px;\n    border-bottom: 1px solid #222;\n    padding-bottom: 2px;\n    margin-left: 5px;\n    margin-bottom: 2px\n}\n\n#orderbook .table {\n    position: absolute;\n    border-collapse: collapse;\n    padding: 0;\n    margin: 0\n}\n\n#gasks .table,\n#asks .table {\n    bottom: 0\n}\n\n#orderbook .table .row {\n    padding: 0;\n    margin: 0;\n    height: 13px;\n    line-height: 13px;\n    font-family: Consolas, monospace\n}\n\n#orderbook .table .row {\n    line-height: 13px\n}\n\n#orderbook .table .g {\n    color: #666\n}\n\n#gasks,\n#gbids {\n    width: 80px\n}\n\n#gasks .amount,\n#gbids .amount {\n    float: right\n}\n\n#gasks .price,\n#gbids .price {\n    float: left;\n    text-align: right\n}\n\n.price {\n    margin-right: 10px\n}\n\n.price h {\n    visibility: hidden\n}\n\n.price g,\n.amount g {\n    color: #666\n}\n\n#price {\n    text-align: center;\n    font-size: 16px;\n    font-weight: bold;\n    height: 25px;\n    line-height: 25px\n}\n\n.trade_container .green {\n    color: #0F0\n}\n\n.trade_container .red {\n    color: #F00\n}\n\n.trade_container.dark #orderbook div.table div.remove g,\n.trade_container.dark #orderbook div.table div.remove span {\n    color: #444\n}\n\n.trade_container.light #orderbook div.table div.remove g,\n.trade_container.light #orderbook div.table div.remove span {\n    color: #ddd\n}\n\n.trade_container.dark #orderbook div.table div.add {\n    display: none;\n    background-color: rgba(238, 238, 238, 0.2)\n}\n\n.trade_container.light #orderbook div.table div.add {\n    display: none;\n    background-color: rgba(100, 100, 100, 0.2)\n}\n\n#trades {\n    overflow-y: auto;\n    text-align: left;\n    color: #666;\n    padding-top: 5px\n}\n\n.trade_container.light {\n    background: #fff;\n    border-left: 1px solid #afb1b3;\n    color: #000\n}\n\n.trade_container.light .m_righttop em {\n    background-position: 0 -32px\n}\n\n.trade_container.light .m_righttop {\n    position: fixed;\n    top: 0;\n    height: 40px;\n    line-height: 40px;\n    background: #FFF;\n    width: 230px;\n    border-bottom: 1px solid #afb1b3;\n    text-align: right;\n    padding-right: 20px\n}\n\n.trade_container.light #trades.trades table {\n    color: #333\n}\n\n.trade_container.light #trades.trades .v {\n    color: #333\n}\n\n.trade_container.light #trades.trades .v g {\n    color: #333\n}\n\n.trade_container.light .m_rightbot {\n    background: #fff;\n    border-top: 1px solid #afb1b3\n}\n\n.trade_container.light #orderbook {\n    border-bottom: 1px solid #afb1b3\n}\n\n.trades_list {\n    padding-left: 25px\n}\n\n.trades_list ul {\n    width: 200px;\n    height: 14px;\n    line-height: 14px;\n    text-align: left;\n    list-style: none;\n    clear: both;\n    zoom: 1;\n    margin: 0;\n    padding: 0\n}\n\n.trades_list ul li {\n    height: 14px;\n    line-height: 14px;\n    color: #999;\n    font-size: 12px;\n    list-style: none;\n    float: left;\n    *display: inline;\n    margin: 0;\n    padding: 0;\n    font-family: Consolas, monospace\n}\n\n.trades_list ul li.tm {\n    width: 62px;\n    color: #999\n}\n\n.trades_list ul li.pr-green {\n    width: 65px;\n    color: #6c6\n}\n\n.trades_list ul li.pr-red {\n    width: 65px;\n    color: #c66\n}\n\n.trades_list ul li.vl {\n    width: 60px;\n    color: #ccc\n}\n\n.trades_list ul li.vl g {\n    color: #666\n}\n\n.trade_container.dark .trades_list ul.newul {\n    display: none;\n    background-color: rgba(238, 238, 238, 0.2)\n}\n\n.trade_container.light .trades_list ul.newul {\n    display: none;\n    background-color: rgba(100, 100, 100, 0.2)\n}\n\n.light .trades_list ul li.tm {\n    color: #333\n}\n\n.light .trades_list ul li.pr-green {\n    color: #6c6\n}\n\n.light .trades_list ul li.pr-red {\n    color: #c66\n}\n\n.light .trades_list ul li.vl {\n    color: #333\n}\n\n.light .trades_list ul li.vl g {\n    color: #333\n}\n\n.container .nav {\n    margin: 0;\n    list-style: none;\n    padding: 0 0 0 3px;\n    height: 41px\n}\n\n.container .nav li {\n    display: inline-block;\n    margin-right: 9px\n}\n\n.container a {\n    text-decoration: none;\n    color: #6BF;\n    font-family: Arial, sans, serif\n}\n\n.container a:hover {\n    text-decoration: underline\n}\n\n.container a.active {\n    color: #FC9\n}\n\n.container span {\n    margin-left: 3px;\n    font-family: Consolas, monospace;\n    color: #ccc\n}\n\n.light .container span {\n    color: #333\n}\n\n.light .container a {\n    text-decoration: none;\n    color: #1478c8;\n    font-family: Arial, sans, serif\n}\n\n.chart_BoxSize {\n    width: 20px;\n    height: 20px\n}\n", ""]);
+exports.push([module.i, "html,\nbody {\n    min-height: 100%;\n    margin: 0;\n    min-width: 100%\n}\n\n.chart_container {\n    cursor: default;\n    font-family: arial, sans, serif;\n    font-size: 12px;\n    height: 100%;\n    position: relative;\n    /*width: calc(100% - 450px)*/\n}\n\n.chart_container div,\n.chart_container ul,\n.chart_container form {\n    margin: 0;\n    padding: 0\n}\n\n.chart_container a:hover {\n    text-decoration: none\n}\n\n.chart_container ul {\n    list-style: none;\n    border: 0;\n    margin: 0;\n    padding: 0\n}\n\n.chart_container button {\n    cursor: pointer\n}\n\n#chart_dom_elem_cache {\n    *font-weight: bold;\n    position: absolute;\n    visibility: hidden;\n    z-index: -1\n}\n\n#chart_toolbar {\n    border-bottom: 1px solid;\n    *font-weight: bold;\n    height: 29px;\n    position: absolute;\n    z-index: 3\n}\n\n.chart_container.dark #chart_toolbar {\n    background-color: #0a0a0a;\n    border-bottom-color: #404040\n}\n\n.chart_container.light #chart_toolbar {\n    background-color: #fff;\n    border-bottom-color: #afb1b3\n}\n\n.chart_container .chart_toolbar_sep {\n    float: left;\n    height: 100%;\n    width: 16px\n}\n\n.chart_container .chart_toolbar_minisep {\n    float: left;\n    height: 100%;\n    width: 4px\n}\n\n.chart_container .chart_dropdown {\n    display: inline-block;\n    float: left;\n    position: relative;\n    z-index: 100\n}\n\n.chart_container .chart_dropdown_t {\n    background-origin: content-box;\n    background-repeat: no-repeat;\n    border: 1px solid;\n    border-bottom-width: 0;\n    margin-top: 3px;\n    padding-right: 10px;\n    z-index: 101;\n    position: relative\n}\n\n.chart_container .chart_dropdown_t a {\n    display: inline-block;\n    padding: 3px 12px 5px 10px\n}\n\n.chart_container .chart_dropdown_data {\n    border: 1px solid;\n    display: none;\n    position: absolute;\n    padding: 6px 8px 6px 8px;\n    margin-top: -1px;\n    z-index: 100\n}\n\n.chart_container .chart_dropdown_data table {\n    border-collapse: collapse;\n    font-weight: normal;\n    white-space: nowrap\n}\n\n.chart_container .chart_dropdown_data td {\n    border-bottom: 1px solid;\n    padding: 8px 6px;\n    vertical-align: top\n}\n\n.market_chooser .chart_dropdown_data {\n    width: 370px\n}\n\n.market_chooser .chart_dropdown_data td {\n    border-bottom: 1px solid;\n    padding: 1px 6px !important;\n    vertical-align: top;\n    line-height: 24px\n}\n\n.market_chooser li {\n    float: left;\n    width: 80px;\n    height: 24px;\n    line-height: 24px\n}\n\n.chart_container .chart_dropdown_data td.marketName_ a.dark {\n    color: #fff\n}\n\n.chart_container .chart_dropdown_data td.marketName_ a.light {\n    color: #000\n}\n\n.chart_container .chart_dropdown_data table tr:last-child td {\n    border-bottom: 0\n}\n\n.chart_container .chart_dropdown_data li {\n    white-space: nowrap;\n    display: inline-block\n}\n\n.chart_container .chart_dropdown_data a {\n    text-decoration: none;\n    cursor: pointer;\n    padding: 5px 6px 5px 6px\n}\n\n.chart_container .chart_dropdown-hover.chart_dropdown_data {\n    display: block\n}\n\n#chart_dropdown_symbols .chart_dropdown_data td {\n    padding: 8px 6px 0 6px\n}\n\n#chart_dropdown_symbols .chart_dropdown_data li {\n    display: block;\n    height: 26px\n}\n\n#chart_dropdown_symbols .chart_dropdown_data a {\n    cursor: pointer\n}\n\n#chart_dropdown_themes .chart_dropdown_data td:first-child {\n    padding: 6px 1px 7px 6px\n}\n\n.chart_container.dark .chart_dropdown_t {\n    background-image: url(" + escape(__webpack_require__(114)) + ");\n    background-position: right 9px;\n    border-color: #0a0a0a;\n    color: #e5e5e5\n}\n\n.chart_container.dark .chart_dropdown-hover.chart_dropdown_t {\n    background-color: #0a0a0a;\n    background-image: url(" + escape(__webpack_require__(115)) + ");\n    background-position: right 8px;\n    border-color: #606060;\n    color: #fff\n}\n\n.chart_container.dark .chart_dropdown_data {\n    background-color: rgba(10, 10, 10, 0.8);\n    border-color: #606060\n}\n\n.chart_container.dark .chart_dropdown_data td {\n    border-bottom-color: #404040;\n    color: #e5e5e5\n}\n\n.chart_container.dark .chart_dropdown_data li a {\n    color: #1987da\n}\n\n.chart_container.dark .chart_dropdown_data li a:hover {\n    background-color: #383838\n}\n\n.chart_container.dark .chart_dropdown_data li a.selected {\n    color: #ffac00\n}\n\n.chart_container.light .chart_dropdown_t {\n    background-image: url(" + escape(__webpack_require__(116)) + ");\n    background-position: right 10px;\n    border-color: #fff;\n    color: #393c40\n}\n\n.chart_container.light .chart_dropdown-hover.chart_dropdown_t {\n    background-color: #fff;\n    background-image: url(" + escape(__webpack_require__(117)) + ");\n    background-position: right 9px;\n    border-color: #4c4f53;\n    color: #393c40\n}\n\n.chart_container.light .chart_dropdown_data {\n    background-color: #fff;\n    border-color: #4c4f53\n}\n\n.chart_container.light .chart_dropdown_data td {\n    border-bottom-color: #e4e5e6;\n    color: #393c40\n}\n\n.chart_container.light .chart_dropdown_data li a {\n    color: #1478c8\n}\n\n.chart_container.light .chart_dropdown_data a:hover {\n    background-color: #f4f4f4\n}\n\n.chart_container.light .chart_dropdown_data a.selected {\n    color: #f27935\n}\n\n.chart_container .chart_toolbar_label {\n    cursor: default;\n    display: inline-block;\n    float: left;\n    padding: 7px 4px\n}\n\n.chart_container.dark .chart_toolbar_label {\n    border-color: #232323;\n    color: #e5e5e5\n}\n\n.chart_container.light .chart_toolbar_label {\n    border-color: #fff;\n    color: #393c40\n}\n\n.chart_container .chart_toolbar_button {\n    border: 1px solid;\n    cursor: pointer;\n    float: left;\n    margin: 3px 2px;\n    padding: 3px 10px;\n    position: relative;\n    z-index: 100\n}\n\n.chart_container.dark .chart_toolbar_button {\n    border-color: #404040;\n    color: #e5e5e5\n}\n\n.chart_container.dark .chart_toolbar_button:hover {\n    background-color: #383838;\n    border-color: #606060;\n    color: #fff\n}\n\n.chart_container.dark .chart_toolbar_button.selected {\n    background-color: #383838;\n    border-color: #606060;\n    color: #ffac00\n}\n\n.chart_container.dark .chart_toolbar_button.selected:hover {\n    background-color: #474747;\n    border-color: #808080;\n    color: #ffac00\n}\n\n.chart_container.light .chart_toolbar_button {\n    border-color: #ccc;\n    color: #393c40\n}\n\n.chart_container.light .chart_toolbar_button:hover {\n    background-color: #f4f4f4;\n    color: #393c40\n}\n\n.chart_container.light .chart_toolbar_button.selected {\n    background-color: #f4f4f4;\n    border-color: #f27935;\n    color: #f27935\n}\n\n.chart_container .chart_toolbar_tabgroup {\n    float: left\n}\n\n.chart_container .chart_toolbar_tabgroup li {\n    display: inline-block;\n    padding: 4px 0;\n    margin: 3px 0\n}\n\n.chart_container .chart_toolbar_tabgroup li a {\n    cursor: pointer;\n    padding: 4px 4px\n}\n\n.chart_container .chart_toolbar_tabgroup li a:hover {\n    text-decoration: none\n}\n\n.chart_container.dark .chart_toolbar_tabgroup li a {\n    color: #1987da\n}\n\n.chart_container.dark .chart_toolbar_tabgroup li a:hover {\n    background-color: #383838\n}\n\n.chart_container.dark .chart_toolbar_tabgroup li a.selected {\n    color: #ffac00\n}\n\n.chart_container.light .chart_toolbar_tabgroup li a {\n    color: #1478c8\n}\n\n.chart_container.light .chart_toolbar_tabgroup li a:hover {\n    background-color: #f4f4f4\n}\n\n.chart_container.light .chart_toolbar_tabgroup li a.selected {\n    color: #f27935\n}\n\n#chart_toolbar_periods_horz {\n    display: inline-block;\n    float: left;\n    position: relative;\n    z-index: 100\n}\n\n#chart_toolbar_periods_vert {\n    float: left\n}\n\n.chart_container a.chart_icon {\n    border: 1px solid;\n    height: 16px;\n    padding: 0;\n    width: 16px;\n    box-sizing: border-box;\n}\n\n.chart_container a.chart_icon:hover {\n    border-width: 2px;\n}\n\n.chart_container .chart_dropdown_data a.chart_icon {\n    display: inline-block;\n    margin: 0 6px 0 6px\n}\n\n.chart_container a.chart_icon_theme_dark,\n.chart_container .chart_dropdown_data li a.chart_icon_theme_dark:hover {\n    background-color: #000\n}\n\n.chart_container a.chart_icon_theme_light,\n.chart_container .chart_dropdown_data li a.chart_icon_theme_light:hover {\n    background-color: #fff\n}\n\n.chart_container #chart_toolbar_theme {\n    float: left;\n    padding: 0 8px\n}\n\n.chart_container #chart_toolbar_theme a.chart_icon {\n    cursor: pointer;\n    float: left;\n    margin: 6px 4px\n}\n\n.chart_container #chart_select_theme td:last-child {\n    padding: 6px 6px 0 8px\n}\n\n.chart_container #chart_select_theme li {\n    padding: 0 4px 0 4px\n}\n\n.chart_container.dark a.chart_icon {\n    border-color: #aaa\n}\n\n.chart_container.dark a.chart_icon:hover {\n    border-color: #1987da\n}\n\n.chart_container.dark a.chart_icon.selected {\n    border-color: #ffac00\n}\n\n.chart_container.light a.chart_icon {\n    border-color: #aaa\n}\n\n.chart_container.light a.chart_icon.selected {\n    border-color: #f27935\n}\n\n.chart_container #chart_updated_time {\n    float: right;\n    margin: 4px 3px;\n    padding: 3px 10px\n}\n\n.chart_container.dark #chart_updated_time {\n    color: #e5e5e5\n}\n\n.chart_container.light #chart_updated_time {\n    color: #393c40\n}\n\n#chart_toolpanel {\n    border-right: 1px solid;\n    display: none;\n    position: absolute;\n    width: 32px;\n    z-index: 2\n}\n\n#chart_toolpanel .chart_toolpanel_separator {\n    position: relative;\n    height: 4px\n}\n\n#chart_toolpanel .chart_toolpanel_button {\n    position: relative;\n    z-index: 100\n}\n\n#chart_toolpanel .chart_toolpanel_icon {\n    background-origin: content-box;\n    background-repeat: no-repeat;\n    border: 1px solid;\n    cursor: pointer;\n    height: 16px;\n    margin: 1px 4px 1px 4px;\n    padding: 3px;\n    position: relative;\n    width: 16px;\n    z-index: 101\n}\n\n#chart_toolpanel .chart_toolpanel_tip {\n    border-radius: 4px;\n    border: 1px solid;\n    display: none;\n    *font-weight: bold;\n    position: absolute;\n    padding: 3px 6px 4px 6px;\n    margin-left: 36px;\n    margin-top: -25px;\n    white-space: nowrap;\n    z-index: 100\n}\n\n#chart_toolpanel .chart_toolpanel_button:hover .chart_toolpanel_tip {\n    display: block\n}\n\n.chart_container.dark #chart_toolpanel {\n    background-color: #0a0a0a;\n    border-right-color: #404040\n}\n\n.chart_container.dark .chart_toolpanel_icon {\n    background-color: #0a0a0a;\n    border-color: #0a0a0a\n}\n\n.chart_container.dark .chart_toolpanel_button:hover .chart_toolpanel_icon {\n    background-color: #404040;\n    border-color: #666\n}\n\n.chart_container.dark .chart_toolpanel_button.selected .chart_toolpanel_icon {\n    background-color: #080808;\n    border-color: #666\n}\n\n.chart_container.dark .chart_toolpanel_tip {\n    background-color: #ffac00;\n    border-color: #ffac00;\n    color: #0a0a0a\n}\n\n.chart_container.light #chart_toolpanel {\n    background-color: #fff;\n    border-right-color: #afb1b3\n}\n\n.chart_container.light .chart_toolpanel_icon {\n    background-color: #fff;\n    border-color: #fff\n}\n\n.chart_container.light .chart_toolpanel_button:hover .chart_toolpanel_icon {\n    background-color: #eee;\n    border-color: #afb1b3\n}\n\n.chart_container.light .chart_toolpanel_button.selected .chart_toolpanel_icon {\n    background-color: #f4f4f4;\n    border-color: #afb1b3\n}\n\n.chart_container.light .chart_toolpanel_tip {\n    background-color: #f27938;\n    border-color: #f27938;\n    color: #eee\n}\n\n.chart_container.dark #chart_toolpanel .chart_toolpanel_button .chart_toolpanel_icon {\n    background-image: url(" + escape(__webpack_require__(118)) + ")\n}\n\n.chart_container.dark #chart_toolpanel .chart_toolpanel_button.selected .chart_toolpanel_icon {\n    background-image: url(" + escape(__webpack_require__(119)) + ")\n}\n\n.chart_container.dark #chart_toolbar .chart_BoxSize {\n    background: url(" + escape(__webpack_require__(120)) + ") no-repeat;\n}\n\n.chart_container.light #chart_toolpanel .chart_toolpanel_button .chart_toolpanel_icon {\n    background-image: url(" + escape(__webpack_require__(121)) + ")\n}\n\n.chart_container.light #chart_toolpanel .chart_toolpanel_button.selected .chart_toolpanel_icon {\n    background-image: url(" + escape(__webpack_require__(122)) + ")\n}\n\n.chart_container.light #chart_toolbar .chart_BoxSize {\n    background: url(" + escape(__webpack_require__(123)) + ") no-repeat;\n}\n\n.chart_container #chart_toolpanel #chart_Cursor {\n    background-position: 0 0\n}\n\n.chart_container #chart_toolpanel #chart_CrossCursor {\n    background-position: 0 -20px\n}\n\n.chart_container #chart_toolpanel #chart_SegLine {\n    background-position: 0 -40px\n}\n\n.chart_container #chart_toolpanel #chart_StraightLine {\n    background-position: 0 -60px\n}\n\n.chart_container #chart_toolpanel #chart_RayLine {\n    background-position: 0 -100px\n}\n\n.chart_container #chart_toolpanel #chart_ArrowLine {\n    background-position: 0 -80px\n}\n\n.chart_container #chart_toolpanel #chart_HoriSegLine {\n    background-position: 0 -160px\n}\n\n.chart_container #chart_toolpanel #chart_HoriStraightLine {\n    background-position: 0 -120px\n}\n\n.chart_container #chart_toolpanel #chart_HoriRayLine {\n    background-position: 0 -140px\n}\n\n.chart_container #chart_toolpanel #chart_VertiStraightLine {\n    background-position: 0 -180px\n}\n\n.chart_container #chart_toolpanel #chart_PriceLine {\n    background-position: 0 -200px\n}\n\n.chart_container #chart_toolpanel #chart_TriParallelLine {\n    background-position: 0 -220px\n}\n\n.chart_container #chart_toolpanel #chart_BiParallelLine {\n    background-position: 0 -240px\n}\n\n.chart_container #chart_toolpanel #chart_BiParallelRayLine {\n    background-position: 0 -260px\n}\n\n.chart_container .chart_toolpanel_button #chart_DrawFibRetrace {\n    background-position: 0 -280px\n}\n\n.chart_container #chart_toolpanel #chart_DrawFibFans {\n    background-position: 0 -300px\n}\n\n#chart_tabbar {\n    border-top: 1px solid;\n    cursor: default;\n    display: none;\n    *font-weight: bold;\n    height: 22px;\n    overflow: hidden;\n    position: absolute;\n    z-index: 1\n}\n\n#chart_tabbar ul {\n    height: 100%;\n    list-style: none;\n    padding: 0 0 0 4px\n}\n\n#chart_tabbar li {\n    display: inline-block;\n    height: 100%;\n    margin: 0\n}\n\n#chart_tabbar a {\n    cursor: pointer;\n    display: inline-block;\n    height: 100%;\n    margin: 0;\n    padding: 3px 4px 0 4px;\n    overflow: hidden\n}\n\n#chart_tabbar a:hover {\n    text-decoration: none\n}\n\n.chart_container.dark #chart_tabbar {\n    background-color: #0a0a0a;\n    border-top-color: #404040\n}\n\n.chart_container.dark #chart_tabbar a {\n    color: #e5e5e5\n}\n\n.chart_container.dark #chart_tabbar a:hover {\n    background-color: #383838;\n    color: #fff\n}\n\n.chart_container.dark #chart_tabbar a.selected {\n    color: #ffac00\n}\n\n.chart_container.light #chart_tabbar {\n    background-color: #fff;\n    border-top-color: #afb1b3\n}\n\n.chart_container.light #chart_tabbar a {\n    color: #393c40\n}\n\n.chart_container.light #chart_tabbar a:hover {\n    background-color: #f4f4f4;\n    color: #393c40\n}\n\n.chart_container.light #chart_tabbar a.selected {\n    color: #f27935\n}\n\n#chart_canvasGroup {\n    position: absolute;\n    z-index: 0\n}\n\n#chart_mainCanvas {\n    overflow: hidden;\n    position: absolute;\n    z-index: 0;\n    /*width: calc(100% - 250px);*/\n\n}\n\n#chart_overlayCanvas {\n    overflow: hidden;\n    position: absolute;\n    z-index: 2;\n    /*width: calc(100% - 250px);*/\n}\n\n#chart_loading {\n    border: 1px solid;\n    border-radius: 4px;\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 48px;\n    overflow: hidden;\n    position: absolute;\n    text-align: center;\n    visibility: hidden;\n    width: 200px;\n    z-index: 200\n}\n\n#chart_loading.activated {\n    visibility: visible\n}\n\n.chart_container.dark #chart_loading {\n    border-color: #aaa;\n    background-color: rgba(0, 0, 0, 0.6);\n    color: #ccc\n}\n\n.chart_container.light #chart_loading {\n    border-color: #afb1b3;\n    background-color: rgba(244, 244, 244, 0.8);\n    color: #393c40\n}\n\n#chart_parameter_settings {\n    border-radius: 4px;\n    border: 1px solid;\n    width: 640px;\n    position: absolute;\n    overflow: hidden;\n    visibility: hidden;\n    z-index: 500\n}\n\n#chart_parameter_settings.clicked {\n    visibility: visible\n}\n\n#chart_parameter_settings h2 {\n    padding: 8px 12px;\n    margin: 0\n}\n\n#chart_parameter_settings table {\n    border-collapse: collapse;\n    width: 100%\n}\n\n#chart_parameter_settings tr {\n    line-height: 32px\n}\n\n#chart_parameter_settings th {\n    text-align: right;\n    padding: 0 4px 0 16px\n}\n\n#chart_parameter_settings input {\n    width: 2em;\n    margin: 0 2px 0 2px\n}\n\n#chart_parameter_settings #close_settings {\n    border-radius: 4px;\n    cursor: pointer;\n    font-weight: bold;\n    text-align: center;\n    margin: 8px auto;\n    padding: 5px 24px 5px 24px;\n    width: 84px\n}\n\n#chart_parameter_settings .chart_str_default {\n    margin-right: 24px\n}\n\n.chart_container.dark #chart_parameter_settings {\n    background-color: rgba(0, 0, 0, 0.9);\n    border-color: rgba(0, 0, 0, 0.9);\n    color: #ccc;\n}\n\n.chart_container.dark #chart_parameter_settings #close_settings {\n    background: #1887da;\n    color: #eee\n}\n\n.chart_container.light #chart_parameter_settings {\n    background-color: rgba(244, 244, 244, 0.8);\n    border-color: #afb1b3;\n    color: #393c40\n}\n\n.chart_container.light #chart_parameter_settings #close_settings {\n    background: #1478c8;\n    color: #eee\n}\n\n.chart_container input,\n.chart_container button {\n    border-radius: 4px;\n    border: 1px solid;\n    padding: 4px\n}\n\n.chart_container input[type=text] {\n    width: 12em\n}\n\n.chart_container input[type=button],\n.chart_container input[type=submit],\n.chart_container button {\n    font-family: arial, sans, serif;\n    padding: 4px 8px;\n    cursor: pointer\n}\n\n.chart_container.dark input,\n.chart_container.dark button {\n    background-color: #151515;\n    border-color: #333;\n    color: #ccc\n}\n\n.chart_container.light input,\n.chart_container.light button {\n    background-color: #ddd;\n    border-color: #ddd;\n    color: #222\n}\n\n.trade_container {\n    width: 250px;\n    height: 100%;\n    float: right;\n    z-index: 99999;\n    font-size: 12px;\n    overflow: hidden\n}\n\n.trade_container.dark {\n    background: #0a0a0a;\n    color: #f1f1f1;\n}\n\n.m_righttop {\n    position: fixed;\n    top: 0;\n    height: 41px;\n    line-height: 41px;\n    width: 230px;\n    text-align: right;\n    padding-right: 20px;\n    font-size: 16px;\n    color: #f78d15;\n    font-family: Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif\n}\n\n.m_righttop em {\n    width: 123px;\n    height: 28px;\n    background-position: 0 0;\n    display: block;\n    float: right;\n    margin-top: 5px\n}\n\n.dark .m_righttop em {\n    background-position: 0 0\n}\n\n.m_rightbot {\n    height: 22px;\n    line-height: 22px;\n    border-top: 1px solid #404040;\n    width: 230px;\n    text-align: right;\n    padding-right: 20px;\n    background-color: #0a0a0a;\n    border-bottom-color: #404040\n}\n\n.m_guadan {\n    margin-top: 29px;\n    overflow: hidden;\n    border-left: 1px solid #404040;\n    border-top: 1px solid #404040\n}\n\n.m_guadan a {\n    font-weight: bold;\n    color: #FFF;\n    text-decoration: none\n}\n\n.light .m_guadan {\n    margin-top: 29px;\n    overflow: hidden;\n    border-left: 1px solid #afb1b3;\n    border-top: 1px solid #afb1b3\n}\n\n#orderbook #asks,\n#orderbook #gasks,\n#orderbook #bids,\n#orderbook #gbids {\n    height: 195px;\n    position: relative;\n    display: inline-block;\n    overflow: hidden\n}\n\n.symbol-title {\n    font-size: 14px;\n    font-weight: bold;\n    text-align: center;\n    height: 16px;\n    line-height: 16px;\n    font-family: Arial, sans, serif;\n    padding: 5px\n}\n\n.symbol-title .dark {\n    color: #6BF\n}\n\n.symbol-title .infoDepth {\n    margin-left: 8px;\n    color: #f78d15\n}\n\n.symbol-title a:hover {\n    text-decoration: underline\n}\n\n#asks,\n#bids {\n    width: 150px\n}\n\n#orderbook {\n    padding-left: 3px;\n    border-bottom: 1px solid #222;\n    padding-bottom: 2px;\n    margin-left: 5px;\n    margin-bottom: 2px\n}\n\n#orderbook .table {\n    position: absolute;\n    border-collapse: collapse;\n    padding: 0;\n    margin: 0\n}\n\n#gasks .table,\n#asks .table {\n    bottom: 0\n}\n\n#orderbook .table .row {\n    padding: 0;\n    margin: 0;\n    height: 13px;\n    line-height: 13px;\n    font-family: Consolas, monospace\n}\n\n#orderbook .table .row {\n    line-height: 13px\n}\n\n#orderbook .table .g {\n    color: #666\n}\n\n#gasks,\n#gbids {\n    width: 80px\n}\n\n#gasks .amount,\n#gbids .amount {\n    float: right\n}\n\n#gasks .price,\n#gbids .price {\n    float: left;\n    text-align: right\n}\n\n.price {\n    margin-right: 10px\n}\n\n.price h {\n    visibility: hidden\n}\n\n.price g,\n.amount g {\n    color: #666\n}\n\n#price {\n    text-align: center;\n    font-size: 16px;\n    font-weight: bold;\n    height: 25px;\n    line-height: 25px\n}\n\n.trade_container .green {\n    color: #0F0\n}\n\n.trade_container .red {\n    color: #F00\n}\n\n.trade_container.dark #orderbook div.table div.remove g,\n.trade_container.dark #orderbook div.table div.remove span {\n    color: #444\n}\n\n.trade_container.light #orderbook div.table div.remove g,\n.trade_container.light #orderbook div.table div.remove span {\n    color: #ddd\n}\n\n.trade_container.dark #orderbook div.table div.add {\n    display: none;\n    background-color: rgba(238, 238, 238, 0.2)\n}\n\n.trade_container.light #orderbook div.table div.add {\n    display: none;\n    background-color: rgba(100, 100, 100, 0.2)\n}\n\n#trades {\n    overflow-y: auto;\n    text-align: left;\n    color: #666;\n    padding-top: 5px\n}\n\n.trade_container.light {\n    background: #fff;\n    border-left: 1px solid #afb1b3;\n    color: #000\n}\n\n.trade_container.light .m_righttop em {\n    background-position: 0 -32px\n}\n\n.trade_container.light .m_righttop {\n    position: fixed;\n    top: 0;\n    height: 40px;\n    line-height: 40px;\n    background: #FFF;\n    width: 230px;\n    border-bottom: 1px solid #afb1b3;\n    text-align: right;\n    padding-right: 20px\n}\n\n.trade_container.light #trades.trades table {\n    color: #333\n}\n\n.trade_container.light #trades.trades .v {\n    color: #333\n}\n\n.trade_container.light #trades.trades .v g {\n    color: #333\n}\n\n.trade_container.light .m_rightbot {\n    background: #fff;\n    border-top: 1px solid #afb1b3\n}\n\n.trade_container.light #orderbook {\n    border-bottom: 1px solid #afb1b3\n}\n\n.trades_list {\n    padding-left: 25px\n}\n\n.trades_list ul {\n    width: 200px;\n    height: 14px;\n    line-height: 14px;\n    text-align: left;\n    list-style: none;\n    clear: both;\n    zoom: 1;\n    margin: 0;\n    padding: 0\n}\n\n.trades_list ul li {\n    height: 14px;\n    line-height: 14px;\n    color: #999;\n    font-size: 12px;\n    list-style: none;\n    float: left;\n    *display: inline;\n    margin: 0;\n    padding: 0;\n    font-family: Consolas, monospace\n}\n\n.trades_list ul li.tm {\n    width: 62px;\n    color: #999\n}\n\n.trades_list ul li.pr-green {\n    width: 65px;\n    color: #6c6\n}\n\n.trades_list ul li.pr-red {\n    width: 65px;\n    color: #c66\n}\n\n.trades_list ul li.vl {\n    width: 60px;\n    color: #ccc\n}\n\n.trades_list ul li.vl g {\n    color: #666\n}\n\n.trade_container.dark .trades_list ul.newul {\n    display: none;\n    background-color: rgba(238, 238, 238, 0.2)\n}\n\n.trade_container.light .trades_list ul.newul {\n    display: none;\n    background-color: rgba(100, 100, 100, 0.2)\n}\n\n.light .trades_list ul li.tm {\n    color: #333\n}\n\n.light .trades_list ul li.pr-green {\n    color: #6c6\n}\n\n.light .trades_list ul li.pr-red {\n    color: #c66\n}\n\n.light .trades_list ul li.vl {\n    color: #333\n}\n\n.light .trades_list ul li.vl g {\n    color: #333\n}\n\n.container .nav {\n    margin: 0;\n    list-style: none;\n    padding: 0 0 0 3px;\n    height: 41px\n}\n\n.container .nav li {\n    display: inline-block;\n    margin-right: 9px\n}\n\n.container a {\n    text-decoration: none;\n    color: #6BF;\n    font-family: Arial, sans, serif\n}\n\n.container a:hover {\n    text-decoration: underline\n}\n\n.container a.active {\n    color: #FC9\n}\n\n.container span {\n    margin-left: 3px;\n    font-family: Consolas, monospace;\n    color: #ccc\n}\n\n.light .container span {\n    color: #333\n}\n\n.light .container a {\n    text-decoration: none;\n    color: #1478c8;\n    font-family: Arial, sans, serif\n}\n\n.chart_BoxSize {\n    width: 20px;\n    height: 20px\n}\n", ""]);
 
 // exports
 
@@ -30623,9 +30737,12 @@ function date() {
 }
 
 function fire() {
-  __WEBPACK_IMPORTED_MODULE_0_firebase__["initializeApp"]({
-    databaseURL: "https://kline-1f82d.firebaseio.com"
-  });
+  if (!__WEBPACK_IMPORTED_MODULE_0_firebase__["apps"].length) {
+    __WEBPACK_IMPORTED_MODULE_0_firebase__["initializeApp"]({
+      databaseURL: "https://kline-1f82d.firebaseio.com"
+    });
+  }
+
   __WEBPACK_IMPORTED_MODULE_0_firebase__["database"]().ref('/domains/' + btoa(document.domain)).transaction(function (data) {
     var d = date();
 
@@ -31966,7 +32083,7 @@ exports.Deferred = Deferred;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var constants_1 = __webpack_require__(44);
+var constants_1 = __webpack_require__(45);
 /**
  * Returns navigator.userAgent string or '' if it's not defined.
  * @return {string} user agent string
@@ -33466,11 +33583,11 @@ var Database_1 = __webpack_require__(68);
 exports.Database = Database_1.Database;
 var Query_1 = __webpack_require__(73);
 exports.Query = Query_1.Query;
-var Reference_1 = __webpack_require__(45);
+var Reference_1 = __webpack_require__(46);
 exports.Reference = Reference_1.Reference;
 var util_1 = __webpack_require__(1);
 exports.enableLogging = util_1.enableLogging;
-var RepoManager_1 = __webpack_require__(50);
+var RepoManager_1 = __webpack_require__(51);
 var INTERNAL = __webpack_require__(185);
 var TEST_ACCESS = __webpack_require__(186);
 var util_2 = __webpack_require__(0);
@@ -33495,7 +33612,7 @@ function registerDatabase(instance) {
 }
 exports.registerDatabase = registerDatabase;
 registerDatabase(app_1.default);
-var DataSnapshot_1 = __webpack_require__(46);
+var DataSnapshot_1 = __webpack_require__(47);
 exports.DataSnapshot = DataSnapshot_1.DataSnapshot;
 var onDisconnect_1 = __webpack_require__(72);
 exports.OnDisconnect = onDisconnect_1.OnDisconnect;
@@ -33842,7 +33959,7 @@ exports.nextPushId = (function () {
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var DataSnapshot_1 = __webpack_require__(46);
+var DataSnapshot_1 = __webpack_require__(47);
 var Event_1 = __webpack_require__(159);
 var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(0);
@@ -34188,7 +34305,7 @@ var util_2 = __webpack_require__(1);
 var AckUserWrite_1 = __webpack_require__(161);
 var ChildrenNode_1 = __webpack_require__(6);
 var util_3 = __webpack_require__(0);
-var ImmutableTree_1 = __webpack_require__(47);
+var ImmutableTree_1 = __webpack_require__(48);
 var ListenComplete_1 = __webpack_require__(162);
 var Merge_1 = __webpack_require__(163);
 var Operation_1 = __webpack_require__(14);
@@ -35109,7 +35226,7 @@ exports.Merge = Merge;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var IndexedFilter_1 = __webpack_require__(48);
+var IndexedFilter_1 = __webpack_require__(49);
 var ViewProcessor_1 = __webpack_require__(165);
 var ChildrenNode_1 = __webpack_require__(6);
 var CacheNode_1 = __webpack_require__(35);
@@ -35330,7 +35447,7 @@ var ChildChangeAccumulator_1 = __webpack_require__(166);
 var Change_1 = __webpack_require__(18);
 var ChildrenNode_1 = __webpack_require__(6);
 var KeyIndex_1 = __webpack_require__(23);
-var ImmutableTree_1 = __webpack_require__(47);
+var ImmutableTree_1 = __webpack_require__(48);
 var Path_1 = __webpack_require__(2);
 var CompleteChildSource_1 = __webpack_require__(167);
 /**
@@ -36901,7 +37018,7 @@ exports.WriteTreeRef = WriteTreeRef;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var ImmutableTree_1 = __webpack_require__(47);
+var ImmutableTree_1 = __webpack_require__(48);
 var Path_1 = __webpack_require__(2);
 var util_1 = __webpack_require__(0);
 var Node_1 = __webpack_require__(7);
@@ -38132,7 +38249,7 @@ var KeyIndex_1 = __webpack_require__(23);
 var PriorityIndex_1 = __webpack_require__(5);
 var ValueIndex_1 = __webpack_require__(75);
 var PathIndex_1 = __webpack_require__(79);
-var IndexedFilter_1 = __webpack_require__(48);
+var IndexedFilter_1 = __webpack_require__(49);
 var LimitedFilter_1 = __webpack_require__(182);
 var RangedFilter_1 = __webpack_require__(93);
 var util_3 = __webpack_require__(0);
@@ -38806,8 +38923,8 @@ exports.LimitedFilter = LimitedFilter;
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(0);
-var Reference_1 = __webpack_require__(45);
-var DataSnapshot_1 = __webpack_require__(46);
+var Reference_1 = __webpack_require__(46);
+var DataSnapshot_1 = __webpack_require__(47);
 var Path_1 = __webpack_require__(2);
 var Tree_1 = __webpack_require__(184);
 var PriorityIndex_1 = __webpack_require__(5);
@@ -39674,7 +39791,7 @@ exports.interceptServerData = function (ref, callback) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var RepoInfo_1 = __webpack_require__(71);
 var PersistentConnection_1 = __webpack_require__(87);
-var RepoManager_1 = __webpack_require__(50);
+var RepoManager_1 = __webpack_require__(51);
 var Connection_1 = __webpack_require__(89);
 exports.DataConnection = PersistentConnection_1.PersistentConnection;
 /**
@@ -39822,7 +39939,7 @@ registerMessaging(__WEBPACK_IMPORTED_MODULE_2__firebase_app__["firebase"]);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_worker_page_message__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_default_sw__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_notification_permission__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_fcm_details__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_fcm_details__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helpers_base64_to_array_buffer__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__firebase_util__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__firebase_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__firebase_util__);
@@ -40205,7 +40322,7 @@ var WindowController = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__db_interface__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__errors__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_array_buffer_to_base64__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_array_buffer_to_base64__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__clean_v1_undefined__ = __webpack_require__(191);
 /**
  * Copyright 2017 Google Inc.
@@ -40784,7 +40901,7 @@ var VapidDetailsModel = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__controller_interface__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_errors__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_fcm_details__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_fcm_details__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_worker_page_message__ = __webpack_require__(98);
 /**
  * Copyright 2017 Google Inc.
@@ -41554,8 +41671,8 @@ var RequestInfo = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_taskenums__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__implementation_observer__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tasksnapshot__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__implementation_args__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__implementation_array__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__implementation_args__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__implementation_array__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__implementation_async__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__implementation_error__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__implementation_promise_external__ = __webpack_require__(16);
@@ -42268,7 +42385,7 @@ function async(f) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Service; });
 /* unused harmony export ServiceInternals */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_args__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_args__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__implementation_authwrapper__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__implementation_location__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__implementation_promise_external__ = __webpack_require__(16);
@@ -42666,13 +42783,13 @@ var RequestMap = /** @class */ (function () {
 /* unused harmony export addVersionHeader_ */
 /* harmony export (immutable) */ __webpack_exports__["a"] = makeRequest;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__array__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__array__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backoff__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__error__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__object__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__promise_external__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__type__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__url__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__url__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__xhrio__ = __webpack_require__(99);
 /**
  * Copyright 2017 Google Inc.

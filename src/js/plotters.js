@@ -770,7 +770,7 @@ export class IndicatorPlotter extends NamedObject {
             } else if (style === exprs.OutputExpr.outputStyle.Custom) {
                 this.drawCustomStick(context, theme,
                     out, start, last,
-                    timeline.toItemLeft(start), cW, timeline.getItemWidth(), range);
+                    timeline.toItemLeft(start), cW, timeline.getItemWidth(), range, mgr.getDataSource(this.getDataSourceName()));
             }
         }
         let left = timeline.toColumnLeft(start);
@@ -855,47 +855,38 @@ export class IndicatorPlotter extends NamedObject {
         }
     }
     
-    drawCustomStick (context, theme, output, first, last, startX, cW, iW, range) {
+    drawCustomStick (context, theme, output, first, last, startX, cW, iW, range, ds) {
         let left = startX;
         let middle = range.toY(0);
         let prevMACD = (first > 0) ? output.execute(first - 1) : NaN;
         
-        if (!window.data) {
-            window.data = []
-        }
-        let Klines = new Kline()
-        // console.log(context)
-        // console.log(output)
-        // window.data = [ ...Klines.data.lines ]
-        // console.log(first, last, data.length)
-        window.data = [ ...window.data.concat(Klines.data.lines) ]
-        // console.log(first, last, window.data.length)
-        let data = [ ...window.data ]
-        for (let i = first - 1; i < last; i++) {
+        for (let i = first ? first - 1 : 0; i < last; i++) {
             let TRADE = output.execute(i);
-            let color = "rgb(255,255,255)"
-            if (data[ i ][ data[ i ].length - 1 ] === 'open') { // 开#19B34C 空心
-                color = '#19B34C'
-                context.strokeStyle = color
-                context.stroke();
-            } else if (data[ i ][ data[ i ].length - 1 ] === 'close') { //关 #B33121 空心
-                color = '#B33121'
-                context.strokeStyle = color
-                context.stroke();
-            } else if (data[ i ][ data[ i ].length - 1 ] === 'liquidation') { // 爆仓 #F6EB2F 实心
-                color = '#F6EB2F'
-                context.fillStyle = color
-                context.fill();
-            } else if (data[ i ][ data[ i ].length - 1 ] === 'both') { // BOTH #19B34C 实心
-                color = '#19B34C'
-                context.fillStyle = color
-                context.fill();
+            let data = ds.getDataAt(i);
+            if (data.trade) {
+                let color = "rgb(255,255,255)"
+                if (data.trade.type === 'open') { // 开#19B34C 空心
+                    color = '#19B34C'
+                    context.strokeStyle = color
+                    context.stroke();
+                } else if (data.trade.type === 'close') { //关 #B33121 空心
+                    color = '#B33121'
+                    context.strokeStyle = color
+                    context.stroke();
+                } else if (data.trade.type === 'liquidation') { // 爆仓 #F6EB2F 实心
+                    color = '#F6EB2F'
+                    context.fillStyle = color
+                    context.fill();
+                } else if (data.trade.type === 'both') { // BOTH #19B34C 实心
+                    color = '#19B34C'
+                    context.fillStyle = color
+                    context.fill();
+                }
             }
             /*画线*/
             context.beginPath();
             context.rect(left, middle, Math.max(iW, 1), 50);
             prevMACD = TRADE;
-            
             left += cW;
         }
     }
@@ -1042,9 +1033,14 @@ export class IndicatorInfoPlotter extends Plotter {
         for (n = 0; n < cnt; n++) {
             out = indic.getOutputAt(n);
             v = out.execute(selIndex);
-            if (isNaN(v))
+            if (!v && typeof(v) !== "string") {
                 continue;
-            info = "  " + out.getName() + ": " + v.toFixed(2);
+            }
+            if (typeof(v) === "number") {
+                info = "  " + out.getName() + ": " + v.toFixed(2);
+            } else {
+                info = "  " + out.getName() + ": " + v;
+            }
             color = out.getColor();
             if (color === undefined)
                 color = themes.Theme.Color.Indicator0 + n;
@@ -1757,9 +1753,9 @@ export class TimelineSelectionPlotter extends Plotter {
         let lang = mgr.getLanguage();
         let x = timeline.toItemCenter(timeline.getSelectedIndex());
         context.fillStyle = theme.getColor(themes.Theme.Color.Background);
-        context.fillRect(x - 52.5, area.getTop() + 2.5, 106, 18);
+        context.fillRect(x - 72.5, area.getTop() + 2.5, 160, 18);
         context.strokeStyle = theme.getColor(themes.Theme.Color.Grid3);
-        context.strokeRect(x - 52.5, area.getTop() + 2.5, 106, 18);
+        context.strokeRect(x - 72.5, area.getTop() + 2.5, 160, 18);
         context.font = theme.getFont(themes.Theme.Font.Default);
         context.textAlign = "center";
         context.textBaseline = "middle";
@@ -1767,14 +1763,17 @@ export class TimelineSelectionPlotter extends Plotter {
         let time = new Date(ds.getDataAt(timeline.getSelectedIndex()).date);
         let month = time.getMonth() + 1;
         let date = time.getDate();
+        let year = time.getFullYear();
         let hour = time.getHours();
         let minute = time.getMinutes();
         let second = time.getSeconds();
         let strMonth = month.toString();
         let strDate = date.toString();
+        let strYear = year.toString();
         let strHour = hour.toString();
         let strMinute = minute.toString();
         let strSecond = second.toString();
+        
         if (minute < 10) {
             strMinute = "0" + strMinute;
         }
@@ -1783,14 +1782,14 @@ export class TimelineSelectionPlotter extends Plotter {
         }
         let text = "";
         if (lang === "zh-cn") {
-            text = strMonth + "月" + strDate + "日  " +
+            text = strYear + "年" + strMonth + "月" + strDate + "日  " +
                 strHour + ":" + strMinute;
         } else if (lang === "zh-tw") {
-            text = strMonth + "月" + strDate + "日  " +
+            text = strYear + "年" + strMonth + "月" + strDate + "日  " +
                 strHour + ":" + strMinute;
         } else if (lang === "en-us") {
             text = TimelineSelectionPlotter.MonthConvert[ month ] + " " + strDate + "  " +
-                strHour + ":" + strMinute;
+                strHour + ":" + strMinute + " " + strYear;
         }
         if (Kline.instance.range < 60000) {
             text += ":" + strSecond;

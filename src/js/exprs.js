@@ -1,142 +1,183 @@
 export class ExprEnv {
-
-     static inst = null;
-     _ds = null;
-     _firstIndex = null;
-
+    
+    static inst = null;
+    _ds = null;
+    _firstIndex = null;
+    
     static get () {
         return this.inst;
     }
-
+    
     static set (env) {
         this.inst = env;
     }
-
-     getDataSource() {
+    
+    getDataSource () {
         return this._ds;
     }
-
-     setDataSource(ds) {
+    
+    setDataSource (ds) {
         return this._ds = ds;
     }
-
-     getFirstIndex() {
+    
+    getFirstIndex () {
         return this._firstIndex;
     }
-
-     setFirstIndex(n) {
+    
+    setFirstIndex (n) {
         return this._firstIndex = n;
     }
-
+    
 }
 
 
 export class Expr {
-    constructor() {
+    constructor () {
         this._rid = 0;
     }
-
-    execute(index) {
+    
+    execute (index) {
     }
-
-    reserve(rid, count) {
+    
+    reserve (rid, count) {
     }
-
-    clear() {
+    
+    clear () {
     }
 }
 
 
 export class OpenExpr extends Expr {
-
-    execute(index) {
+    
+    execute (index) {
         return ExprEnv.get()._ds.getDataAt(index).open;
     }
-
+    
 }
 
 
 export class HighExpr extends Expr {
-
-    execute(index) {
+    
+    execute (index) {
         return ExprEnv.get()._ds.getDataAt(index).high;
     }
-
+    
 }
 
 
 export class LowExpr extends Expr {
-
-    execute(index) {
+    
+    execute (index) {
         return ExprEnv.get()._ds.getDataAt(index).low;
     }
-
+    
 }
 
 
 export class CloseExpr extends Expr {
-
-    execute(index) {
+    
+    execute (index) {
         return ExprEnv.get()._ds.getDataAt(index).close;
     }
+    
+}
 
+export class TradeExpr extends Expr {
+    execute (index) {
+        let result = "";
+        if (ExprEnv.get()._ds.getDataAt(index).trade) {
+            for (const item of ExprEnv.get()._ds.getDataAt(index).trade.detail) {
+                result += `${this.formatTimestamp(item.trade_time)} [${item.trade_type} P:${item.trade_price.toFixed(4)} B:${item.balance.toFixed(4)}] `
+            }
+        }
+        return result ? result : 'None';
+    }
+    
+    add0 (m) {
+        return m < 10 ? '0' + m : m
+    }
+    
+    formatTimestamp (timestamps) {
+        var time = new Date(parseInt(timestamps) * 1000)
+        var y = time.getFullYear()
+        var m = time.getMonth() + 1
+        var d = time.getDate()
+        var h = time.getHours()
+        var mm = time.getMinutes()
+        var s = time.getSeconds()
+        return y + '/' + this.add0(m) + '/' + this.add0(d) + ' ' + this.add0(h) + ':' + this.add0(mm) + ':' + this.add0(s)
+    }
 }
 
 
-export class VolumeExpr extends Expr {
+export class BalanceExpr extends Expr {
+    execute (index) {
+        let balance = 0;
+        if (ExprEnv.get()._ds.getDataAt(index).trade) {
+            const detail = ExprEnv.get()._ds.getDataAt(index).trade.detail;
+            balance = detail[ detail.length - 1 ].balance.toFixed(4);
+        } else {
+            balance = window.balance;
+        }
+        window.balance = balance;
+        return balance;
+    }
+}
 
-    execute(index) {
+export class VolumeExpr extends Expr {
+    
+    execute (index) {
         return ExprEnv.get()._ds.getDataAt(index).volume;
     }
-
+    
 }
 
 
 export class ConstExpr extends Expr {
-
-    constructor(v) {
+    
+    constructor (v) {
         super();
         this._value = v;
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._value;
     }
-
+    
 }
 
 
 export class ParameterExpr extends Expr {
-
-    constructor(name, minValue, maxValue, defaultValue) {
+    
+    constructor (name, minValue, maxValue, defaultValue) {
         super();
         this._name = name;
         this._minValue = minValue;
         this._maxValue = maxValue;
         this._value = this._defaultValue = defaultValue;
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._value;
     }
-
-    getMinValue() {
+    
+    getMinValue () {
         return this._minValue;
     }
-
-    getMaxValue() {
+    
+    getMaxValue () {
         return this._maxValue;
     }
-
-    getDefaultValue() {
+    
+    getDefaultValue () {
         return this._defaultValue;
     }
-
-    getValue() {
+    
+    getValue () {
         return this._value;
     }
-
-    setValue(v) {
+    
+    setValue (v) {
         if (v === 0)
             this._value = 0;
         else if (v < this._minValue)
@@ -146,65 +187,65 @@ export class ParameterExpr extends Expr {
         else
             this._value = v;
     }
-
+    
 }
 
 
 export class OpAExpr extends Expr {
-
-    constructor(a) {
+    
+    constructor (a) {
         super();
         this._exprA = a;
     };
-
-    reserve(rid, count) {
+    
+    reserve (rid, count) {
         if (this._rid < rid) {
             this._rid = rid;
             this._exprA.reserve(rid, count);
         }
     }
-
-    clear() {
+    
+    clear () {
         this._exprA.clear();
     }
-
+    
 }
 
 export class OpABExpr extends Expr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super();
         this._exprA = a;
         this._exprB = b;
     }
-
-    reserve(rid, count) {
+    
+    reserve (rid, count) {
         if (this._rid < rid) {
             this._rid = rid;
             this._exprA.reserve(rid, count);
             this._exprB.reserve(rid, count);
         }
     }
-
-    clear() {
+    
+    clear () {
         this._exprA.clear();
         this._exprB.clear();
     }
-
+    
 }
 
 
 export class OpABCExpr extends Expr {
-
-    constructor(a, b, c) {
+    
+    constructor (a, b, c) {
         super();
         this._exprA = a;
         this._exprB = b;
         this._exprC = c;
     }
-
-
-    reserve(rid, count) {
+    
+    
+    reserve (rid, count) {
         if (this._rid < rid) {
             this._rid = rid;
             this._exprA.reserve(rid, count);
@@ -212,8 +253,8 @@ export class OpABCExpr extends Expr {
             this._exprC.reserve(rid, count);
         }
     }
-
-    clear() {
+    
+    clear () {
         this._exprA.clear();
         this._exprB.clear();
         this._exprC.clear();
@@ -222,16 +263,16 @@ export class OpABCExpr extends Expr {
 
 
 export class OpABCDExpr extends Expr {
-
-    constructor(a, b, c, d) {
+    
+    constructor (a, b, c, d) {
         super();
         this._exprA = a;
         this._exprB = b;
         this._exprC = c;
         this._exprD = d;
     }
-
-    reserve(rid, count) {
+    
+    reserve (rid, count) {
         if (this._rid < rid) {
             this._rid = rid;
             this._exprA.reserve(rid, count);
@@ -240,76 +281,76 @@ export class OpABCDExpr extends Expr {
             this._exprD.reserve(rid, count);
         }
     };
-
-    clear() {
+    
+    clear () {
         this._exprA.clear();
         this._exprB.clear();
         this._exprC.clear();
         this._exprD.clear();
     }
-
+    
 }
 
 
 export class NegExpr extends OpAExpr {
-
-    constructor(a) {
+    
+    constructor (a) {
         super(a);
     };
-
-    execute(index) {
+    
+    execute (index) {
         return -(this._exprA.execute(index));
     }
-
+    
 }
 
 
 export class AddExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._exprA.execute(index) + this._exprB.execute(index);
     }
-
+    
 }
 
 
 export class SubExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._exprA.execute(index) - this._exprB.execute(index);
     }
-
+    
 }
 
 
 export class MulExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._exprA.execute(index) * this._exprB.execute(index);
     }
-
+    
 }
 
 
 export class DivExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         let a = this._exprA.execute(index);
         let b = this._exprB.execute(index);
         if (a === 0)
@@ -318,108 +359,108 @@ export class DivExpr extends OpABExpr {
             return (a > 0) ? 1000000 : -1000000;
         return a / b;
     }
-
+    
 }
 
 
 export class GtExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._exprA.execute(index) > this._exprB.execute(index) ? 1 : 0;
     }
-
+    
 }
 
 
 export class GeExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._exprA.execute(index) >= this._exprB.execute(index) ? 1 : 0;
     }
-
+    
 }
 
 
 export class LtExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._exprA.execute(index) < this._exprB.execute(index) ? 1 : 0;
     }
-
+    
 }
 
 
 export class LeExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._exprA.execute(index) <= this._exprB.execute(index) ? 1 : 0;
     }
-
+    
 }
 
 
 export class EqExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._exprA.execute(index) === this._exprB.execute(index) ? 1 : 0;
     }
-
+    
 }
 
 
 export class MaxExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return Math.max(this._exprA.execute(index), this._exprB.execute(index));
     }
-
+    
 }
 
 
 export class AbsExpr extends OpAExpr {
-
-    constructor(a) {
+    
+    constructor (a) {
         super(a);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return Math.abs(this._exprA.execute(index));
     }
-
+    
 }
 
 
 export class RefExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         if (this._offset === undefined || this._offset < 0) {
             this._offset = this._exprB.execute(index);
             if (this._offset < 0) {
@@ -436,75 +477,75 @@ export class RefExpr extends OpABExpr {
         }
         return result;
     }
-
+    
 }
 
 
 export class AndExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return (this._exprA.execute(index) !== 0) && (this._exprB.execute(index) !== 0) ? 1 : 0;
     }
-
+    
 }
 
 
 export class OrExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return (this._exprA.execute(index) !== 0) || (this._exprB.execute(index) !== 0) ? 1 : 0;
     }
-
+    
 }
 
 
 export class IfExpr extends OpABCExpr {
-
-    constructor(a, b, c) {
+    
+    constructor (a, b, c) {
         super(a, b, c);
     }
-
-    execute(index) {
+    
+    execute (index) {
         return this._exprA.execute(index) !== 0 ? this._exprB.execute(index) : this._exprC.execute(index);
     }
-
+    
 }
 
 
 export class AssignExpr extends OpAExpr {
-
-    constructor(name, a) {
+    
+    constructor (name, a) {
         super(a);
         this._name = name;
         this._buf = [];
     }
-
-    getName() {
+    
+    getName () {
         return this._name;
     }
-
-    execute(index) {
-        return this._buf[index];
+    
+    execute (index) {
+        return this._buf[ index ];
     }
-
-    assign(index) {
-        this._buf[index] = this._exprA.execute(index);
-        if (ExprEnv.get()._firstIndex >= 0) {
-            if (isNaN(this._buf[index]) && !isNaN(this._buf[index - 1])) {
+    
+    assign (index) {
+        this._buf[ index ] = this._exprA.execute(index);
+        if (ExprEnv.get()._firstIndex >= 0 && typeof (this._buf[ index ]) === "number") {
+            if (isNaN(this._buf[ index ]) && !isNaN(this._buf[ index - 1 ])) {
                 throw this._name + ".assign(" + index + "): NaN";
             }
         }
     }
-
-    reserve(rid, count) {
+    
+    reserve (rid, count) {
         if (this._rid < rid) {
             for (let c = count; c > 0; c--) {
                 this._buf.push(NaN);
@@ -512,106 +553,109 @@ export class AssignExpr extends OpAExpr {
         }
         super.reserve(rid, count);
     }
-
-    clear() {
+    
+    clear () {
         super.clear();
         this._buf = [];
     }
-
+    
 }
 
 
 export class OutputExpr extends AssignExpr {
-
+    
     static outputStyle = {
-        None: 0,
-        Line: 1,
-        VolumeStick: 2,
-        MACDStick: 3,
-        SARPoint: 4,
-        Custom: 5
+        None : 0,
+        Line : 1,
+        VolumeStick : 2,
+        MACDStick : 3,
+        SARPoint : 4,
+        Custom : 5
     };
-
-    constructor(name, a, style, color) {
+    
+    constructor (name, a, style, color) {
         super(name, a);
         this._style = (style === undefined) ? OutputExpr.outputStyle.Line : style;
         this._color = color;
     }
-
-
-    getStyle() {
+    
+    
+    getStyle () {
         return this._style;
     }
-
-    getColor() {
+    
+    getColor () {
         return this._color;
     }
-
+    
 }
 
 
 export class RangeOutputExpr extends OutputExpr {
-
-    constructor(name, a, style, color) {
+    
+    constructor (name, a, style, color) {
         super(name, a, style, color);
     }
-
-    getName() {
+    
+    getName () {
         return this._name + this._exprA.getRange();
     }
-
+    
 }
 
 
 export class RangeExpr extends OpABExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
         this._range = -1;
         this._buf = [];
     }
-
-    getRange() {
+    
+    getRange () {
         return this._range;
     }
-
-    initRange() {
+    
+    initRange () {
         this._range = this._exprB.execute(0);
     }
-
-    execute(index) {
+    
+    execute (index) {
         if (this._range < 0) {
             this.initRange();
         }
-        let rA = this._buf[index].resultA = this._exprA.execute(index);
-        return this._buf[index].result = this.calcResult(index, rA);
+        let rA = this._buf[ index ].resultA = this._exprA.execute(index);
+        if (typeof(rA) !== "number") {
+            return rA;
+        }
+        return this._buf[ index ].result = this.calcResult(index, rA);
     }
-
-    reserve(rid, count) {
+    
+    reserve (rid, count) {
         if (this._rid < rid) {
             for (let c = count; c > 0; c--) {
-                this._buf.push({resultA: NaN, result: NaN});
+                this._buf.push({resultA : NaN, result : NaN});
             }
         }
         super.reserve(rid, count);
     }
-
-    clear() {
+    
+    clear () {
         super.clear();
         this._range = -1;
         this._buf = [];
     }
-
+    
 }
 
 
 export class HhvExpr extends RangeExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    calcResult(index, resultA) {
+    
+    calcResult (index, resultA) {
         if (this._range === 0) {
             return NaN;
         }
@@ -625,7 +669,7 @@ export class HhvExpr extends RangeExpr {
             let start = index - n + 1;
             let i = Math.max(first, start);
             for (; i < index; i++) {
-                let p = this._buf[i];
+                let p = this._buf[ i ];
                 if (result < p.resultA) {
                     result = p.resultA;
                 }
@@ -635,17 +679,17 @@ export class HhvExpr extends RangeExpr {
             return resultA;
         }
     }
-
+    
 }
 
 
 export class LlvExpr extends RangeExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    calcResult(index, resultA) {
+    
+    calcResult (index, resultA) {
         if (this._range === 0)
             return NaN;
         let first = ExprEnv.get()._firstIndex;
@@ -657,7 +701,7 @@ export class LlvExpr extends RangeExpr {
             let start = index - n + 1;
             let i = Math.max(first, start);
             for (; i < index; i++) {
-                let p = this._buf[i];
+                let p = this._buf[ i ];
                 if (result > p.resultA)
                     result = p.resultA;
             }
@@ -670,12 +714,12 @@ export class LlvExpr extends RangeExpr {
 
 
 export class CountExpr extends RangeExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    calcResult(index, resultA) {
+    
+    calcResult (index, resultA) {
         if (this._range === 0)
             return NaN;
         let first = ExprEnv.get()._firstIndex;
@@ -687,7 +731,7 @@ export class CountExpr extends RangeExpr {
                 n = index - first;
             let count = 0;
             for (; n >= 0; n--) {
-                if (this._buf[index - n].resultA !== 0.0)
+                if (this._buf[ index - n ].resultA !== 0.0)
                     count++;
             }
             return count;
@@ -695,44 +739,44 @@ export class CountExpr extends RangeExpr {
             return 0;
         }
     }
-
+    
 }
 
 
 export class SumExpr extends RangeExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    calcResult(index, resultA) {
+    
+    calcResult (index, resultA) {
         let first = ExprEnv.get()._firstIndex;
         if (first < 0)
             return resultA;
         if (index > first) {
             let n = this._range;
             if (n === 0 || n >= index + 1 - first) {
-                return this._buf[index - 1].result + resultA;
+                return this._buf[ index - 1 ].result + resultA;
             }
-            return this._buf[index - 1].result + resultA - this._buf[index - n].resultA;
+            return this._buf[ index - 1 ].result + resultA - this._buf[ index - n ].resultA;
         } else {
             return resultA;
         }
     }
-
+    
 }
 
 
 export class StdExpr extends RangeExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    calcResult(index, resultA) {
+    
+    calcResult (index, resultA) {
         if (this._range === 0)
             return NaN;
-        let stdData = this._stdBuf[index];
+        let stdData = this._stdBuf[ index ];
         let first = ExprEnv.get()._firstIndex;
         if (first < 0) {
             stdData.resultMA = resultA;
@@ -742,42 +786,42 @@ export class StdExpr extends RangeExpr {
             let n = this._range;
             if (n >= index + 1 - first) {
                 n = index + 1 - first;
-                stdData.resultMA = this._stdBuf[index - 1].resultMA * (1.0 - 1.0 / n) + (resultA / n);
+                stdData.resultMA = this._stdBuf[ index - 1 ].resultMA * (1.0 - 1.0 / n) + (resultA / n);
             } else {
-                stdData.resultMA = this._stdBuf[index - 1].resultMA + (resultA - this._buf[index - n].resultA) / n;
+                stdData.resultMA = this._stdBuf[ index - 1 ].resultMA + (resultA - this._buf[ index - n ].resultA) / n;
             }
             let sum = 0;
             for (let i = index - n + 1; i <= index; i++)
-                sum += Math.pow(this._buf[i].resultA - stdData.resultMA, 2);
+                sum += Math.pow(this._buf[ i ].resultA - stdData.resultMA, 2);
             return Math.sqrt(sum / n);
         }
         stdData.resultMA = resultA;
         return 0.0;
     }
-
-    reserve(rid, count) {
+    
+    reserve (rid, count) {
         if (this._rid < rid) {
             for (let c = count; c > 0; c--)
-                this._stdBuf.push({resultMA: NaN});
+                this._stdBuf.push({resultMA : NaN});
         }
         super.reserve(rid, count);
     }
-
-    clear() {
+    
+    clear () {
         super.clear();
         this._stdBuf = [];
     }
-
+    
 }
 
 
 export class MaExpr extends RangeExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    calcResult(index, resultA) {
+    
+    calcResult (index, resultA) {
         if (this._range === 0)
             return NaN;
         let first = ExprEnv.get()._firstIndex;
@@ -787,57 +831,57 @@ export class MaExpr extends RangeExpr {
             let n = this._range;
             if (n >= index + 1 - first) {
                 n = index + 1 - first;
-                return this._buf[index - 1].result * (1.0 - 1.0 / n) + (resultA / n);
+                return this._buf[ index - 1 ].result * (1.0 - 1.0 / n) + (resultA / n);
             }
-            return this._buf[index - 1].result + (resultA - this._buf[index - n].resultA) / n;
+            return this._buf[ index - 1 ].result + (resultA - this._buf[ index - n ].resultA) / n;
         } else {
             return resultA;
         }
     }
-
+    
 }
 
 
 export class EmaExpr extends RangeExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     }
-
-    initRange() {
+    
+    initRange () {
         super.initRange();
         this._alpha = 2.0 / (this._range + 1);
     }
-
-    calcResult(index, resultA) {
+    
+    calcResult (index, resultA) {
         if (this._range === 0)
             return NaN;
         let first = ExprEnv.get()._firstIndex;
         if (first < 0)
             return resultA;
         if (index > first) {
-            let prev = this._buf[index - 1];
+            let prev = this._buf[ index - 1 ];
             return this._alpha * (resultA - prev.result) + prev.result;
         }
         return resultA;
     }
-
+    
 }
 
 
 export class ExpmemaExpr extends EmaExpr {
-
-    constructor(a, b) {
+    
+    constructor (a, b) {
         super(a, b);
     };
-
-    calcResult(index, resultA) {
+    
+    calcResult (index, resultA) {
         let first = ExprEnv.get()._firstIndex;
         if (first < 0)
             return resultA;
         if (index > first) {
             let n = this._range;
-            let prev = this._buf[index - 1];
+            let prev = this._buf[ index - 1 ];
             if (n >= index + 1 - first) {
                 n = index + 1 - first;
                 return prev.result * (1.0 - 1.0 / n) + (resultA / n);
@@ -846,24 +890,24 @@ export class ExpmemaExpr extends EmaExpr {
         }
         return resultA;
     }
-
+    
 }
 
 
 export class SmaExpr extends RangeExpr {
-
-    constructor(a, b, c) {
+    
+    constructor (a, b, c) {
         super(a, b);
         this._exprC = c;
         this._mul = null;
     }
-
-    initRange() {
+    
+    initRange () {
         super.initRange();
         this._mul = this._exprC.execute(0);
     }
-
-    calcResult(index, resultA) {
+    
+    calcResult (index, resultA) {
         if (this._range === 0)
             return NaN;
         let first = ExprEnv.get()._firstIndex;
@@ -873,7 +917,7 @@ export class SmaExpr extends RangeExpr {
             let n = this._range;
             if (n > index + 1 - first)
                 n = index + 1 - first;
-            return ((n - 1) * this._buf[index - 1].result + resultA * this._mul) / n;
+            return ((n - 1) * this._buf[ index - 1 ].result + resultA * this._mul) / n;
         }
         return resultA;
     }
@@ -881,8 +925,8 @@ export class SmaExpr extends RangeExpr {
 
 
 export class SarExpr extends OpABCDExpr {
-
-    constructor(a, b, c, d) {
+    
+    constructor (a, b, c, d) {
         super(a, b, c, d);
         this._buf = [];
         this._range = -1;
@@ -890,15 +934,15 @@ export class SarExpr extends OpABCDExpr {
         this._step = null;
         this._max = null;
     }
-
-    execute(index) {
+    
+    execute (index) {
         if (this._range < 0) {
             this._range = this._exprA.execute(0);
             this._min = this._exprB.execute(0) / 100.0;
             this._step = this._exprC.execute(0) / 100.0;
             this._max = this._exprD.execute(0) / 100.0;
         }
-        let data = this._buf[index];
+        let data = this._buf[ index ];
         let exprEnv = ExprEnv.get();
         let first = exprEnv._firstIndex;
         if (first < 0) {
@@ -909,7 +953,7 @@ export class SarExpr extends OpABCDExpr {
         } else {
             let high = exprEnv._ds.getDataAt(index).high;
             let low = exprEnv._ds.getDataAt(index).low;
-            let prev = this._buf[index - 1];
+            let prev = this._buf[ index - 1 ];
             data.sar = prev.sar + prev.af * (prev.ep - prev.sar);
             if (prev.longPos) {
                 data.longPos = true;
@@ -955,18 +999,18 @@ export class SarExpr extends OpABCDExpr {
         }
         return data.sar;
     }
-
-    reserve(rid, count) {
+    
+    reserve (rid, count) {
         if (this._rid < rid) {
             for (let c = count; c > 0; c--)
-                this._buf.push({longPos: true, sar: NaN, ep: NaN, af: NaN});
+                this._buf.push({longPos : true, sar : NaN, ep : NaN, af : NaN});
         }
         super.reserve(rid, count);
     }
-
-    clear() {
+    
+    clear () {
         super.clear();
         this._range = -1;
     }
-
+    
 }

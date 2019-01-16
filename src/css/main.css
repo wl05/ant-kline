@@ -11,7 +11,7 @@ body {
     font-size: 12px;
     height: 100%;
     position: relative;
-    width: 100%
+    /*width: calc(100% - 450px)*/
 }
 
 .chart_container div,
@@ -378,7 +378,7 @@ body {
     height: 16px;
     padding: 0;
     width: 16px;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 .chart_container a.chart_icon:hover {
@@ -721,13 +721,16 @@ body {
 #chart_mainCanvas {
     overflow: hidden;
     position: absolute;
-    z-index: 0
+    z-index: 0;
+    /*width: calc(100% - 250px);*/
+
 }
 
 #chart_overlayCanvas {
     overflow: hidden;
     position: absolute;
-    z-index: 2
+    z-index: 2;
+    /*width: calc(100% - 250px);*/
 }
 
 #chart_loading {
@@ -878,7 +881,7 @@ body {
 
 .trade_container.dark {
     background: #0a0a0a;
-    color: #f1f1f1
+    color: #f1f1f1;
 }
 
 .m_righttop {

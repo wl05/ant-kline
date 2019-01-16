@@ -9,11 +9,15 @@
     <script src="../lib/jquery.mousewheel.js"></script>
     <style type="text/css">
         .kline {
-            width: 1200px;
+            width: 100%;
             margin-left: auto;
             margin-right: auto;
             height: 462px;
             position: relative;
+        }
+
+        .kline #kline_container {
+            width: 100%;
         }
     </style>
 </head>
@@ -56,10 +60,9 @@
 <script src="../dist/kline.js"></script>
 
 <script type="text/javascript">
-
     var kline = new Kline({
         element : "#kline_container",
-        width : 1200,
+        width : 2000,
         height : 650,
         theme : 'dark', // light/dark
         language : 'zh-cn', // zh-cn/en-us/zh-tw
@@ -67,7 +70,7 @@
         symbol : "BTC",
         symbolName : "BTC/USD",
         type : "poll", // poll/socket
-        url : "localhost:3000",
+        url : "192.168.1.11:3000",
         limit : 1000,
         intervalTime : 5000,
         debug : true,
@@ -78,7 +81,6 @@
     });
 
     kline.draw();
-
 
     $('#resize-btn').click(function () {
         var height = $('#height').val();

@@ -1,40 +1,43 @@
-import {ChartManager} from './chart_manager'
-import {ChartSettings} from './chart_settings'
+import { ChartManager } from './chart_manager'
+import { ChartSettings } from './chart_settings'
 import * as data_sources from './data_sources'
 import * as data_providers from './data_providers'
 import * as areas from './areas'
 import * as plotters from './plotters'
-import {Timeline} from './timeline'
-import {CName} from './cname'
+import { Timeline } from './timeline'
+import { CName } from './cname'
 import * as layouts from './layouts'
 import * as themes from './themes'
 import * as ranges from './ranges'
 
 export class Template {
-
+    
     static displayVolume = true;
-
-    static createCandlestickDataSource(dsAlias) {
+    
+    static createCandlestickDataSource (dsAlias) {
         return new data_sources.MainDataSource(dsAlias);
     }
-
-    static createDataSource(dsName, dsAlias, createFunc) {
+    
+    static createDataSource (dsName, dsAlias, createFunc) {
         let mgr = ChartManager.instance;
         if (mgr.getCachedDataSource(dsAlias) === null)
             mgr.setCachedDataSource(dsAlias, createFunc(dsAlias));
         mgr.setCurrentDataSource(dsName, dsAlias);
         mgr.updateData(dsName, null);
     }
-
-    static createTableComps(dsName) {
+    
+    static createTableComps (dsName) {
+        
         this.createMainChartComps(dsName);
+        
         if (this.displayVolume) {
             this.createIndicatorChartComps(dsName, "VOLUME");
         }
         this.createTimelineComps(dsName);
+        
     }
-
-    static createMainChartComps(dsName) {
+    
+    static createMainChartComps (dsName) {
         let mgr = ChartManager.instance;
         let tableLayout = mgr.getArea(dsName + ".charts");
         let areaName = dsName + ".main";
@@ -77,8 +80,8 @@ export class Template {
         plotter = new plotters.LastClosePlotter(areaName + "Range.decoration");
         mgr.setPlotter(plotter.getName(), plotter);
     }
-
-    static createIndicatorChartComps(dsName, indicName) {
+    
+    static createIndicatorChartComps (dsName, indicName) {
         let mgr = ChartManager.instance;
         let tableLayout = mgr.getArea(dsName + ".charts");
         let areaName = dsName + ".indic" + tableLayout.getNextRowId();
@@ -93,10 +96,10 @@ export class Template {
             for (i = 0; i < rowIndex; i++) {
                 a = tableLayout.getAreaAt(i << 1);
                 a.setTop(0);
-                a.setBottom(heights[i]);
+                a.setBottom(heights[ i ]);
             }
             area.setTop(0);
-            area.setBottom(heights[rowIndex]);
+            area.setBottom(heights[ rowIndex ]);
         }
         let rangeArea = new areas.IndicatorRangeArea(rangeAreaName);
         mgr.setArea(rangeAreaName, rangeArea);
@@ -124,8 +127,8 @@ export class Template {
         plotter = new plotters.RangeSelectionPlotter(areaName + "Range.selection");
         mgr.setPlotter(plotter.getName(), plotter);
     }
-
-    static createTimelineComps(dsName) {
+    
+    static createTimelineComps (dsName) {
         let mgr = ChartManager.instance;
         let plotter;
         let timeline = new Timeline(dsName);
@@ -137,8 +140,8 @@ export class Template {
         plotter = new plotters.TimelineSelectionPlotter(dsName + ".timeline.selection");
         mgr.setPlotter(plotter.getName(), plotter);
     }
-
-    static createLiveOrderComps(dsName) {
+    
+    static createLiveOrderComps (dsName) {
         let mgr = ChartManager.instance;
         let plotter;
         plotter = new plotters.BackgroundPlotter(dsName + ".main.background");
@@ -146,8 +149,8 @@ export class Template {
         plotter = new plotters.CLiveOrderPlotter(dsName + ".main.main");
         mgr.setPlotter(plotter.getName(), plotter);
     }
-
-    static createLiveTradeComps(dsName) {
+    
+    static createLiveTradeComps (dsName) {
         let mgr = ChartManager.instance;
         let plotter;
         plotter = new plotters.BackgroundPlotter(dsName + ".main.background");
@@ -155,12 +158,12 @@ export class Template {
         plotter = new plotters.CLiveTradePlotter(dsName + ".main.main");
         mgr.setPlotter(plotter.getName(), plotter);
     }
-
+    
 }
 
 export class DefaultTemplate extends Template {
-
-    static loadTemplate(dsName, dsAlias) {
+    
+    static loadTemplate (dsName, dsAlias) {
         let mgr = ChartManager.instance;
         let settings = ChartSettings.get();
         let frameName = (new CName(dsName)).getCompAt(0);
@@ -183,13 +186,13 @@ export class DefaultTemplate extends Template {
         mgr.setThemeName(frameName, settings.theme);
         return mgr;
     }
-
+    
 }
 
 
 export class TemplateMeasuringHandler {
-
-    static onMeasuring(sender, args) {
+    
+    static onMeasuring (sender, args) {
         let width = args.Width;
         let height = args.Height;
         let areaName = sender.getNameObject().getCompAt(2);
@@ -197,5 +200,5 @@ export class TemplateMeasuringHandler {
             sender.setMeasuredDimension(width, 22);
         }
     }
-
+    
 }
