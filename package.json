@@ -1,6 +1,6 @@
 {
     "name": "ant-kline",
-    "version": "1.2.8",
+    "version": "1.2.9",
     "description": "对kline.js的自定义修改",
     "main": "dist/kline.js",
     "directories": {

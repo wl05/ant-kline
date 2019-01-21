@@ -900,6 +900,10 @@ export class ChartManager {
                 indic = new indicators.VOLUMEIndicator();
                 range = new ranges.ZeroBasedPositiveRange(areaName);
                 break;
+            case "ATR":
+                indic = new indicators.ATRIndicator();
+                range = new ranges.ZeroCenteredRange(areaName);
+                break;
             case "MACD":
                 indic = new indicators.MACDIndicator();
                 range = new ranges.ZeroCenteredRange(areaName);

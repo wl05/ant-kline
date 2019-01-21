@@ -1,9 +1,9 @@
-import {NamedObject} from './named_object'
-import {ChartManager} from './chart_manager'
+import { NamedObject } from './named_object'
+import { ChartManager } from './chart_manager'
 
 export class Range extends NamedObject {
-
-    constructor(name) {
+    
+    constructor (name) {
         super(name);
         this._updated = true;
         this._minValue = Number.MAX_VALUE;
@@ -20,56 +20,56 @@ export class Range extends NamedObject {
         this._selectedValue = -Number.MAX_VALUE;
         this._gradations = [];
     }
-
-    isUpdated() {
+    
+    isUpdated () {
         return this._updated;
     }
-
-    setUpdated(v) {
+    
+    setUpdated (v) {
         this._updated = v;
     }
-
-    getMinValue() {
+    
+    getMinValue () {
         return this._minValue;
     }
-
-    getMaxValue() {
+    
+    getMaxValue () {
         return this._maxValue;
     }
-
-    getRange() {
+    
+    getRange () {
         return this._maxValue - this._minValue;
     }
-
-    getOuterMinValue() {
+    
+    getOuterMinValue () {
         return this._outerMinValue;
     }
-
-    getOuterMaxValue() {
+    
+    getOuterMaxValue () {
         return this._outerMaxValue;
     }
-
-    getOuterRange() {
+    
+    getOuterRange () {
         return this._outerMaxValue - this._outerMinValue;
     }
-
-    getHeight() {
+    
+    getHeight () {
         return Math.max(0, this._bottom - this._top);
     }
-
-    getGradations() {
+    
+    getGradations () {
         return this._gradations;
     }
-
-    getMinInterval() {
+    
+    getMinInterval () {
         return this._minInterval;
     }
-
-    setMinInterval(v) {
+    
+    setMinInterval (v) {
         this._minInterval = v;
     }
-
-    getSelectedPosition() {
+    
+    getSelectedPosition () {
         if (this._selectedPosition >= 0) {
             return this._selectedPosition;
         }
@@ -78,8 +78,8 @@ export class Range extends NamedObject {
         }
         return -1;
     }
-
-    getSelectedValue() {
+    
+    getSelectedValue () {
         if (this._selectedValue > -Number.MAX_VALUE) {
             return this._selectedValue;
         }
@@ -93,73 +93,73 @@ export class Range extends NamedObject {
         }
         return this.toValue(this._selectedPosition);
     }
-
-    setPaddingTop(p) {
+    
+    setPaddingTop (p) {
         this._paddingTop = p;
     }
-
-    setPaddingBottom(p) {
+    
+    setPaddingBottom (p) {
         this._paddingBottom = p;
     }
-
-    toValue(y) {
+    
+    toValue (y) {
         return this._maxValue - (y - this._top) / this._ratio;
     }
-
-    toY(value) {
+    
+    toY (value) {
         if (this._ratio > 0) {
             return this._top + Math.floor((this._maxValue - value) * this._ratio + 0.5);
         }
         return this._top;
     }
-
-    toHeight(value) {
-		if (value == Infinity || this._ratio == 0) {
-		  return 1.5;
-		}
-	  	return Math.floor(value * this._ratio + 1.5);
+    
+    toHeight (value) {
+        if (value == Infinity || this._ratio == 0) {
+            return 1.5;
+        }
+        return Math.floor(value * this._ratio + 1.5);
     }
-
-    update() {
+    
+    update () {
         let min = Number.MAX_VALUE;
         let max = -Number.MAX_VALUE;
         let mgr = ChartManager.instance;
-        let dp, dpNames = [".main", ".secondary"];
+        let dp, dpNames = [ ".main", ".secondary" ];
         for (let i = 0; i < dpNames.length; i++) {
-            dp = mgr.getDataProvider(this.getName() + dpNames[i]);
+            dp = mgr.getDataProvider(this.getName() + dpNames[ i ]);
             if (dp !== null && dp !== undefined) {
                 min = Math.min(min, dp.getMinValue());
                 max = Math.max(max, dp.getMaxValue());
             }
         }
-        let r = {"min": min, "max": max};
+        let r = {"min" : min, "max" : max};
         this.preSetRange(r);
         this.setRange(r.min, r.max);
     }
-
-    select(v) {
+    
+    select (v) {
         this._selectedValue = v;
         this._selectedPosition = -1;
     }
-
-    selectAt(y) {
+    
+    selectAt (y) {
         this._selectedPosition = y;
         this._selectedValue = -Number.MAX_VALUE;
     }
-
-    unselect() {
+    
+    unselect () {
         this._selectedPosition = -1;
         this._selectedValue = -Number.MAX_VALUE;
     }
-
-    preSetRange(r) {
+    
+    preSetRange (r) {
         if (r.min === r.max) {
             r.min = -1.0;
             r.max = 1.0;
         }
     }
-
-    setRange(minValue, maxValue) {
+    
+    setRange (minValue, maxValue) {
         let mgr = ChartManager.instance;
         let area = mgr.getArea(this.getAreaName());
         if (this._minValue === minValue && this._maxValue === maxValue && !area.isChanged()) {
@@ -186,8 +186,8 @@ export class Range extends NamedObject {
         this._outerMaxValue = this.toValue(area.getTop());
         this.updateGradations();
     }
-
-    calcInterval() {
+    
+    calcInterval () {
         let H = this.getHeight();
         let h = this.getMinInterval();
         if ((H / h) <= 1) {
@@ -214,8 +214,8 @@ export class Range extends NamedObject {
         }
         return m;
     }
-
-    updateGradations() {
+    
+    updateGradations () {
         this._gradations = [];
         let interval = this.calcInterval();
         if (interval <= 0.0) {
@@ -227,62 +227,62 @@ export class Range extends NamedObject {
             v -= interval;
         } while (v > this.getMinValue());
     }
-
+    
 }
 
 
 export class PositiveRange extends Range {
-
-    constructor(name) {
+    
+    constructor (name) {
         super(name);
     }
-
-    preSetRange(r) {
+    
+    preSetRange (r) {
         if (r.min < 0) r.min = 0;
         if (r.max < 0) r.max = 0;
     }
-
+    
 }
 
 
 export class ZeroBasedPositiveRange extends Range {
-
-    constructor(name) {
+    
+    constructor (name) {
         super(name);
     }
-
-    preSetRange(r) {
+    
+    preSetRange (r) {
         r.min = 0;
         if (r.max < 0) r.max = 0;
     }
-
+    
 }
 
 
 export class MainRange extends Range {
-
-    constructor(name) {
+    
+    constructor (name) {
         super(name);
     }
-
-    preSetRange(r) {
+    
+    preSetRange (r) {
         let mgr = ChartManager.instance;
-
+        
         let timeline = mgr.getTimeline(this.getDataSourceName());
         let dIndex = timeline.getMaxIndex() - timeline.getLastIndex();
         if (dIndex < 25) {
             let ds = mgr.getDataSource(this.getDataSourceName());
-
+            
             let data = ds.getDataAt(ds.getDataCount() - 1);
             let d = ((r.max - r.min) / 4) * (1 - (dIndex / 25));
-
+            
             r.min = Math.min(r.min, Math.max(data.low - d, 0));
             r.max = Math.max(r.max, data.high + d);
         }
-
+        
         if (r.min > 0) {
             let a = r.max / r.min;
-
+            
             if (a < 1.016) {
                 let m = (r.max + r.min) / 2.0;
                 let c = (a - 1.0) * 1.5;
@@ -297,17 +297,17 @@ export class MainRange extends Range {
         if (r.min < 0) r.min = 0;
         if (r.max < 0) r.max = 0;
     }
-
+    
 }
 
 
 export class ZeroCenteredRange extends Range {
-
-    constructor(name) {
+    
+    constructor (name) {
         super(name);
     }
-
-    calcInterval(area) {
+    
+    calcInterval (area) {
         let h = this.getMinInterval();
         if (area.getHeight() / h < 2) {
             return 0.0;
@@ -321,8 +321,8 @@ export class ZeroCenteredRange extends Range {
         i -= 2;
         return r / i;
     }
-
-    updateGradations() {
+    
+    updateGradations () {
         this._gradations = [];
         let mgr = ChartManager.instance;
         let area = mgr.getArea(this.getAreaName());
@@ -337,23 +337,23 @@ export class ZeroCenteredRange extends Range {
             v += interval;
         } while (v <= this.getMaxValue());
     }
-
-    preSetRange(r) {
+    
+    preSetRange (r) {
         let abs = Math.max(Math.abs(r.min), Math.abs(r.max));
         r.min = -abs;
         r.max = abs;
     }
-
+    
 }
 
 
 export class PercentageRange extends Range {
-
-    constructor(name) {
+    
+    constructor (name) {
         super(name);
     }
-
-    updateGradations() {
+    
+    updateGradations () {
         this._gradations = [];
         let mgr = ChartManager.instance;
         let area = mgr.getArea(this.getAreaName());
@@ -385,6 +385,6 @@ export class PercentageRange extends Range {
             } while (v < this.getMaxValue());
         }
     }
-
+    
 }
 

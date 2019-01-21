@@ -120,18 +120,43 @@ export class BalanceExpr extends Expr {
             balance = window.balance;
         }
         window.balance = balance;
+        // console.log('balance', balance)
         return balance;
     }
 }
 
+
+export class AtrExprDetail extends Expr {
+    execute (index) {
+        let result = "";
+        if (ExprEnv.get()._ds.getDataAt(index).atr) {
+            result = ExprEnv.get()._ds.getDataAt(index).atr.toFixed(8)
+        }
+        return result ? result : 'None';
+    }
+}
+
+export class AtrExprRatio extends Expr {
+    execute (index) {
+        let result = "";
+        if (ExprEnv.get()._ds.getDataAt(index).atr) {
+            result = ((ExprEnv.get()._ds.getDataAt(index).atr.toFixed(4) / ExprEnv.get()._ds.getDataAt(index).close.toFixed(4))).toFixed(6) * 100 + '%'
+        }
+        return result ? result : 'None';
+    }
+}
+
+export class AtrExpr extends Expr {
+    execute (index) {
+        return (ExprEnv.get()._ds.getDataAt(index).atr.toFixed(4) / ExprEnv.get()._ds.getDataAt(index).close.toFixed(4)) * 10000
+    }
+}
+
 export class VolumeExpr extends Expr {
-    
     execute (index) {
         return ExprEnv.get()._ds.getDataAt(index).volume;
     }
-    
 }
-
 
 export class ConstExpr extends Expr {
     

@@ -259,6 +259,28 @@ export class VOLUMEIndicator extends Indicator {
     }
 }
 
+export class ATRIndicator extends Indicator {
+    
+    constructor () {
+        super();
+        this.addOutput(new exprs.OutputExpr("ATR",
+            new exprs.AtrExprDetail(),
+            exprs.OutputExpr.outputStyle.None
+        ));
+        this.addOutput(new exprs.OutputExpr("ATR/Close Ratio",
+            new exprs.AtrExprRatio(),
+            exprs.OutputExpr.outputStyle.None
+        ));
+        this.addOutput(new exprs.OutputExpr("ATR Ratio Value",
+            new exprs.MulExpr(new exprs.AtrExpr(), new exprs.AtrExpr())
+        ));
+    }
+    
+    getName () {
+        return "ATR";
+    }
+}
+
 
 export class MACDIndicator extends Indicator {
     
@@ -322,16 +344,11 @@ export class TRADEIndicator extends Indicator {
             new exprs.TradeExpr(),
             exprs.OutputExpr.outputStyle.None
         ));
-        
+        console.log(new exprs.BalanceExpr())
         this.addOutput(new exprs.OutputExpr("Balance",
             new exprs.MaExpr(new exprs.BalanceExpr(), new exprs.BalanceExpr())
         ));
         
-        // this.addOutput(new exprs.RangeOutputExpr("MA",
-        //     new exprs.MaExpr(new exprs.CloseExpr(), M1),
-        //     exprs.OutputExpr.outputStyle.Line,
-        //     themes.Theme.Color.Indicator1
-        // ));
         let TRADE = new exprs.OutputExpr("TRADE",
             new exprs.MulExpr(
                 new exprs.SubExpr(DIF, DEA),
