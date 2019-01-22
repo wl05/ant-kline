@@ -128,29 +128,41 @@ export class BalanceExpr extends Expr {
 
 export class AtrExprDetail extends Expr {
     execute (index) {
-        let result = "";
-        if (ExprEnv.get()._ds.getDataAt(index).atr) {
-            result = ExprEnv.get()._ds.getDataAt(index).atr.toFixed(8)
-        }
-        return result ? result : 'None';
+        return ExprEnv.get()._ds.getDataAt(index).atr.toFixed(4)
     }
 }
 
 export class AtrExprRatio extends Expr {
     execute (index) {
-        let result = "";
-        if (ExprEnv.get()._ds.getDataAt(index).atr) {
-            result = ((ExprEnv.get()._ds.getDataAt(index).atr.toFixed(4) / ExprEnv.get()._ds.getDataAt(index).close.toFixed(4))).toFixed(6) * 100 + '%'
-        }
-        return result ? result : 'None';
+        return (((ExprEnv.get()._ds.getDataAt(index).atr / ExprEnv.get()._ds.getDataAt(index).close)).toFixed(4)) * 100 + '%'
     }
 }
 
 export class AtrExpr extends Expr {
     execute (index) {
-        return (ExprEnv.get()._ds.getDataAt(index).atr.toFixed(4) / ExprEnv.get()._ds.getDataAt(index).close.toFixed(4)) * 10000
+        return ((ExprEnv.get()._ds.getDataAt(index).atr / ExprEnv.get()._ds.getDataAt(index).close) * 10000).toFixed(4)
     }
 }
+
+
+export class AtrExprSecondDetail extends Expr {
+    execute (index) {
+        return ExprEnv.get()._ds.getDataAt(index).atr_second.toFixed(4)
+    }
+}
+
+export class AtrExprSecondRatio extends Expr {
+    execute (index) {
+        return (((ExprEnv.get()._ds.getDataAt(index).atr_second / ExprEnv.get()._ds.getDataAt(index).close)).toFixed(4)) * 100 + '%'
+    }
+}
+
+export class AtrExprSecond extends Expr {
+    execute (index) {
+        return ((ExprEnv.get()._ds.getDataAt(index).atr_second / ExprEnv.get()._ds.getDataAt(index).close) * 10000).toFixed(4)
+    }
+}
+
 
 export class VolumeExpr extends Expr {
     execute (index) {

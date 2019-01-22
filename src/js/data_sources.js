@@ -120,15 +120,15 @@ export class MainDataSource extends DataSource {
         }
         
         for (let i = 0; i < data.length; i++) {
-            if (i <= 20) {
+            
+            if (i <= 30) {
                 data[ i ].atr = 0;
-            } else if (i > 20) {
-                data[ i ].atr = _atr(data.slice(i - 20, i + 1))
+            } else if (i > 30) {
+                data[ i ].atr = _atr(data.slice(i - 30, i + 1))
+                data[ i ].atr_second = _atr(data.slice(i - 5, i + 1))
             }
         }
-        
         return data
-        
     }
     
     update (data) {

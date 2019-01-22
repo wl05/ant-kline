@@ -263,16 +263,29 @@ export class ATRIndicator extends Indicator {
     
     constructor () {
         super();
-        this.addOutput(new exprs.OutputExpr("ATR",
+        this.addOutput(new exprs.OutputExpr("ATR(30)",
             new exprs.AtrExprDetail(),
             exprs.OutputExpr.outputStyle.None
         ));
-        this.addOutput(new exprs.OutputExpr("ATR/Close Ratio",
+        this.addOutput(new exprs.OutputExpr("ATR/Close Ratio(30)",
             new exprs.AtrExprRatio(),
             exprs.OutputExpr.outputStyle.None
         ));
-        this.addOutput(new exprs.OutputExpr("ATR Ratio Value",
-            new exprs.MulExpr(new exprs.AtrExpr(), new exprs.AtrExpr())
+        this.addOutput(new exprs.OutputExpr("ATR Ratio Value(30)",
+            new exprs.MaxExpr(new exprs.AtrExpr(), new exprs.AtrExpr())
+        ));
+        
+        
+        this.addOutput(new exprs.OutputExpr("ATR(5)",
+            new exprs.AtrExprSecondDetail(),
+            exprs.OutputExpr.outputStyle.None,
+        ));
+        this.addOutput(new exprs.OutputExpr("ATR/Close Ratio(5)",
+            new exprs.AtrExprSecondRatio(),
+            exprs.OutputExpr.outputStyle.None,
+        ));
+        this.addOutput(new exprs.OutputExpr("ATR Ratio Value(5)",
+            new exprs.MaExpr(new exprs.AtrExprSecond(), new exprs.AtrExprSecond())
         ));
     }
     

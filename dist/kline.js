@@ -4005,10 +4005,11 @@ function (_DataSource) {
       }
 
       for (var i = 0; i < data.length; i++) {
-        if (i <= 20) {
+        if (i <= 30) {
           data[i].atr = 0;
-        } else if (i > 20) {
-          data[i].atr = _atr(data.slice(i - 20, i + 1));
+        } else if (i > 30) {
+          data[i].atr = _atr(data.slice(i - 30, i + 1));
+          data[i].atr_second = _atr(data.slice(i - 5, i + 1));
         }
       }
 
@@ -12029,13 +12030,13 @@ function (_NamedObject4) {
         out = indic.getOutputAt(n);
         var style = out.getStyle();
 
-        if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["C" /* OutputExpr */].outputStyle.VolumeStick) {
+        if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["F" /* OutputExpr */].outputStyle.VolumeStick) {
           this.drawVolumeStick(context, theme, mgr.getDataSource(this.getDataSourceName()), start, last, timeline.toItemLeft(start), cW, timeline.getItemWidth(), range);
-        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["C" /* OutputExpr */].outputStyle.MACDStick) {
+        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["F" /* OutputExpr */].outputStyle.MACDStick) {
           this.drawMACDStick(context, theme, out, start, last, timeline.toItemLeft(start), cW, timeline.getItemWidth(), range);
-        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["C" /* OutputExpr */].outputStyle.SARPoint) {
+        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["F" /* OutputExpr */].outputStyle.SARPoint) {
           this.drawSARPoint(context, theme, out, start, last, timeline.toItemCenter(start), cW, timeline.getItemWidth(), range);
-        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["C" /* OutputExpr */].outputStyle.Custom) {
+        } else if (style === __WEBPACK_IMPORTED_MODULE_5__exprs__["F" /* OutputExpr */].outputStyle.Custom) {
           this.drawCustomStick(context, theme, out, start, last, timeline.toItemLeft(start), cW, timeline.getItemWidth(), range, mgr.getDataSource(this.getDataSourceName()));
         }
       }
@@ -12051,7 +12052,7 @@ function (_NamedObject4) {
         var x = center;
         out = indic.getOutputAt(n);
 
-        if (out.getStyle() === __WEBPACK_IMPORTED_MODULE_5__exprs__["C" /* OutputExpr */].outputStyle.Line) {
+        if (out.getStyle() === __WEBPACK_IMPORTED_MODULE_5__exprs__["F" /* OutputExpr */].outputStyle.Line) {
           var v = void 0,
               points = [];
 
@@ -14329,54 +14330,57 @@ function (_CToolPlotter13) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return ExprEnv; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return ExprEnv; });
 /* unused harmony export Expr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return OpenExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return HighExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return LowExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return CloseExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return TradeExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return BalanceExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return OpenExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return HighExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return LowExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return CloseExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "O", function() { return TradeExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return BalanceExpr; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return AtrExprDetail; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return AtrExprRatio; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return AtrExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return VolumeExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return ConstExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return ParameterExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return AtrExprSecondDetail; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return AtrExprSecondRatio; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return AtrExprSecond; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return VolumeExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return ConstExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return ParameterExpr; });
 /* unused harmony export OpAExpr */
 /* unused harmony export OpABExpr */
 /* unused harmony export OpABCExpr */
 /* unused harmony export OpABCDExpr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return NegExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return NegExpr; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return AddExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return SubExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return MulExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return DivExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return GtExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return SubExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return MulExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return DivExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return GtExpr; });
 /* unused harmony export GeExpr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return LtExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return LtExpr; });
 /* unused harmony export LeExpr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return EqExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return MaxExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return EqExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return MaxExpr; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AbsExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return RefExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return RefExpr; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AndExpr; });
 /* unused harmony export OrExpr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return IfExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return IfExpr; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return AssignExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return OutputExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return RangeOutputExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return OutputExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return RangeOutputExpr; });
 /* unused harmony export RangeExpr */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return HhvExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return LlvExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return CountExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return SumExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return StdExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return MaExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return EmaExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return ExpmemaExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return SmaExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return SarExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return HhvExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return LlvExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return CountExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return SumExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return StdExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return MaExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return EmaExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return ExpmemaExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return SmaExpr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return SarExpr; });
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
@@ -14657,13 +14661,7 @@ function (_Expr7) {
   _createClass(AtrExprDetail, [{
     key: "execute",
     value: function execute(index) {
-      var result = "";
-
-      if (ExprEnv.get()._ds.getDataAt(index).atr) {
-        result = ExprEnv.get()._ds.getDataAt(index).atr.toFixed(8);
-      }
-
-      return result ? result : 'None';
+      return ExprEnv.get()._ds.getDataAt(index).atr.toFixed(4);
     }
   }]);
 
@@ -14683,13 +14681,7 @@ function (_Expr8) {
   _createClass(AtrExprRatio, [{
     key: "execute",
     value: function execute(index) {
-      var result = "";
-
-      if (ExprEnv.get()._ds.getDataAt(index).atr) {
-        result = (ExprEnv.get()._ds.getDataAt(index).atr.toFixed(4) / ExprEnv.get()._ds.getDataAt(index).close.toFixed(4)).toFixed(6) * 100 + '%';
-      }
-
-      return result ? result : 'None';
+      return (ExprEnv.get()._ds.getDataAt(index).atr / ExprEnv.get()._ds.getDataAt(index).close).toFixed(4) * 100 + '%';
     }
   }]);
 
@@ -14709,16 +14701,76 @@ function (_Expr9) {
   _createClass(AtrExpr, [{
     key: "execute",
     value: function execute(index) {
-      return ExprEnv.get()._ds.getDataAt(index).atr.toFixed(4) / ExprEnv.get()._ds.getDataAt(index).close.toFixed(4) * 10000;
+      return (ExprEnv.get()._ds.getDataAt(index).atr / ExprEnv.get()._ds.getDataAt(index).close * 10000).toFixed(4);
     }
   }]);
 
   return AtrExpr;
 }(Expr);
-var VolumeExpr =
+var AtrExprSecondDetail =
 /*#__PURE__*/
 function (_Expr10) {
-  _inherits(VolumeExpr, _Expr10);
+  _inherits(AtrExprSecondDetail, _Expr10);
+
+  function AtrExprSecondDetail() {
+    _classCallCheck(this, AtrExprSecondDetail);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AtrExprSecondDetail).apply(this, arguments));
+  }
+
+  _createClass(AtrExprSecondDetail, [{
+    key: "execute",
+    value: function execute(index) {
+      return ExprEnv.get()._ds.getDataAt(index).atr_second.toFixed(4);
+    }
+  }]);
+
+  return AtrExprSecondDetail;
+}(Expr);
+var AtrExprSecondRatio =
+/*#__PURE__*/
+function (_Expr11) {
+  _inherits(AtrExprSecondRatio, _Expr11);
+
+  function AtrExprSecondRatio() {
+    _classCallCheck(this, AtrExprSecondRatio);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AtrExprSecondRatio).apply(this, arguments));
+  }
+
+  _createClass(AtrExprSecondRatio, [{
+    key: "execute",
+    value: function execute(index) {
+      return (ExprEnv.get()._ds.getDataAt(index).atr_second / ExprEnv.get()._ds.getDataAt(index).close).toFixed(4) * 100 + '%';
+    }
+  }]);
+
+  return AtrExprSecondRatio;
+}(Expr);
+var AtrExprSecond =
+/*#__PURE__*/
+function (_Expr12) {
+  _inherits(AtrExprSecond, _Expr12);
+
+  function AtrExprSecond() {
+    _classCallCheck(this, AtrExprSecond);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AtrExprSecond).apply(this, arguments));
+  }
+
+  _createClass(AtrExprSecond, [{
+    key: "execute",
+    value: function execute(index) {
+      return (ExprEnv.get()._ds.getDataAt(index).atr_second / ExprEnv.get()._ds.getDataAt(index).close * 10000).toFixed(4);
+    }
+  }]);
+
+  return AtrExprSecond;
+}(Expr);
+var VolumeExpr =
+/*#__PURE__*/
+function (_Expr13) {
+  _inherits(VolumeExpr, _Expr13);
 
   function VolumeExpr() {
     _classCallCheck(this, VolumeExpr);
@@ -14737,8 +14789,8 @@ function (_Expr10) {
 }(Expr);
 var ConstExpr =
 /*#__PURE__*/
-function (_Expr11) {
-  _inherits(ConstExpr, _Expr11);
+function (_Expr14) {
+  _inherits(ConstExpr, _Expr14);
 
   function ConstExpr(v) {
     var _this;
@@ -14761,8 +14813,8 @@ function (_Expr11) {
 }(Expr);
 var ParameterExpr =
 /*#__PURE__*/
-function (_Expr12) {
-  _inherits(ParameterExpr, _Expr12);
+function (_Expr15) {
+  _inherits(ParameterExpr, _Expr15);
 
   function ParameterExpr(name, minValue, maxValue, defaultValue) {
     var _this2;
@@ -14813,8 +14865,8 @@ function (_Expr12) {
 }(Expr);
 var OpAExpr =
 /*#__PURE__*/
-function (_Expr13) {
-  _inherits(OpAExpr, _Expr13);
+function (_Expr16) {
+  _inherits(OpAExpr, _Expr16);
 
   function OpAExpr(a) {
     var _this3;
@@ -14846,8 +14898,8 @@ function (_Expr13) {
 }(Expr);
 var OpABExpr =
 /*#__PURE__*/
-function (_Expr14) {
-  _inherits(OpABExpr, _Expr14);
+function (_Expr17) {
+  _inherits(OpABExpr, _Expr17);
 
   function OpABExpr(a, b) {
     var _this4;
@@ -14884,8 +14936,8 @@ function (_Expr14) {
 }(Expr);
 var OpABCExpr =
 /*#__PURE__*/
-function (_Expr15) {
-  _inherits(OpABCExpr, _Expr15);
+function (_Expr18) {
+  _inherits(OpABCExpr, _Expr18);
 
   function OpABCExpr(a, b, c) {
     var _this5;
@@ -14927,8 +14979,8 @@ function (_Expr15) {
 }(Expr);
 var OpABCDExpr =
 /*#__PURE__*/
-function (_Expr16) {
-  _inherits(OpABCDExpr, _Expr16);
+function (_Expr19) {
+  _inherits(OpABCDExpr, _Expr19);
 
   function OpABCDExpr(a, b, c, d) {
     var _this6;
@@ -29012,7 +29064,7 @@ function () {
   function Indicator() {
     _classCallCheck(this, Indicator);
 
-    this._exprEnv = new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* ExprEnv */]();
+    this._exprEnv = new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* ExprEnv */]();
     this._rid = 0;
     this._params = [];
     this._assigns = [];
@@ -29098,7 +29150,7 @@ function () {
 
       this._exprEnv.setDataSource(ds);
 
-      __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* ExprEnv */].set(this._exprEnv);
+      __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* ExprEnv */].set(this._exprEnv);
 
       try {
         var i, cnt;
@@ -29161,17 +29213,17 @@ function (_Indicator) {
     _classCallCheck(this, HLCIndicator);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(HLCIndicator).call(this));
-    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M1", 2, 1000, 60);
+    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M1", 2, 1000, 60);
 
     _this.addParameter(M1);
 
-    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("HIGH", new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.None));
+    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("HIGH", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.None));
 
-    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("LOW", new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.None));
+    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("LOW", new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.None));
 
-    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("CLOSE", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator0));
+    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("CLOSE", new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator0));
 
-    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M1), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator1));
+    _this.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M1), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator1));
 
     return _this;
   }
@@ -29196,12 +29248,12 @@ function (_Indicator2) {
     _classCallCheck(this, MAIndicator);
 
     _this2 = _possibleConstructorReturn(this, _getPrototypeOf(MAIndicator).call(this));
-    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M1", 2, 1000, 7);
-    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M2", 2, 1000, 30);
-    var M3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M3", 2, 1000, 0);
-    var M4 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M4", 2, 1000, 0);
-    var M5 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M5", 2, 1000, 0);
-    var M6 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M6", 2, 1000, 0);
+    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M1", 2, 1000, 7);
+    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M2", 2, 1000, 30);
+    var M3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M3", 2, 1000, 0);
+    var M4 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M4", 2, 1000, 0);
+    var M5 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M5", 2, 1000, 0);
+    var M6 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M6", 2, 1000, 0);
 
     _this2.addParameter(M1);
 
@@ -29215,17 +29267,17 @@ function (_Indicator2) {
 
     _this2.addParameter(M6);
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M1)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M1)));
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M2)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M2)));
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M3)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M3)));
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M4)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M4)));
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M5)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M5)));
 
-    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M6)));
+    _this2.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M6)));
 
     return _this2;
   }
@@ -29250,12 +29302,12 @@ function (_Indicator3) {
     _classCallCheck(this, EMAIndicator);
 
     _this3 = _possibleConstructorReturn(this, _getPrototypeOf(EMAIndicator).call(this));
-    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M1", 2, 1000, 7);
-    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M2", 2, 1000, 30);
-    var M3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M3", 2, 1000, 0);
-    var M4 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M4", 2, 1000, 0);
-    var M5 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M5", 2, 1000, 0);
-    var M6 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M6", 2, 1000, 0);
+    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M1", 2, 1000, 7);
+    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M2", 2, 1000, 30);
+    var M3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M3", 2, 1000, 0);
+    var M4 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M4", 2, 1000, 0);
+    var M5 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M5", 2, 1000, 0);
+    var M6 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M6", 2, 1000, 0);
 
     _this3.addParameter(M1);
 
@@ -29269,17 +29321,17 @@ function (_Indicator3) {
 
     _this3.addParameter(M6);
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M1)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M1)));
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M2)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M2)));
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M3)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M3)));
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M4)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M4)));
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M5)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M5)));
 
-    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), M6)));
+    _this3.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("EMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), M6)));
 
     return _this3;
   }
@@ -29304,20 +29356,20 @@ function (_Indicator4) {
     _classCallCheck(this, VOLUMEIndicator);
 
     _this4 = _possibleConstructorReturn(this, _getPrototypeOf(VOLUMEIndicator).call(this));
-    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M1", 2, 500, 5);
-    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M2", 2, 500, 10);
+    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M1", 2, 500, 5);
+    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M2", 2, 500, 10);
 
     _this4.addParameter(M1);
 
     _this4.addParameter(M2);
 
-    var VOLUME = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("VOLUME", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* VolumeExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.VolumeStick, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Text4);
+    var VOLUME = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("VOLUME", new __WEBPACK_IMPORTED_MODULE_0__exprs__["P" /* VolumeExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.VolumeStick, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Text4);
 
     _this4.addOutput(VOLUME);
 
-    _this4.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](VOLUME, M1), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator0));
+    _this4.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](VOLUME, M1), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator0));
 
-    _this4.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](VOLUME, M2), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator1));
+    _this4.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](VOLUME, M2), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.Line, __WEBPACK_IMPORTED_MODULE_1__themes__["c" /* Theme */].Color.Indicator1));
 
     return _this4;
   }
@@ -29343,11 +29395,17 @@ function (_Indicator5) {
 
     _this5 = _possibleConstructorReturn(this, _getPrototypeOf(ATRIndicator).call(this));
 
-    _this5.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("ATR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* AtrExprDetail */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.None));
+    _this5.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("ATR(30)", new __WEBPACK_IMPORTED_MODULE_0__exprs__["f" /* AtrExprDetail */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.None));
 
-    _this5.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("ATR/Close Ratio", new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* AtrExprRatio */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.None));
+    _this5.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("ATR/Close Ratio(30)", new __WEBPACK_IMPORTED_MODULE_0__exprs__["g" /* AtrExprRatio */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.None));
 
-    _this5.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("ATR Ratio Value", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* AtrExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* AtrExpr */]())));
+    _this5.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("ATR Ratio Value(30)", new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* AtrExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["e" /* AtrExpr */]())));
+
+    _this5.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("ATR(5)", new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* AtrExprSecondDetail */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.None));
+
+    _this5.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("ATR/Close Ratio(5)", new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* AtrExprSecondRatio */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.None));
+
+    _this5.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("ATR Ratio Value(5)", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* AtrExprSecond */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* AtrExprSecond */]())));
 
     return _this5;
   }
@@ -29372,9 +29430,9 @@ function (_Indicator6) {
     _classCallCheck(this, MACDIndicator);
 
     _this6 = _possibleConstructorReturn(this, _getPrototypeOf(MACDIndicator).call(this));
-    var SHORT = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("SHORT", 2, 200, 12);
-    var LONG = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("LONG", 2, 200, 26);
-    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("MID", 2, 200, 9);
+    var SHORT = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("SHORT", 2, 200, 12);
+    var LONG = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("LONG", 2, 200, 26);
+    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("MID", 2, 200, 9);
 
     _this6.addParameter(SHORT);
 
@@ -29382,15 +29440,15 @@ function (_Indicator6) {
 
     _this6.addParameter(MID);
 
-    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), SHORT), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), LONG)));
+    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), SHORT), new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), LONG)));
 
     _this6.addOutput(DIF);
 
-    var DEA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("DEA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](DIF, MID));
+    var DEA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("DEA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](DIF, MID));
 
     _this6.addOutput(DEA);
 
-    var MACD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("MACD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](DIF, DEA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](2)), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.MACDStick);
+    var MACD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("MACD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](DIF, DEA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](2)), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.MACDStick);
 
     _this6.addOutput(MACD);
 
@@ -29417,23 +29475,23 @@ function (_Indicator7) {
     _classCallCheck(this, TRADEIndicator);
 
     _this7 = _possibleConstructorReturn(this, _getPrototypeOf(TRADEIndicator).call(this));
-    var SHORT = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("", 0, 0, 0);
-    var LONG = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("LONG", 2, 200, 26);
-    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("MID", 2, 200, 9); // this.addParameter(SHORT);
+    var SHORT = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("", 0, 0, 0);
+    var LONG = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("LONG", 2, 200, 26);
+    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("MID", 2, 200, 9); // this.addParameter(SHORT);
     // this.addParameter(LONG);
     // this.addParameter(MID);
 
-    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), SHORT), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), LONG))); // this.addOutput(DIF);
+    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), SHORT), new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), LONG))); // this.addOutput(DIF);
 
-    var DEA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("DEA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](DIF, MID)); // this.addOutput(DEA);
+    var DEA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("DEA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](DIF, MID)); // this.addOutput(DEA);
 
-    _this7.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("Details", new __WEBPACK_IMPORTED_MODULE_0__exprs__["L" /* TradeExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.None));
+    _this7.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("Details", new __WEBPACK_IMPORTED_MODULE_0__exprs__["O" /* TradeExpr */](), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.None));
 
-    console.log(new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* BalanceExpr */]());
+    console.log(new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* BalanceExpr */]());
 
-    _this7.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("Balance", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* BalanceExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["h" /* BalanceExpr */]())));
+    _this7.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("Balance", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* BalanceExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* BalanceExpr */]())));
 
-    var TRADE = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("TRADE", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](DIF, DEA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.Custom);
+    var TRADE = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("TRADE", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](DIF, DEA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.Custom);
 
     _this7.addOutput(TRADE);
 
@@ -29460,46 +29518,46 @@ function (_Indicator8) {
     _classCallCheck(this, DMIIndicator);
 
     _this8 = _possibleConstructorReturn(this, _getPrototypeOf(DMIIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 90, 14);
-    var MM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("MM", 2, 60, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 90, 14);
+    var MM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("MM", 2, 60, 6);
 
     _this8.addParameter(N);
 
     _this8.addParameter(MM);
 
-    var MTR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MTR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1))))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */]()))), N));
+    var MTR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MTR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1))))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */]()))), N));
 
     _this8.addAssign(MTR);
 
-    var HD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1))));
+    var HD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1))));
 
     _this8.addAssign(HD);
 
-    var LD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */]()));
+    var LD = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LD", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */]()));
 
     _this8.addAssign(LD);
 
-    var DMP = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("DMP", new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["c" /* AndExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* GtExpr */](HD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* GtExpr */](HD, LD)), HD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), N));
+    var DMP = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("DMP", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["c" /* AndExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* GtExpr */](HD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* GtExpr */](HD, LD)), HD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), N));
 
     _this8.addAssign(DMP);
 
-    var DMM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("DMM", new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["c" /* AndExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* GtExpr */](LD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* GtExpr */](LD, HD)), LD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), N));
+    var DMM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("DMM", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["c" /* AndExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* GtExpr */](LD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* GtExpr */](LD, HD)), LD, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), N));
 
     _this8.addAssign(DMM);
 
-    var PDI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("PDI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](DMP, MTR), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var PDI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("PDI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](DMP, MTR), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this8.addOutput(PDI);
 
-    var MDI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("MDI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](DMM, MTR), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var MDI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("MDI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](DMM, MTR), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this8.addOutput(MDI);
 
-    var ADX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("ADX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](MDI, PDI)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](MDI, PDI)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)), MM));
+    var ADX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("ADX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* ExpmemaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](MDI, PDI)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](MDI, PDI)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)), MM));
 
     _this8.addOutput(ADX);
 
-    var ADXR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("ADXR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* ExpmemaExpr */](ADX, MM));
+    var ADXR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("ADXR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* ExpmemaExpr */](ADX, MM));
 
     _this8.addOutput(ADXR);
 
@@ -29526,9 +29584,9 @@ function (_Indicator9) {
     _classCallCheck(this, DMAIndicator);
 
     _this9 = _possibleConstructorReturn(this, _getPrototypeOf(DMAIndicator).call(this));
-    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N1", 2, 60, 10);
-    var N2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N2", 2, 250, 50);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M", 2, 100, 10);
+    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N1", 2, 60, 10);
+    var N2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N2", 2, 250, 50);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M", 2, 100, 10);
 
     _this9.addParameter(N1);
 
@@ -29536,11 +29594,11 @@ function (_Indicator9) {
 
     _this9.addParameter(M);
 
-    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), N1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), N2)));
+    var DIF = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("DIF", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), N1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), N2)));
 
     _this9.addOutput(DIF);
 
-    var DIFMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("DIFMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](DIF, M));
+    var DIFMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("DIFMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](DIF, M));
 
     _this9.addOutput(DIFMA);
 
@@ -29567,22 +29625,22 @@ function (_Indicator10) {
     _classCallCheck(this, TRIXIndicator);
 
     _this10 = _possibleConstructorReturn(this, _getPrototypeOf(TRIXIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 100, 12);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M", 2, 100, 9);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 100, 12);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M", 2, 100, 9);
 
     _this10.addParameter(N);
 
     _this10.addParameter(M);
 
-    var MTR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MTR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), N), N), N));
+    var MTR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MTR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["p" /* EmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), N), N), N));
 
     _this10.addAssign(MTR);
 
-    var TRIX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("TRIX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var TRIX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("TRIX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](MTR, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this10.addOutput(TRIX);
 
-    var MATRIX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("MATRIX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](TRIX, M));
+    var MATRIX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("MATRIX", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](TRIX, M));
 
     _this10.addOutput(MATRIX);
 
@@ -29609,19 +29667,19 @@ function (_Indicator11) {
     _classCallCheck(this, BRARIndicator);
 
     _this11 = _possibleConstructorReturn(this, _getPrototypeOf(BRARIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 120, 26);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 120, 26);
 
     _this11.addParameter(N);
 
-    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)));
+    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)));
 
     _this11.addAssign(REF_CLOSE_1);
 
-    var BR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("BR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0), new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), REF_CLOSE_1)), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0), new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](REF_CLOSE_1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */]())), N)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var BR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("BR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["N" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0), new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), REF_CLOSE_1)), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["N" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* MaxExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0), new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](REF_CLOSE_1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */]())), N)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this11.addOutput(BR);
 
-    var AR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("AR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* OpenExpr */]()), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* OpenExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */]()), N)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var AR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("AR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["N" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* OpenExpr */]()), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["N" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* OpenExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */]()), N)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this11.addOutput(AR);
 
@@ -29648,34 +29706,34 @@ function (_Indicator12) {
     _classCallCheck(this, VRIndicator);
 
     _this12 = _possibleConstructorReturn(this, _getPrototypeOf(VRIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 100, 26);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M", 2, 100, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 100, 26);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M", 2, 100, 6);
 
     _this12.addParameter(N);
 
     _this12.addParameter(M);
 
-    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)));
+    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)));
 
     _this12.addAssign(REF_CLOSE_1);
 
-    var TH = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TH", new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), N));
+    var TH = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TH", new __WEBPACK_IMPORTED_MODULE_0__exprs__["N" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["P" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), N));
 
     _this12.addAssign(TH);
 
-    var TL = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TL", new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* LtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), N));
+    var TL = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TL", new __WEBPACK_IMPORTED_MODULE_0__exprs__["N" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* LtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["P" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), N));
 
     _this12.addAssign(TL);
 
-    var TQ = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TQ", new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* EqExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), N));
+    var TQ = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("TQ", new __WEBPACK_IMPORTED_MODULE_0__exprs__["N" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* EqExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["P" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), N));
 
     _this12.addAssign(TQ);
 
-    var VR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("VR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](TH, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](2)), TQ), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](TL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](2)), TQ)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var VR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("VR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](TH, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](2)), TQ), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](TL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](2)), TQ)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this12.addOutput(VR);
 
-    var MAVR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("MAVR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](VR, M));
+    var MAVR = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("MAVR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](VR, M));
 
     _this12.addOutput(MAVR);
 
@@ -29702,23 +29760,23 @@ function (_Indicator13) {
     _classCallCheck(this, OBVIndicator);
 
     _this13 = _possibleConstructorReturn(this, _getPrototypeOf(OBVIndicator).call(this));
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M", 2, 100, 30);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M", 2, 100, 30);
 
     _this13.addParameter(M);
 
-    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)));
+    var REF_CLOSE_1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)));
 
     _this13.addAssign(REF_CLOSE_1);
 
-    var VA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("VA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* NegExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* VolumeExpr */]())));
+    var VA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("VA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["P" /* VolumeExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* NegExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["P" /* VolumeExpr */]())));
 
     _this13.addAssign(VA);
 
-    var OBV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("OBV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* EqExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0), VA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)));
+    var OBV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("OBV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["N" /* SumExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["w" /* IfExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* EqExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), REF_CLOSE_1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0), VA), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)));
 
     _this13.addOutput(OBV);
 
-    var MAOBV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("MAOBV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](OBV, M));
+    var MAOBV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("MAOBV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](OBV, M));
 
     _this13.addOutput(MAOBV);
 
@@ -29745,26 +29803,26 @@ function (_Indicator14) {
     _classCallCheck(this, EMVIndicator);
 
     _this14 = _possibleConstructorReturn(this, _getPrototypeOf(EMVIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 90, 14);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M", 2, 60, 9);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 90, 14);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M", 2, 60, 9);
 
     _this14.addParameter(N);
 
     _this14.addParameter(M);
 
-    var VOLUME = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("VOLUME", new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* VolumeExpr */](), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* VolumeExpr */]()));
+    var VOLUME = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("VOLUME", new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["P" /* VolumeExpr */](), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["P" /* VolumeExpr */]()));
 
     _this14.addAssign(VOLUME);
 
-    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MID", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */]())), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var MID = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("MID", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */]())), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this14.addAssign(MID);
 
-    var EMV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("EMV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](MID, new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](VOLUME, new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */]()))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */]()), N)), N));
+    var EMV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("EMV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](MID, new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](VOLUME, new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */]()))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */]()), N)), N));
 
     _this14.addOutput(EMV);
 
-    var MAEMV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("MAEMV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](EMV, M));
+    var MAEMV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("MAEMV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](EMV, M));
 
     _this14.addOutput(MAEMV);
 
@@ -29791,9 +29849,9 @@ function (_Indicator15) {
     _classCallCheck(this, RSIIndicator);
 
     _this15 = _possibleConstructorReturn(this, _getPrototypeOf(RSIIndicator).call(this));
-    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N1", 2, 120, 6);
-    var N2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N2", 2, 250, 12);
-    var N3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N3", 2, 500, 24);
+    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N1", 2, 120, 6);
+    var N2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N2", 2, 250, 12);
+    var N3 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N3", 2, 500, 24);
 
     _this15.addParameter(N1);
 
@@ -29801,19 +29859,19 @@ function (_Indicator15) {
 
     _this15.addParameter(N3);
 
-    var LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)));
+    var LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)));
 
     _this15.addAssign(LC);
 
-    var CLOSE_LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("CLOSE_LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), LC));
+    var CLOSE_LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("CLOSE_LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), LC));
 
     _this15.addAssign(CLOSE_LC);
 
-    _this15.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("RSI1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), N1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100))));
+    _this15.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("RSI1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), N1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100))));
 
-    _this15.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("RSI2", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), N2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100))));
+    _this15.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("RSI2", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), N2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100))));
 
-    _this15.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("RSI3", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), N3, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N3, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100))));
+    _this15.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("RSI3", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), N3, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N3, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100))));
 
     return _this15;
   }
@@ -29838,34 +29896,34 @@ function (_Indicator16) {
     _classCallCheck(this, WRIndicator);
 
     _this16 = _possibleConstructorReturn(this, _getPrototypeOf(WRIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 100, 10);
-    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N1", 2, 100, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 100, 10);
+    var N1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N1", 2, 100, 6);
 
     _this16.addParameter(N);
 
     _this16.addParameter(N1);
 
-    var HHV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), N));
+    var HHV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), N));
 
     _this16.addAssign(HHV);
 
-    var HHV1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), N1));
+    var HHV1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), N1));
 
     _this16.addAssign(HHV1);
 
-    var LLV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */](), N));
+    var LLV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */](), N));
 
     _this16.addAssign(LLV);
 
-    var LLV1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */](), N1));
+    var LLV1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */](), N1));
 
     _this16.addAssign(LLV1);
 
-    var WR1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("WR1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](HHV, new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](HHV, LLV)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var WR1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("WR1", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](HHV, new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](HHV, LLV)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this16.addOutput(WR1);
 
-    var WR2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("WR2", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](HHV1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](HHV1, LLV1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var WR2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("WR2", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](HHV1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */]()), new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](HHV1, LLV1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this16.addOutput(WR2);
 
@@ -29892,12 +29950,12 @@ function (_Indicator17) {
     _classCallCheck(this, SARIndicator);
 
     _this17 = _possibleConstructorReturn(this, _getPrototypeOf(SARIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](4);
-    var MIN = new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](2);
-    var STEP = new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](2);
-    var MAX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](20);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](4);
+    var MIN = new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](2);
+    var STEP = new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](2);
+    var MAX = new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](20);
 
-    _this17.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("SAR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* SarExpr */](N, MIN, STEP, MAX), __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */].outputStyle.SARPoint));
+    _this17.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("SAR", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SarExpr */](N, MIN, STEP, MAX), __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */].outputStyle.SARPoint));
 
     return _this17;
   }
@@ -29922,9 +29980,9 @@ function (_Indicator18) {
     _classCallCheck(this, KDJIndicator);
 
     _this18 = _possibleConstructorReturn(this, _getPrototypeOf(KDJIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 90, 9);
-    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M1", 2, 30, 3);
-    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M2", 2, 30, 3);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 90, 9);
+    var M1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M1", 2, 30, 3);
+    var M2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M2", 2, 30, 3);
 
     _this18.addParameter(N);
 
@@ -29932,27 +29990,27 @@ function (_Indicator18) {
 
     _this18.addParameter(M2);
 
-    var HHV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["s" /* HighExpr */](), N));
+    var HHV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("HHV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* HhvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* HighExpr */](), N));
 
     _this18.addAssign(HHV);
 
-    var LLV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["v" /* LowExpr */](), N));
+    var LLV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LLV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* LlvExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* LowExpr */](), N));
 
     _this18.addAssign(LLV);
 
-    var RSV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("RSV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), LLV), new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](HHV, LLV)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var RSV = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("RSV", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), LLV), new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](HHV, LLV)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this18.addAssign(RSV);
 
-    var K = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("K", new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SmaExpr */](RSV, M1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)));
+    var K = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("K", new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SmaExpr */](RSV, M1, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)));
 
     _this18.addOutput(K);
 
-    var D = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("D", new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SmaExpr */](K, M2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)));
+    var D = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("D", new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SmaExpr */](K, M2, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)));
 
     _this18.addOutput(D);
 
-    var J = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("J", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](K, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](3)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](D, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](2))));
+    var J = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("J", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](K, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](3)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](D, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](2))));
 
     _this18.addOutput(J);
 
@@ -29979,22 +30037,22 @@ function (_Indicator19) {
     _classCallCheck(this, ROCIndicator);
 
     _this19 = _possibleConstructorReturn(this, _getPrototypeOf(ROCIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 120, 12);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M", 2, 60, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 120, 12);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M", 2, 60, 6);
 
     _this19.addParameter(N);
 
     _this19.addParameter(M);
 
-    var REF_CLOSE_N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_N", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), N));
+    var REF_CLOSE_N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("REF_CLOSE_N", new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), N));
 
     _this19.addAssign(REF_CLOSE_N);
 
-    var ROC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("ROC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), REF_CLOSE_N), REF_CLOSE_N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var ROC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("ROC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), REF_CLOSE_N), REF_CLOSE_N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this19.addOutput(ROC);
 
-    var MAROC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("MAROC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](ROC, M));
+    var MAROC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("MAROC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](ROC, M));
 
     _this19.addOutput(MAROC);
 
@@ -30021,18 +30079,18 @@ function (_Indicator20) {
     _classCallCheck(this, MTMIndicator);
 
     _this20 = _possibleConstructorReturn(this, _getPrototypeOf(MTMIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 120, 12);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M", 2, 60, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 120, 12);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M", 2, 60, 6);
 
     _this20.addParameter(N);
 
     _this20.addParameter(M);
 
-    var MTM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("MTM", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), N)));
+    var MTM = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("MTM", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), N)));
 
     _this20.addOutput(MTM);
 
-    var MTMMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("MTMMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](MTM, M));
+    var MTMMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("MTMMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](MTM, M));
 
     _this20.addOutput(MTMMA);
 
@@ -30059,23 +30117,23 @@ function (_Indicator21) {
     _classCallCheck(this, BOLLIndicator);
 
     _this21 = _possibleConstructorReturn(this, _getPrototypeOf(BOLLIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 120, 20);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 120, 20);
 
     _this21.addParameter(N);
 
-    var STD_CLOSE_N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("STD_CLOSE_N", new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* StdExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), N));
+    var STD_CLOSE_N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("STD_CLOSE_N", new __WEBPACK_IMPORTED_MODULE_0__exprs__["L" /* StdExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), N));
 
     _this21.addAssign(STD_CLOSE_N);
 
-    var BOLL = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("BOLL", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), N));
+    var BOLL = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("BOLL", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), N));
 
     _this21.addOutput(BOLL);
 
-    var UB = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("UB", new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](BOLL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](2), STD_CLOSE_N)));
+    var UB = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("UB", new __WEBPACK_IMPORTED_MODULE_0__exprs__["b" /* AddExpr */](BOLL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](2), STD_CLOSE_N)));
 
     _this21.addOutput(UB);
 
-    var LB = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("LB", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](BOLL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](2), STD_CLOSE_N)));
+    var LB = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("LB", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](BOLL, new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](2), STD_CLOSE_N)));
 
     _this21.addOutput(LB);
 
@@ -30102,18 +30160,18 @@ function (_Indicator22) {
     _classCallCheck(this, PSYIndicator);
 
     _this22 = _possibleConstructorReturn(this, _getPrototypeOf(PSYIndicator).call(this));
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 2, 100, 12);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M", 2, 100, 6);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 2, 100, 12);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M", 2, 100, 6);
 
     _this22.addParameter(N);
 
     _this22.addParameter(M);
 
-    var PSY = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("PSY", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["k" /* CountExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["q" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1))), N), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var PSY = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("PSY", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["n" /* CountExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["t" /* GtExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1))), N), N), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this22.addOutput(PSY);
 
-    var PSYMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("PSYMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](PSY, M));
+    var PSYMA = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("PSYMA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](PSY, M));
 
     _this22.addOutput(PSYMA);
 
@@ -30145,10 +30203,10 @@ function (_Indicator23) {
       return "StochRSI";
     };
 
-    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("N", 3, 100, 14);
-    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("M", 3, 100, 14);
-    var P1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("P1", 2, 50, 3);
-    var P2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["D" /* ParameterExpr */]("P2", 2, 50, 3);
+    var N = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("N", 3, 100, 14);
+    var M = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("M", 3, 100, 14);
+    var P1 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("P1", 2, 50, 3);
+    var P2 = new __WEBPACK_IMPORTED_MODULE_0__exprs__["G" /* ParameterExpr */]("P2", 2, 50, 3);
 
     _this23.addParameter(N);
 
@@ -30158,23 +30216,23 @@ function (_Indicator23) {
 
     _this23.addParameter(P2);
 
-    var LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)));
+    var LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["I" /* RefExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)));
 
     _this23.addAssign(LC);
 
-    var CLOSE_LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("CLOSE_LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["i" /* CloseExpr */](), LC));
+    var CLOSE_LC = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("CLOSE_LC", new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* CloseExpr */](), LC));
 
     _this23.addAssign(CLOSE_LC);
 
-    var RSI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("RSI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["y" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](0)), N, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N, new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var RSI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["d" /* AssignExpr */]("RSI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["B" /* MaxExpr */](CLOSE_LC, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](0)), N, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["K" /* SmaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["a" /* AbsExpr */](CLOSE_LC), N, new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](1))), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this23.addAssign(RSI);
 
-    var STOCHRSI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* OutputExpr */]("STOCHRSI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["z" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["l" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](RSI, new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* LlvExpr */](RSI, M)), P1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["J" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["r" /* HhvExpr */](RSI, M), new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* LlvExpr */](RSI, M)), P1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["j" /* ConstExpr */](100)));
+    var STOCHRSI = new __WEBPACK_IMPORTED_MODULE_0__exprs__["F" /* OutputExpr */]("STOCHRSI", new __WEBPACK_IMPORTED_MODULE_0__exprs__["C" /* MulExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["o" /* DivExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](RSI, new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* LlvExpr */](RSI, M)), P1), new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["M" /* SubExpr */](new __WEBPACK_IMPORTED_MODULE_0__exprs__["u" /* HhvExpr */](RSI, M), new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* LlvExpr */](RSI, M)), P1)), new __WEBPACK_IMPORTED_MODULE_0__exprs__["m" /* ConstExpr */](100)));
 
     _this23.addOutput(STOCHRSI);
 
-    _this23.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["E" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["x" /* MaExpr */](STOCHRSI, P2)));
+    _this23.addOutput(new __WEBPACK_IMPORTED_MODULE_0__exprs__["H" /* RangeOutputExpr */]("MA", new __WEBPACK_IMPORTED_MODULE_0__exprs__["A" /* MaExpr */](STOCHRSI, P2)));
 
     return _this23;
   }
